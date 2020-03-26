@@ -1,31 +1,21 @@
 <template>
 <div>
-		<div class="open">
-			<div class="layer"></div>
-			<div class="layer"></div>
+	<div class="open">
+		<div class="layer"></div>
+		<div class="layer"></div>
+	</div>
+	
+	<div class="bannerText font">
+		<h2>zoek jij naar een stageplaats?</h2><br>
+		<p>Wacht dan niet langer en maak een account aan om te solliciteren aan vacatures, en wie weet vindt jij je droom bpv plaats om je waar je stage kan lopen. Stage finder helpt jou daarbij, Meld je nu aan!</p>
+		<a href="#">Lees meer</a>
+	</div>
+
+	<footer id="sticky-footer" class="footer mt-auto py-3 dark">
+		<div class="container text-center">
+		<span class="text-muted">Copyright &copy; Stagefinder</span>
 		</div>
-		<section>
-			<div class="bannerText font">
-				<h2>zoek jij naar een stageplaats?</h2><br>
-				<p>Wacht dan niet langer en maak een account aan om te solliciteren aan vacatures, en wie weet vindt jij je droom bpv plaats om je waar je stage kan lopen. Stage finder helpt jou daarbij, Meld je nu aan!</p>
-				<a href="#">Lees meer</a>
-			</div>
-			<img src="bulb.jpg" class="bulb">
-			<ul class="sci">
-				<li><a href="#"><i class="fa fa-facebook"></i></a></li>
-				<li><a href="#"><i class="fa fa-twitter"></i></a></li>
-				<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
-				<li><a href="#"><i class="fa fa-instagram"></i></a></li>
-			</ul>
-			<div class="element1"></div>
-			<div class="element2"></div>
-		</section>
-        <div class="container"></div>
-    <footer id="sticky-footer" class="py-4 bg-dark text-white-50 font">
-        <div class="container text-center">
-        <small>Copyright &copy; Stagefinder</small>
-        </div>
-    </footer>
+	</footer>
 </div>
 </template>
 
@@ -81,17 +71,6 @@ body {
 	{
 		transform: scaleY(0);
 	}
-}
-
-section {
-	position: absolute;
-	width: 100%;
-	height: 100%;
-	background: #fff;
-	display: grid;
-	justify-content: center;
-	align-items: center;
-	overflow: hidden;
 }
 
 .bannerText {
@@ -209,26 +188,8 @@ section {
 	}
 }
 
-.bulb {
-	opacity: 0;
-	position: absolute;
-	right: 10%;
-	top: 50%;
-	transform: translateY(-50%);
-	animation: fadeIn 1s linear forwards;
-	animation-delay: 6s;
-	z-index: 100;
-}
 
-.sci {
-	position: absolute;
-	bottom: 15px;
-	right: 30px;
-	display: flex;
-	flex-direction: column;
-}
-
-.sci li {
+.li {
 	opacity: 0;
 	list-style: none;
 	padding: 10px 0;
@@ -246,41 +207,6 @@ section {
 	{
 		transform: translateX(0);
 		opacity: 1;
-	}
-}
-
-.element1 {
-	opacity: 0;
-	position: absolute;
-	bottom: -150px;
-	right: 40%;
-	width: 250px;
-	height: 250px;
-	border: 40px solid  rgb(255, 163, 25);
-	animation: rotate 40s linear infinite, fadeIn 1s linear forwards;
-	animation-delay: 7s;
-}
-
-.element2 {
-	opacity: 0;
-	position: absolute;
-	left: -10px;
-	top: 40%;
-	width: 50px;
-	height: 50px;
-	border: 2px solid rgb(255, 163, 25);
-	animation: rotate 30s linear infinite, fadeIn 1s linear forwards;
-	animation-delay: 7s;
-}
-
-@keyframes rotate {
-	0%
-	{
-		transform: rotate(45deg);
-	}
-	100%
-	{
-		transform: rotate(405deg);
 	}
 }
 
