@@ -8,6 +8,7 @@ import AddIntership from './components/items/AddIntership.vue'
 import EditItem from './components/items/EditItem.vue'
 import Internship from './components/items/Internship.vue'
 import Login from './components/auth/Login.vue'
+import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Profile from './components/items/Profile.vue'
 import Index from './components/items/Index.vue'
 import faq from './components/faq.vue'
@@ -38,6 +39,11 @@ let routes = [
     name: 'Login',
     path: '/login',
     component: Login,
+  },
+  {
+    name: 'ProfileInfo',
+    path: '/ProfileInfo',
+    component: ProfileInfo,
   },
   {
     name: 'Profile',

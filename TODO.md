@@ -7,6 +7,7 @@
 
 # Responsive die nog gedaan moeten worden.
   Homepage
+  faq
   Login kleine stukje
 
 # admin firebase
@@ -17,5 +18,6 @@
 
 # Wanneer je hebt geregistreet dan kom je naar profile pagina waar je je 
 # bedrijf gegevens en over je persoonlijke gegevens invoert en gaat naar de database.
+
   
 # Our team: https://bootsnipp.com/snippets/nNoMz

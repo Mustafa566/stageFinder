@@ -137,7 +137,7 @@ export default {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
           alert('Account created for ' + this.email);
-          this.$router.push('/index');
+          this.$router.push('/ProfileInfo');
           location.reload();
         },
         err => {
@@ -420,7 +420,6 @@ $diffRatio: ($contW - $imgW) / $contW;
 h2 {
   width: 100%;
   font-size: 26px;
-  text-align: center;
 }
 
 label {
