@@ -104,6 +104,7 @@ export default {
     },
     methods: {
         AddProfile() {
+            console.log(JSON.stringify(this.profileData))
             this.$firebaseRefs.profile.push({
                 firstName: this.profileData.firstName,
                 lastName: this.profileData.lastName,
@@ -119,19 +120,19 @@ export default {
                 location: this.profileData.location,
                 companyEmail: this.profileData.companyEmail
             })
-            // this.profileData.firstName = '';
-            // this.profileData.lastName = '';
-            // this.profileData.phoneNumber = '';
-            // this.profileData.adress = '';
-            // this.profileData.gender = '';
-            // this.profileData.personalEmail = '';
-            // this.profileData.companyName = '';
-            // this.profileData.chamberOfCommerceNumber = '';
-            // this.profileData.street = '';
-            // this.profileData.houseNumber = '';
-            // this.profileData.zipCode = '';
-            // this.profileData.location = '';
-            // this.profileData.companyEmail = '';
+            this.profileData.firstName = '';
+            this.profileData.lastName = '';
+            this.profileData.phoneNumber = '';
+            this.profileData.adress = '';
+            this.profileData.gender = '';
+            this.profileData.personalEmail = '';
+            this.profileData.companyName = '';
+            this.profileData.chamberOfCommerceNumber = '';
+            this.profileData.street = '';
+            this.profileData.houseNumber = '';
+            this.profileData.zipCode = '';
+            this.profileData.location = '';
+            this.profileData.companyEmail = '';
             // this.$router.push('/internship')
             console.log('Added to database');
         }

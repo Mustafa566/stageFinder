@@ -21,3 +21,10 @@
 
   
 # Our team: https://bootsnipp.com/snippets/nNoMz
+
+This is the full code: 
+
+    https://paste.ofcode.org/FY9XvuBKHfxGYKpWAKvW3y and  this is a other page 
+
+    that post to database and this works: 
+    https://paste.ofcode.org/m3nAEQwgvP6KuZWZzDyR5R

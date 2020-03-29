@@ -83,6 +83,7 @@ export default {
   },
   methods: {
         AddIntership() {
+            console.log(JSON.stringify(this.newItem))
             this.$firebaseRefs.items.push({
                 name: this.newItem.name,
                 location: this.newItem.location,
