@@ -16,6 +16,8 @@ import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
 
+var PORT = process.env.PORT || 5000;
+
 Vue.use(VueFire)
 Vue.use(VueRouter)
 Vue.config.productionTip = false
