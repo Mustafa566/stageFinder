@@ -4,64 +4,64 @@
         <form v-on:submit.prevent="AddProfile">
             <div class="row mt-4">
                 <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="First name" v-bind="profileData.firstName" required/>
+                    <input type="text" class="inputText form-control" placeholder="First name" v-model="profileData.firstName" required/>
                 </div>
                 <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Last name" v-bind="profileData.lastName" required/>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Phone number" v-bind="profileData.phoneNumber" required/>
-                </div>
-                <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Adress" v-bind="profileData.adress" required/>
+                    <input type="text" class="inputText form-control" placeholder="Last name" v-model="profileData.lastName" required/>
                 </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Citizenship" v-bind="profileData.citizenship" required/>
+                    <input type="text" class="inputText form-control" placeholder="Phone number" v-model="profileData.phoneNumber" required/>
+                </div>
+                <div class="col-sm-1 col-md form-group">
+                    <input type="text" class="inputText form-control" placeholder="Adress" v-model="profileData.adress" required/>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-1 col-md form-group">
+                    <input type="text" class="inputText form-control" placeholder="Citizenship" v-model="profileData.citizenship" required/>
                 </div>
                 <select class="custom-select col-sm-1 col-md">
-                    <option selected v-bind="profileData.gender">Gender</option>
+                    <option selected :v-model="profileData.gender">Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
                 <div class="col-sm-1 col-md form-group">
-                    <input type="email" class="inputText form-control" placeholder="Personal E-mail" v-bind="profileData.personalEmail" required/>
+                    <input type="email" class="inputText form-control" placeholder="Personal E-mail" v-model="profileData.personalEmail" required/>
                 </div>
             </div>
 
             <h2 class="mt-5 mb-5">Business information</h2>
             <div class="row mt-4">
                 <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Company name" v-bind="profileData.companyName" required/>
+                    <input type="text" class="inputText form-control" placeholder="Company name" v-model="profileData.companyName" required/>
                 </div>
                 <div class="col-sm-1 col-md form-group">
-                    <input type="number" class="inputText form-control" placeholder="Chamber of Commerce number" v-bind="profileData.chamberOfCommerceNumber" required/>
-                </div>
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Street" v-bind="profileData.street" required/>
-                </div>
-                <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="House number" v-bind="profileData.houseNumber" required/>
-                </div>
-                <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="ZIP code" v-bind="profileData.zipCode" required/>
+                    <input type="number" class="inputText form-control" placeholder="Chamber of Commerce number" v-model="profileData.chamberOfCommerceNumber" required/>
                 </div>
             </div>
 
             <div class="row mt-4">
                 <div class="col-sm-1 col-md form-group">
-                    <input type="text" class="inputText form-control" placeholder="Location" v-bind="profileData.location" required/>
+                    <input type="text" class="inputText form-control" placeholder="Street" v-model="profileData.street" required/>
                 </div>
                 <div class="col-sm-1 col-md form-group">
-                    <input type="email" class="inputText form-control" placeholder="Company email" v-bind="profileData.companyEmail" required/>
+                    <input type="text" class="inputText form-control" placeholder="House number" v-model="profileData.houseNumber" required/>
+                </div>
+                <div class="col-sm-1 col-md form-group">
+                    <input type="text" class="inputText form-control" placeholder="ZIP code" v-model="profileData.zipCode" required/>
+                </div>
+            </div>
+
+            <div class="row mt-4">
+                <div class="col-sm-1 col-md form-group">
+                    <input type="text" class="inputText form-control" placeholder="Location" v-model="profileData.location" required/>
+                </div>
+                <div class="col-sm-1 col-md form-group">
+                    <input type="email" class="inputText form-control" placeholder="Company email" v-model="profileData.companyEmail" required/>
                 </div>
             </div>
 
