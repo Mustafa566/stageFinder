@@ -1,6 +1,16 @@
 <template>
     <div class="container">
-        <h2 class="mb-5">Personal information</h2>
+        <div v-if="!isHidden" class="alert alert-success" role="alert">
+            <strong>Personal and Business information saved.</strong>
+        </div>
+        <div class="row">
+            <div class="col">
+                <h2 class="mb-5">Personal information</h2>
+            </div>
+            <div class="col">
+                <input v-if="isLoggedIn" class="nav float-right font-weight-bold" v-model="currentUser">
+            </div>
+        </div>
         <form v-on:submit.prevent="AddProfile">
             <div class="row mt-4">
                 <div class="col-sm-1 col-md form-group">
@@ -24,8 +34,8 @@
                 <div class="col-sm-1 col-md form-group">
                     <input type="text" class="inputText form-control" placeholder="Citizenship" v-model="profileData.citizenship" required/>
                 </div>
-                <select class="custom-select col-sm-1 col-md">
-                    <option selected :v-model="profileData.gender">Gender</option>
+                <select class="custom-select col-md col-sm-1">
+                    <option selected disabled>Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
                 </select>
@@ -69,11 +79,13 @@
                 <input type="submit" class="btn btn-primary mt-3" value="Save"/>
             </div>
         </form>
+        
     </div>
 </template>
 
 <script>
 import { db } from '../../config/db';
+import firebase from "firebase"
 
 export default {
     components: {
@@ -84,6 +96,9 @@ export default {
     },
     data () {
         return {
+            isLoggedIn: false,
+            currentUser: false,
+            isHidden: true,
             profileData: {
                 firstName: '',
                 lastName: '',
@@ -104,7 +119,7 @@ export default {
     },
     methods: {
         AddProfile() {
-            console.log(JSON.stringify(this.profileData))
+            console.log(JSON.stringify(this.profileData) + '<br/>' +this.currentUser)
             this.$firebaseRefs.profile.push({
                 firstName: this.profileData.firstName,
                 lastName: this.profileData.lastName,
@@ -118,7 +133,8 @@ export default {
                 houseNumber: this.profileData.houseNumber,
                 zipCode: this.profileData.zipCode,
                 location: this.profileData.location,
-                companyEmail: this.profileData.companyEmail
+                companyEmail: this.profileData.companyEmail,
+                currentUser: this.currentUser
             })
             this.profileData.firstName = '';
             this.profileData.lastName = '';
@@ -133,8 +149,17 @@ export default {
             this.profileData.zipCode = '';
             this.profileData.location = '';
             this.profileData.companyEmail = '';
-            // this.$router.push('/internship')
+            this.currentUser = '';
+            window.scrollTo(0,0, 0,0);
             console.log('Added to database');
+            /* Waiting for 2 seconds here */
+            this.$router.push('/internship')
+        }
+    },
+    created() {
+        if(firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.currentUser = firebase.auth().currentUser.email;
         }
     }
 }

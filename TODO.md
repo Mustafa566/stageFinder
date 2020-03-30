@@ -16,15 +16,12 @@
   https://www.youtube.com/watch?v=paNuap1mw3A&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=20
 
 
-# Wanneer je hebt geregistreet dan kom je naar profile pagina waar je je 
-# bedrijf gegevens en over je persoonlijke gegevens invoert en gaat naar de database.
+# Our team
+  https://bootsnipp.com/snippets/nNoMz
 
-  
-# Our team: https://bootsnipp.com/snippets/nNoMz
+# ProfileInfo.vue
+  when you click submit it scrolls above then wait 2 seconds and go to index.vue page.
 
-This is the full code: 
-
-    https://paste.ofcode.org/FY9XvuBKHfxGYKpWAKvW3y and  this is a other page 
-
-    that post to database and this works: 
-    https://paste.ofcode.org/m3nAEQwgvP6KuZWZzDyR5R
+# Profile.vue
+  Set all the information from the personal and business to the profile page.
+  Check if the currentUser the same is an take only their own information.
