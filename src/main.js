@@ -10,7 +10,7 @@ import Internship from './components/items/Internship.vue'
 import Login from './components/auth/Login.vue'
 import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Profile from './components/items/Profile.vue'
-import Index from './components/items/Index.vue'
+import Index from './components/Index.vue'
 import faq from './components/faq.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"

@@ -125,7 +125,7 @@ export default {
                 lastName: this.profileData.lastName,
                 phoneNumber: this.profileData.phoneNumber,
                 adress: this.profileData.adress,
-                adress: this.profileData.citizenship,
+                citizenship: this.profileData.citizenship,
                 gender: this.profileData.gender,
                 personalEmail: this.profileData.personalEmail,
                 companyName: this.profileData.companyName,
