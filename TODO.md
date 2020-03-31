@@ -25,3 +25,5 @@
 # Profile.vue
   Set all the information from the personal and business to the profile page.
   Check if the currentUser the same is an take only their own information.
+
+# Comments about the code.

@@ -34,7 +34,7 @@
                 <div class="col-sm-1 col-md form-group">
                     <input type="text" class="inputText form-control" placeholder="Citizenship" v-model="profileData.citizenship" required/>
                 </div>
-                <select class="custom-select col-md col-sm-1">
+                <select class="custom-select col-md col-sm-1" v-model="gender">
                     <option selected disabled>Gender</option>
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
@@ -125,6 +125,7 @@ export default {
                 lastName: this.profileData.lastName,
                 phoneNumber: this.profileData.phoneNumber,
                 adress: this.profileData.adress,
+                adress: this.profileData.citizenship,
                 gender: this.profileData.gender,
                 personalEmail: this.profileData.personalEmail,
                 companyName: this.profileData.companyName,
@@ -140,6 +141,7 @@ export default {
             this.profileData.lastName = '';
             this.profileData.phoneNumber = '';
             this.profileData.adress = '';
+            this.profileData.citizenship = '';
             this.profileData.gender = '';
             this.profileData.personalEmail = '';
             this.profileData.companyName = '';
