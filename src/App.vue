@@ -49,8 +49,8 @@
 
 /* standards */
 .btn-primary {
-  background-color: #f5940b;
-  border-color: #f5940b;
+  background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
+  border-color: #d98618;
 }
 
 .navbar {
@@ -58,8 +58,8 @@
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:link, .btn-primary:visited {
-  background-color: #DF9347;
-  border-color: #DF9347;
+  background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
+  border-color: #d98618;
 }
 
 .defaultColor {
@@ -144,6 +144,10 @@ input::-webkit-inner-spin-button {
 .infoList {
   border: 2px solid black;
   border-radius: 5px;
+}
+
+.card-border {
+  border-radius: 15px;
 }
 </style>
 

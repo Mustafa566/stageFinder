@@ -1,6 +1,6 @@
 <template>
-    <div class="container bgColor">
-        <h3 class="text-center mt-4">Add internship</h3>
+    <div v-if="isLoggedIn" class="container bgColor">
+        <h3 class="text-center mt-4">Edit internship</h3>
         <div class="card-body">
             <form v-on:submit.prevent="updateItem">
                 <div class="row mt-4">
@@ -50,7 +50,7 @@
 </template>
 
 <script>
-
+import firebase from "firebase";
 import { db } from '../../config/db';
 
 export default {
@@ -66,7 +66,8 @@ export default {
   },
   data () {
     return {
-      newItem: {}
+      newItem: {},
+      isLoggedIn: false
     }
   },
   created() {
@@ -87,6 +88,12 @@ export default {
     updateItem() {
       this.$firebaseRefs.items.child(this.$route.params.id).set(this.newItem);
       this.$router.push('/internship')
+    }
+  },
+  created() {
+    if(firebase.auth().currentUser) {
+      this.isLoggedIn = true;
+      this.currentUser = firebase.auth().currentUser.email;
     }
   }
 }

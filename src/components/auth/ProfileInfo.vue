@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div v-if="isLoggedIn" class="container">
         <div v-if="!isHidden" class="alert alert-success" role="alert">
             <strong>Personal and Business information saved.</strong>
         </div>

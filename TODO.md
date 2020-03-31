@@ -9,12 +9,7 @@
   - Homepage
   - faq
   - Login kleine stukje
-
-# admin firebase
-  https://www.youtube.com/watch?v=4wa3CMK4E2Y&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=18
-  https://www.youtube.com/watch?v=VvcBqPua2DI&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=19
-  https://www.youtube.com/watch?v=paNuap1mw3A&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=20
-
+  - profile
 
 # Our team
   - https://bootsnipp.com/snippets/nNoMz
@@ -29,3 +24,5 @@
   - Before you post it you have a preview design.
 
 # Comments about the code.
+
+# Chat system.
