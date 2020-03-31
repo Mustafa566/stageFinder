@@ -6,9 +6,9 @@
   Date.now() function add index
 
 # Responsive die nog gedaan moeten worden.
-  Homepage
-  faq
-  Login kleine stukje
+  - Homepage
+  - faq
+  - Login kleine stukje
 
 # admin firebase
   https://www.youtube.com/watch?v=4wa3CMK4E2Y&list=PL4cUxeGkcC9jUPIes_B8vRjn1_GaplOPQ&index=18
@@ -17,13 +17,15 @@
 
 
 # Our team
-  https://bootsnipp.com/snippets/nNoMz
+  - https://bootsnipp.com/snippets/nNoMz
 
 # ProfileInfo.vue
-  when you click submit it scrolls above then wait 2 seconds and go to index.vue page.
+  - when you click submit it scrolls above then wait 2 seconds and go to index.vue page.
 
 # Profile.vue
-  Set all the information from the personal and business to the profile page.
-  Check if the currentUser the same is an take only their own information.
+  - Check if the currentUser the same is an take only their own information.
+
+# AddIntership.vue
+  - Before you post it you have a preview design.
 
 # Comments about the code.
