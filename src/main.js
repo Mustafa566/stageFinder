@@ -15,8 +15,10 @@ import faq from './components/faq.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
+import VueHead from 'vue-head'
 
 
+Vue.use(VueHead)
 Vue.use(VueFire)
 Vue.use(VueRouter)
 Vue.config.productionTip = false
@@ -34,7 +36,7 @@ let routes = [
   {
     name: 'Index',
     path: '/index',
-    component: Index ,
+    component: Index,
   },
   {
     name: 'Login',

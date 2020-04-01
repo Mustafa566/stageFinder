@@ -6,16 +6,16 @@
           </div>
         <div class="card-body">
           <div class="container" v-for="profileData of profile" :key="profileData['.key']">
-            <div class="row">
+            <div v-if="seen" class="row">
               <div class="col">
                 <div class="card card-border" style="width: 30rem;">
                   <div class="card-body">
                     <h4 class="card-title text-center mb-4">Personal information</h4>
+                      <p class="card-text">ID: {{profileData.CurrentUser}}</p>
                       <p class="card-text">First name: {{profileData.firstName}}</p>
                       <p class="card-text">Last name: {{profileData.lastName}}</p>
                       <p class="card-text">Phone number: {{profileData.phoneNumber}}</p>
                       <p class="card-text">Adress: {{profileData.adress}}</p>
-                      <p class="card-text">Gender: {{profileData.gender}}</p>
                       <p class="card-text">Citizenship: {{profileData.citizenship}}</p>
                       <p class="card-text">Personal email: {{profileData.personalEmail}}</p>
                   </div>
@@ -37,12 +37,12 @@
                 </div>
               </div>
             </div>
-            <div class="card-body mt-5 float-right">
+          </div>
+          <div class="card-body mt-5 float-right">
               <div class="row">
                 <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
               </div>
             </div>
-          </div>
         </div>
     </div>
 </template>
@@ -54,13 +54,22 @@ import { db } from '../../config/db';
 export default {
   data() {
     return {
-      email: "",
-      password: "",
+      title: 'Profile',
+      email: '',
+      password: '',
       profileData: [],
       isHidden: true,
+      seen: true,
       isLoggedIn: false
     }
   },
+  head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	},
   firebase: {
     profile: db.ref('profile')
   },
@@ -80,6 +89,13 @@ export default {
     if(firebase.auth().currentUser) {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
+    }
+    // eslint-disable-next-line
+    var user = firebase.auth().currentUser;
+    if (this.user == this.profileData.CurrentUser) {
+      this.seen = true;
+    } else {
+      this.seen = false;
     }
   }
 };

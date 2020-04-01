@@ -19,6 +19,23 @@
 </div>
 </template>
 
+<script>
+export default {
+	data() {
+		return {
+			title: 'Homepage'
+		}
+	},
+	head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	}
+}
+</script>
+
 <style scope> 
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
 body {

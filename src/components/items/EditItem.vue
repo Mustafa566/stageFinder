@@ -66,10 +66,18 @@ export default {
   },
   data () {
     return {
-      newItem: {},
-      isLoggedIn: false
+        title: 'Edit',
+        newItem: {},
+        isLoggedIn: false
     }
   },
+  head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+    },
   created() {
      let item = this.itemsObj[this.$route.params.id]
      this.newItem = {
@@ -83,17 +91,15 @@ export default {
        website: item.website,
        info: item.info,
      }
+     if(firebase.auth().currentUser) {
+        this.isLoggedIn = true;
+        this.currentUser = firebase.auth().currentUser.email;
+      }
   },
   methods: {
     updateItem() {
       this.$firebaseRefs.items.child(this.$route.params.id).set(this.newItem);
       this.$router.push('/internship')
-    }
-  },
-  created() {
-    if(firebase.auth().currentUser) {
-      this.isLoggedIn = true;
-      this.currentUser = firebase.auth().currentUser.email;
     }
   }
 }

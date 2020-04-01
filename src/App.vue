@@ -7,7 +7,7 @@
       </button>
       <div class="navbar-collapse" v-if="!isHidden">
         <ul class="navbar-nav mr-auto"></ul>
-        <li v-if="isLoggedIn" class="nav"><span class="currentUser">{{currentUser}}</span></li>
+        <li v-if="isLoggedIn" class="nav"><span class="currentUser"><img class="userOnline" src="@/assets/icons/userOnline.png">{{currentUser}}</span></li>
         <ul class="navbar-nav">
           <img v-if="isLoggedIn" class="icons" src="@/assets/icons/add.png">
           <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Add' }" class="nav-link">Add Internship</router-link></li>
@@ -80,6 +80,13 @@
   height: 28px;
   margin-top: 5px;
   margin-left: 15px;
+}
+
+.userOnline {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+  padding: 3px;
 }
 
 /* */

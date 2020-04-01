@@ -94,8 +94,9 @@ import firebase from "firebase";
 export default {
   data() {
     return {
-      email: "",
-      password: "",
+      title: 'Login',
+      email: '',
+      password: '',
       password_length: 0,
       typed: false,
       contains_lovercase: false,
@@ -105,6 +106,13 @@ export default {
       valid_password: false
     };
   },
+  head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	},
   methods: {
     p_len() {
       this.password_length = this.password.length;

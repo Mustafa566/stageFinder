@@ -20,9 +20,6 @@
 # Profile.vue
   - Check if the currentUser the same is an take only their own information.
 
-# AddIntership.vue
-  - Before you post it you have a preview design.
-
 # Comments about the code.
 
 # Chat system.

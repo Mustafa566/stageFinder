@@ -45,6 +45,80 @@
                     <input type="submit" class="btn btn-primary mt-3" value="Add Item"/>
                 </div>
             </form>
+            <h2 class="text-center mb-3">Preview design</h2>
+            <div class="card rounded-circle">
+                <div class="card-body default-bgcolor">
+                    <h4 class="card-title text-center mb-5 font-weight-bold">{{ newItem.name }}</h4>
+                    <div class="row mb-4">
+                        <div class="col-sm text-center mb-4">
+                            <h6 class="font-weight-bold">Location</h6>
+                            <p class="card-text">{{ newItem.location }}</p>
+                        </div>
+                        <div class="col-sm text-center mb-4">
+                            <h6 class="font-weight-bold">Availability</h6>
+                            <p class="card-text">{{ newItem.availability }}</p>
+                        </div>
+                    </div>
+                    <div class="container">
+                        <div class="row">
+                            <button @click="toggle" class="btn btn-dark">{{toggleIcon}}</button>
+                        </div>
+                    <div class="infoList mt-4" v-show="showSection">
+                    <div class="container mt-5">
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md">
+                                <h6 class="font-weight-bold text-center">Education</h6>
+                            </div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.education }}
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md text-center">
+                                <h6 class="font-weight-bold">Niveau</h6>
+                            </div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.niveau }}
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md text-center">
+                                <h6 class="font-weight-bold">Website</h6>
+                            </div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.website }}
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md text-center">
+                                <h6 class="font-weight-bold">Phone number</h6>
+                            </div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.phoneNumber }}
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md text-center">
+                                <h6 class="font-weight-bold">Email</h6>
+                            </div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.email }}
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md text-center">
+                                <h6 class="font-weight-bold">Information</h6>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.info }}
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 </template>
@@ -69,7 +143,10 @@ export default {
   },
   data () {
     return {
+        title: 'Add internship',
         isLoggedIn: false,
+        toggleIcon: 'More info',
+        showSection: false,
         newItem: {
             name: '',
             location: '',
@@ -83,6 +160,13 @@ export default {
         },
     }
   },
+  head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	},
   methods: {
         AddIntership() {
             console.log(JSON.stringify(this.newItem))
@@ -107,6 +191,9 @@ export default {
             this.newItem.website = '';
             this.newItem.info = '';
             this.$router.push('/internship')
+        },
+        toggle() {
+            this.showSection = !this.showSection
         }
     },
     created() {

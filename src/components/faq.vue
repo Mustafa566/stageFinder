@@ -17,6 +17,24 @@
    </div>
 </div>
 </template>
+
+<script>
+export default {
+	data() {
+		return {
+			title: 'Faq'
+		}
+	},
+	head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	}
+}
+</script>
+
 <style scope> 
      @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 

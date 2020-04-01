@@ -94,6 +94,7 @@ export default {
   },
   data() {
     return {
+      title: 'Internship',
       items: [],
       isLoggedIn: false,
       currentUser: false,
@@ -101,6 +102,13 @@ export default {
       toggleIcon: 'More info'
     }
   },
+  head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	},
   firebase: {
     items: db.ref('items')
   },

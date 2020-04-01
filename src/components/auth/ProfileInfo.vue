@@ -34,11 +34,6 @@
                 <div class="col-sm-1 col-md form-group">
                     <input type="text" class="inputText form-control" placeholder="Citizenship" v-model="profileData.citizenship" required/>
                 </div>
-                <select class="custom-select col-md col-sm-1" v-model="gender">
-                    <option selected disabled>Gender</option>
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                </select>
                 <div class="col-sm-1 col-md form-group">
                     <input type="email" class="inputText form-control" placeholder="Personal E-mail" v-model="profileData.personalEmail" required/>
                 </div>
@@ -76,7 +71,7 @@
             </div>
 
             <div class="form-group">
-                <input type="submit" class="btn btn-primary mt-3" value="Save"/>
+                <input type="submit" class="btn btn-primary mt-3" @click="alert()" value="Save"/>
             </div>
         </form>
         
@@ -96,6 +91,7 @@ export default {
     },
     data () {
         return {
+            title: 'Profile Information',
             isLoggedIn: false,
             currentUser: false,
             isHidden: true,
@@ -105,7 +101,6 @@ export default {
                 phoneNumber: '',
                 adress: '',
                 citizenship: '',
-                gender: '',
                 personalEmail: '',
                 companyName: '',
                 chamberOfCommerceNumber: '',
@@ -117,16 +112,22 @@ export default {
             },
         }
     },
+    head: {
+		title: function () {
+			return {
+				inner: this.title
+			}
+		}
+	},
     methods: {
         AddProfile() {
-            console.log(JSON.stringify(this.profileData) + '<br/>' +this.currentUser)
+            console.log(JSON.stringify(this.profileData) + this.currentUser)
             this.$firebaseRefs.profile.push({
                 firstName: this.profileData.firstName,
                 lastName: this.profileData.lastName,
                 phoneNumber: this.profileData.phoneNumber,
                 adress: this.profileData.adress,
                 citizenship: this.profileData.citizenship,
-                gender: this.profileData.gender,
                 personalEmail: this.profileData.personalEmail,
                 companyName: this.profileData.companyName,
                 chamberOfCommerceNumber: this.profileData.chamberOfCommerceNumber,
@@ -135,14 +136,12 @@ export default {
                 zipCode: this.profileData.zipCode,
                 location: this.profileData.location,
                 companyEmail: this.profileData.companyEmail,
-                currentUser: this.currentUser
+                CurrentUser: this.currentUser
             })
             this.profileData.firstName = '';
             this.profileData.lastName = '';
             this.profileData.phoneNumber = '';
             this.profileData.adress = '';
-            this.profileData.citizenship = '';
-            this.profileData.gender = '';
             this.profileData.personalEmail = '';
             this.profileData.companyName = '';
             this.profileData.chamberOfCommerceNumber = '';
@@ -151,11 +150,24 @@ export default {
             this.profileData.zipCode = '';
             this.profileData.location = '';
             this.profileData.companyEmail = '';
-            this.currentUser = '';
+            this.CurrentUser = '';
             window.scrollTo(0,0, 0,0);
             console.log('Added to database');
             /* Waiting for 2 seconds here */
             this.$router.push('/internship')
+        },
+        alert() {
+            if (this.profileData.firstName == '' || this.profileData.lastName == '' || 
+                this.profileData.phoneNumber == '' || this.profileData.adress == '' ||
+                this.profileData.citizenship == '' || this.profileData.personalEmail == '' ||
+                this.profileData.companyName == '' || this.profileData.chamberOfCommerceNumber == '' ||
+                this.profileData.street == '' || this.profileData.houseNumber == '' ||
+                this.profileData.zipCode == '' || this.profileData.location == '' ||
+                this.companyEmail == '') {
+                this.isHidden = true;
+            } else {
+                this.isHidden = false;
+            }
         }
     },
     created() {
