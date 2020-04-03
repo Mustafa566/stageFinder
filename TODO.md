@@ -22,4 +22,5 @@
 
 # Comments about the code.
 
-# Chat system.
+# Chat bot.
+  - https://makkusu_otaku.indie.af/page/html-chatbot/index.html

@@ -45,6 +45,7 @@
                     <input type="submit" class="btn btn-primary mt-3" value="Add Item"/>
                 </div>
             </form>
+
             <h2 class="text-center mb-3">Preview design</h2>
             <div class="card rounded-circle">
                 <div class="card-body default-bgcolor">
@@ -197,10 +198,10 @@ export default {
         }
     },
     created() {
-    if(firebase.auth().currentUser) {
-      this.isLoggedIn = true;
-      this.currentUser = firebase.auth().currentUser.email;
+        if(firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.currentUser = firebase.auth().currentUser.email;
+        }   
     }
-  }
 }
 </script>
