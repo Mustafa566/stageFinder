@@ -98,7 +98,7 @@ export default {
     //   this.seen = false;
     // }
     if (firebase.auth().currentUser) {
-      this.profileData.CurrentUser = this.currentUser.uid;
+      this.profileData.CurrentUser == this.currentUser.uid;
     }
   }
 };
