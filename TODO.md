@@ -13,6 +13,7 @@
 
 # Our team
   - https://bootsnipp.com/snippets/nNoMz
+  - img color change to grey photoshop.
 
 # ProfileInfo.vue
   - when you click submit it scrolls above then wait 2 seconds and go to index.vue page.

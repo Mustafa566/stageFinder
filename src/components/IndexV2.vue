@@ -15,20 +15,26 @@
 					</h5>
 				</div>
 				<div class="col">
-					<img src="@/assets/images/isometricHome.png">
+					<img class="isometric" src="@/assets/images/isometricHome.png">
 				</div>
 			</div>
 			<div class="row mt-5">
-				<div class="col-6">
-					<div class="card" style="width: 18rem;">
+				<h2 class="text-center mt-5 mb-5">OUR TEAM</h2>
+				<div class="col">
+					<div class="card float-right" style="width: 18rem;">
 						<!-- <img src="" class="card-img-top"> -->
 						<div class="card-body">
 							<h5 class="card-title text-center">Mustafa Bolat</h5>
 							<p class="card-text text-center">Full stack developer</p>
+							<div class="row">
+								<img class="mx-auto d-block" src="@/assets/icons/instagram.png">
+								<img class="mx-auto d-block" src="@/assets/icons/linkedin.png">
+								<img class="mx-auto d-block" src="@/assets/icons/email.png">
+							</div>
 						</div>
 					</div>
 				</div>	
-				<div class="col-6">.col-6</div>			
+				<div class="col">Col</div>			
 			</div>
 		</div>
 	<footer class="footer mt-auto py-3 sticky-footer">
@@ -93,7 +99,7 @@ export default {
 	}
 }
 
-img {
+.isometric {
 	width: 800px;
 	height: 500px;
 	animation-delay: 1s;
@@ -154,7 +160,6 @@ body {
 .size {
 	font-size: 35px;
 }
-
 
 .sticky-footer {
   right: 0;
