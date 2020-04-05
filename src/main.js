@@ -10,8 +10,9 @@ import Internship from './components/crud/Internship.vue'
 import Login from './components/auth/Login.vue'
 import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Profile from './components/crud/Profile.vue'
-import Index from './components/IndexV2.vue'
-import faq from './components/faq.vue'
+import Bot from './components/chatBot/Bot.vue'
+import Index from './components/Index.vue'
+import faq from './components/Faq.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
@@ -32,6 +33,11 @@ let routes = [
     name: 'faq',
     path: '/faq',
     component: faq ,
+  },
+  {
+    name: 'Bot',
+    path: '/Bot',
+    component: Bot ,
   },
   {
     name: 'Index',

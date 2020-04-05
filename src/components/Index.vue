@@ -18,26 +18,51 @@
 					<img class="isometric" src="@/assets/images/isometricHome.png">
 				</div>
 			</div>
-			<div class="row mt-5">
+			<div class="row mt-5 isobg">
 				<h2 class="text-center mt-5 mb-5">OUR TEAM</h2>
 				<div class="col">
 					<div class="card float-right" style="width: 18rem;">
-						<!-- <img src="" class="card-img-top"> -->
+						<img src="@/assets/images/mustafa.png" class="card-img-top teamImg">
 						<div class="card-body">
 							<h5 class="card-title text-center">Mustafa Bolat</h5>
-							<p class="card-text text-center">Full stack developer</p>
-							<div class="row">
-								<img class="mx-auto d-block" src="@/assets/icons/instagram.png">
-								<img class="mx-auto d-block" src="@/assets/icons/linkedin.png">
-								<img class="mx-auto d-block" src="@/assets/icons/email.png">
+							<p class="card-text text-center mt-4">Full stack developer</p>
+							<div class="row mt-4">
+								<a class="mx-auto d-block" href="https://www.instagram.com/musti_566/">
+									<img src="@/assets/icons/instagram.png">
+								</a>
+								<a class="mx-auto d-block" href="https://www.linkedin.com/in/mustafa-bolat-21417b125/">
+									<img src="@/assets/icons/linkedin.png">
+								</a>
+								<a class="mx-auto d-block" href="mailto:mustimmb566@gmail.com">
+									<img src="@/assets/icons/email.png">
+								</a>
 							</div>
 						</div>
 					</div>
 				</div>	
-				<div class="col">Col</div>			
+				<div class="col">
+					<div class="card float-left" style="width: 18rem;">
+						<img src="" class="card-img-top teamImg">
+						<div class="card-body">
+							<h5 class="card-title text-center">Stefan Mokhamsing</h5>
+							<p class="card-text text-center mt-4">Frontend developer</p>
+							<div class="row mt-4">
+								<a class="mx-auto d-block" href="">
+									<img src="@/assets/icons/instagram.png">
+								</a>
+								<a class="mx-auto d-block" href="">
+									<img src="@/assets/icons/linkedin.png">
+								</a>
+								<a class="mx-auto d-block" href="mailto:Stef_911@outlook.com">
+									<img src="@/assets/icons/email.png">
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>			
 			</div>
 		</div>
-	<footer class="footer mt-auto py-3 sticky-footer">
+	<footer class="footer mt-5 py-3 sticky-footer">
 		<div class="container text-center">
 			<span class="text-muted">Copyright &copy; Stagefinder</span>
 		</div>
@@ -160,6 +185,18 @@ body {
 .size {
 	font-size: 35px;
 }
+
+.teamImg {
+	width: 200px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+/* .isobg {
+	background-image: url('~@/assets/images/brainstorming_.png');
+	background-repeat: no-repeat;
+	background-position: 15% 80%;
+} */
 
 .sticky-footer {
   right: 0;
