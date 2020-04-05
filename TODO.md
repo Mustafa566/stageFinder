@@ -20,4 +20,5 @@
 # Comments about the code.
 
 # Chat bot.
-  - https://makkusu_otaku.indie.af/page/html-chatbot/index.html
+  - When you enter scoll top bottom of div.
+  - More styling

@@ -158,6 +158,38 @@ input::-webkit-inner-spin-button {
 .card-border {
   border-radius: 15px;
 }
+
+.inputChat {
+  display: block;
+  width: 100%;
+  margin-top: 5px;
+  padding-bottom: 5px;
+  font-size: 16px;
+  border-bottom: 1px solid rgba(0,0,0,0.4);
+}
+
+.chatLog {
+  line-height: 3;
+}
+
+.max {
+  height: 450px;
+  max-height: 450px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  border-bottom: 2px solid #EAEAEA;
+  background-color: #EAEAEA;
+}
+
+.max::-webkit-scrollbar {
+  width: 12px;
+	background-color: black;
+}
+
+.max::-webkit-scrollbar-thumb {
+	background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
+}
+
 </style>
 
 <script>

@@ -50,7 +50,7 @@
 								<a class="mx-auto d-block" href="">
 									<img src="@/assets/icons/instagram.png">
 								</a>
-								<a class="mx-auto d-block" href="">
+								<a class="mx-auto d-block" href="https://www.linkedin.com/in/stefan-mokhamsing-b9808a1a1/?originalSubdomain=nl">
 									<img src="@/assets/icons/linkedin.png">
 								</a>
 								<a class="mx-auto d-block" href="mailto:Stef_911@outlook.com">
