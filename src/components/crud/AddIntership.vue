@@ -42,7 +42,7 @@
                 </div>
 
                 <div class="form-group">
-                    <input type="submit" class="btn btn-primary mt-3" value="Add Item"/>
+                    <input type="submit" class="btn btn-primary mt-3" value="Add internship"/>
                 </div>
             </form>
 

@@ -20,10 +20,17 @@ export default {
     data() {
         return {
             know: {
-                "welkom" : "Welcome I will help you to answer your questions. If you want more info type 'help'. ",
-                "login" : "log",
-                "register" : ":)",
-                "add internship" : "test answer"
+                'welkom' : 'Welcome I will help you to answer your questions. If you want more info type "help".',
+                'help' : 'Working...',
+                'how do you login' : 'If you are on the "Homepage" you see on the top a "Login" button click on it, ' + 
+                                     'sign in with your email and password and you logged in.',
+                'how do you register' : '1. Click on "login" on the navbar.' +
+                                        '2. On the right side you see a "SIGN UP" button click on the button and you can register.',
+                'add internship' : '1. You need a account and you need to be logged in.' + '<br>' +
+                                   '2. When you logged in you see above your email on the right side you see "Add internship" ' +
+                                   'click on it.' + '<br>' +
+                                   '3. Then you see some empty field you need to fill with your company information ' +
+                                   '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".'
             },
             msg: ''
         }
@@ -31,12 +38,12 @@ export default {
     methods: {
         talk() {
             var user = this.msg
-            document.getElementById("chatLog").innerHTML += user + "<br>";
+            document.getElementById('chatLog').innerHTML += user + '<br>';
             if (user != '') {
                 if (user in this.know) {
-                    document.getElementById("chatLog").innerHTML += this.know[user] + "<br>";
+                    document.getElementById('chatLog').innerHTML += this.know[user] + "<br>" + "<br>";
                 } else {
-                    document.getElementById("chatLog").innerHTML += "I don't understand...<br>";
+                    document.getElementById('chatLog').innerHTML += 'I don\'t understand...<br>' + '<br>';
                 }
             } else {
                 alert('Type text in');

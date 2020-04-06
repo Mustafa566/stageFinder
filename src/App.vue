@@ -18,6 +18,8 @@
           <img v-if="isLoggedIn" class="icons" src="@/assets/icons/profile.png">
           <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link">Profile</router-link></li>
 
+          <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
+
           <img v-if="isLoggedIn" class="icons" src="@/assets/icons/logout.png">
           <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link">Logout</button></li>
 
@@ -25,8 +27,6 @@
           <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
 
           <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/login.png">
-          <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link></li>
-
           <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link></li>
 
           <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
