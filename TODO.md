@@ -11,9 +11,6 @@
   - Login kleine stukje
   - profile
 
-# ProfileInfo.vue
-  - when you click submit it scrolls above then wait 2 seconds and go to index.vue page.
-
 # Profile.vue
   - Check if the currentUser the same is an take only their own information.
 

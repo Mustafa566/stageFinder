@@ -5,12 +5,12 @@
                 <div class="row ml-0 mt-3">
                     <p>{{this.know.welkom}}</p>
                 </div>
-                <p id="chatLog" class="chatLog"></p><br>
+               <p id="chatLog" class="chatLog font-weight-bold"></p><br>
             </div>
         </div>
         <div class="row mt-4">
             <input id="userBox" class="inputChat" type="text" @keyup.enter="talk()" v-model="msg" required>
-            <input type="submit" class="btn btn-primary mt-2" @click="talk()">
+            <input type="submit" class="btn btn-primary mt-2 ml-2" @click="talk()">
         </div>
     </div>
 </template>
@@ -30,7 +30,9 @@ export default {
                                    '2. When you logged in you see above your email on the right side you see "Add internship" ' +
                                    'click on it.' + '<br>' +
                                    '3. Then you see some empty field you need to fill with your company information ' +
-                                   '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".'
+                                   '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".',
+                'edit a internship' : '1. Go to your "internship page". Their you see a edit button if you click on it you can edit ' +
+                                      'your internship information.'
             },
             msg: ''
         }

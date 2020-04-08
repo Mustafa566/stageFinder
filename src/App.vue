@@ -163,6 +163,7 @@ input::-webkit-inner-spin-button {
   display: block;
   width: 100%;
   margin-top: 5px;
+  margin-left: 10px;
   padding-bottom: 5px;
   font-size: 16px;
   border-bottom: 1px solid rgba(0,0,0,0.4);

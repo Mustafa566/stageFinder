@@ -153,8 +153,9 @@ export default {
             this.CurrentUser = '';
             window.scrollTo(0,0, 0,0);
             console.log('Added to database');
-            /* Waiting for 2 seconds here */
-            this.$router.push('/internship')
+            setTimeout(() => {
+                this.$router.push('/internship')
+            }, 3000);
         },
         alert() {
             if (this.profileData.firstName == '' || this.profileData.lastName == '' || 
