@@ -30,6 +30,7 @@
           <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link></li>
 
           <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
+          <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link">FAQ</router-link></li>
         </ul>
       </div>
     </nav>

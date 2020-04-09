@@ -9,7 +9,9 @@
             </div>
         </div>
         <div class="row mt-4">
-            <input id="userBox" class="inputChat" type="text" @keyup.enter="talk()" v-model="msg" required>
+            <div class="col">
+                <input id="userBox" class="inputChat" type="text" @keyup.enter="talk()" v-model="msg" required>
+            </div>
             <input type="submit" class="btn btn-primary mt-2 ml-2" @click="talk()">
         </div>
     </div>
@@ -39,7 +41,7 @@ export default {
     },
     methods: {
         talk() {
-            var user = this.msg
+            var user = this.msg;
             document.getElementById('chatLog').innerHTML += user + '<br>';
             if (user != '') {
                 if (user in this.know) {
@@ -50,9 +52,10 @@ export default {
             } else {
                 alert('Type text in');
             }
+            window.scrollTo(0, 500);
             this.msg = '';
             console.log(this.msg);
-        } 
+        }
     }
 }
 </script>

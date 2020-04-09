@@ -1,18 +1,18 @@
 <template>
-<div class="box">
-   <p class="heading">FAQs</p>
+<div class="container box">
+   <h2 class="heading">FAQs</h2>
    <div class="faqs">
       <details>
-         <summary>What is Lorem ipsum?</summary>
-         <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         <summary class="text-bold">What is Lorem ipsum?</summary>
+         <p class="text mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </details>
       <details>
          <summary>What is Lorem ipsum?</summary>
-         <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         <p class="text mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </details>
       <details>
          <summary>What is Lorem ipsum?</summary>
-         <p class="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+         <p class="text mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </details>
    </div>
 </div>
@@ -22,7 +22,7 @@
 export default {
 	data() {
 		return {
-			title: 'Faq'
+         title: 'Faq'
 		}
 	},
 	head: {
@@ -36,21 +36,16 @@ export default {
 </script>
 
 <style scope> 
-     @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 
-body{
-   background: #f6f6f6;
-}
-
-.box{
-   width: 320px;
-   margin: 100px auto;
+.box {
+   margin: 0px auto;
    background: #fff;
    border-radius: 7px;
    box-shadow: 1px 2px 4px rgba(0,0,0,.3);
 }
 
-.box .heading{
+.heading {
    background: #7800CF;
    border-radius: 7px 7px 0px 0px;
    padding: 10px;
@@ -82,5 +77,4 @@ details{
 details summary{
    outline: none;
 }
-
 </style>

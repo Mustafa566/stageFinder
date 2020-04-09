@@ -42,7 +42,7 @@
 				</div>	
 				<div class="col">
 					<div class="card float-left" style="width: 18rem;">
-						<img src="" class="card-img-top teamImg">
+						<img src="@/assets/images/stefan.png" class="card-img-top teamImg2">
 						<div class="card-body">
 							<h5 class="card-title text-center">Stefan Mokhamsing</h5>
 							<p class="card-text text-center mt-4">Frontend developer</p>
@@ -188,6 +188,12 @@ body {
 
 .teamImg {
 	width: 200px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.teamImg2 {
+	width: 207px;
 	margin: auto;
 	margin-top: 10px;
 }
