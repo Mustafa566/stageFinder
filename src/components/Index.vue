@@ -19,9 +19,9 @@
 				</div>
 			</div>
 			<div class="row mt-5 isobg">
-				<h2 class="text-center mt-5 mb-5">OUR TEAM</h2>
+				<h2 class="text-center mt-5 mb-5 team">OUR TEAM</h2>
 				<div class="col">
-					<div class="card float-right" style="width: 18rem;">
+					<div class="card float-right team" style="width: 18rem;">
 						<img src="@/assets/images/mustafa.png" class="card-img-top teamImg">
 						<div class="card-body">
 							<h5 class="card-title text-center">Mustafa Bolat</h5>
@@ -41,7 +41,7 @@
 					</div>
 				</div>	
 				<div class="col">
-					<div class="card float-left" style="width: 18rem;">
+					<div class="card float-left team" style="width: 18rem;">
 						<img src="@/assets/images/stefan.png" class="card-img-top teamImg2">
 						<div class="card-body">
 							<h5 class="card-title text-center">Stefan Mokhamsing</h5>
@@ -124,6 +124,18 @@ export default {
 	}
 }
 
+@keyframes slideout {
+	from {
+		margin-right: 200%;
+		width: 100%;
+	}
+
+	to {
+		margin-right: 0%;
+		width: 100%;
+	}
+}
+
 .isometric {
 	width: 800px;
 	height: 500px;
@@ -174,16 +186,23 @@ body {
 	z-index: 1;
 }
 
+.size {
+	font-size: 35px;
+	animation: fadeIn 1s linear backwards;
+	animation-delay: 2s;
+}
+
 .h5 {
 	opacity: 0;
 	font-weight: 400;
 	font-size: 1.2em;
 	animation: fadeIn 1s linear forwards;
-	animation-delay: 2s;
+	animation-delay: 2.5s;
 }
 
-.size {
-	font-size: 35px;
+.team {
+	animation: fadeIn 1s linear backwards;
+	animation-delay: 3s;
 }
 
 .teamImg {

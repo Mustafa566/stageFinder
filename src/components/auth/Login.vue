@@ -26,6 +26,21 @@
                 </label>
                 <button type="button" @click="login" class="submit button">Sign In</button>
                 <hr>
+                <div v-if="!isHidden" class="loader loader--style3" title="2">
+                  <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                    width="60px" height="60px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                  <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,
+                  14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                    <animateTransform attributeType="xml"
+                      attributeName="transform"
+                      type="rotate"
+                      from="0 25 25"
+                      to="360 25 25"
+                      dur="0.6s"
+                      repeatCount="indefinite"/>
+                    </path>
+                  </svg>
+                </div>
             </form>
             <div class="sub-cont">
                 <div v-if="error" class="alert alert-danger">{{error}}</div>
@@ -94,6 +109,7 @@ import firebase from "firebase";
 export default {
   data() {
     return {
+      isHidden: true,
       title: 'Login',
       email: '',
       password: '',
@@ -104,6 +120,7 @@ export default {
       contains_uppercase: false,
       valid_password_length: false,
       valid_password: false
+
     };
   },
   head: {
@@ -156,9 +173,11 @@ export default {
     login(e) {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          alert('You are logged in as ' + this.email);
-          this.$router.push('/index');
-          location.reload();
+          setTimeout(() => {
+            this.$router.push('/index');
+            location.reload();
+          }, 3000);
+        this.isHidden = false;
         },
         err => {
           alert(err.message);
@@ -585,5 +604,16 @@ label {
   to {
     stroke-dashoffset: 0;
   }
+}
+
+.loader{
+  margin: 0px auto;
+  height: 100px;
+  text-align: center;
+  padding: 1em;
+}
+
+svg path, svg rect{
+  fill: #FF6700;
 }
 </style>
