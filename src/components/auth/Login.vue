@@ -2,7 +2,7 @@
     <div class="main">
         <div class="cont">
             <div v-if="error" class="alert alert-danger">{{error}}</div>
-            <form class="form sign-in" @submit.prevent="submit">
+            <form class="form sign-in" @keyup.enter="login()" @submit.prevent="submit">
                 <h2 class="h2 text-center">Welcome back,</h2>
                 <label>
                     <span>Email</span>
@@ -43,7 +43,7 @@
                         <span class="m--in">Sign In</span>
                     </div>
                 </div>
-                <form class="form sign-up" @submit.prevent="submit">
+                <form class="form sign-up" @submit.prevent="submit" @keyup.enter="register()">
                     <h2 class="h2 text-center">Time to feel like home,</h2>
                     <label>
                         <span>Email</span>

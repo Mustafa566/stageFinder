@@ -12,7 +12,7 @@ import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Profile from './components/crud/Profile.vue'
 import Bot from './components/chatBot/Bot.vue'
 import Index from './components/Index.vue'
-import faq from './components/Faq.vue'
+import faq from './components/faq.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
