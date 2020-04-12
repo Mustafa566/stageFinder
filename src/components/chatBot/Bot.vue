@@ -26,13 +26,13 @@ export default {
             title: 'Chat bot',
             test: this.json,
             know: {
-                'welkom' : '📌Welcome I will help you to answer your questions. If you want more info type "help".📌',
+                'welkom' : '📍Welcome I will help you to answer your questions. If you want more info type "help".📍',
                 'help' : 'These are the questions that can be answerd: <br>' + 
-                         '1. how do you login <br>' +
-                         '2. how do you register <br>' +
-                         '3. how to add a internship <br>' +
-                         '4. edit a internship <br>' +
-                         '5. who are you',
+                         '1️⃣ how do you login <br>' +
+                         '2️⃣ how do you register <br>' +
+                         '3️⃣ how to add a internship <br>' +
+                         '4️⃣ edit a internship <br>' +
+                         '5️⃣ who are you',
                 'how do you login' : 'If you are on the "Homepage" you see on the top a "Login" button click on it, ' + 
                                      'sign in with your email and password and you logged in.',
                 'how do you register' : '1. Click on "login" on the navbar.' +
@@ -69,8 +69,10 @@ export default {
             } else {
                 alert('Type text in');
             }
-            this.msg = '';
             console.log(this.msg);
+            this.msg = '';
+            const chatLogDiv = document.getElementById('chatLog')
+            chatLogDiv.scrollTop = chatLogDiv.scrollHeight
         }
     }
 }

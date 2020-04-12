@@ -18,4 +18,3 @@
 
 # Chat bot.
   - When you enter scoll top bottom of div.
-  - More styling

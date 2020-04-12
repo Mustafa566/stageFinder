@@ -9,30 +9,13 @@
         <ul class="navbar-nav mr-auto"></ul>
         <li v-if="isLoggedIn" class="nav"><span class="currentUser"><img class="userOnline" src="@/assets/icons/userOnline.png">{{currentUser}}</span></li>
         <ul class="navbar-nav mr-3">
-          <div class="row">
-            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/add.png">
-            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Add' }" class="nav-link">Add Internship</router-link></li>
-
-            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/internship.png">
-            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
-
-            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/profile.png">
-            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link">Profile</router-link></li>
-
-            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
-
-            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/logout.png">
-            <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link">Logout</button></li>
-
-            <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/internship.png">
-            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
-
-            <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/login.png">
-            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link></li>
-
-            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
-            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link">FAQ</router-link></li>
-          </div>
+            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Add' }" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/add.png"> Add Internship</router-link></li>
+            <li class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/internship.png"> Internships</router-link></li>
+            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/profile.png"> Profile</router-link></li>
+            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link"><img v-if="!isLoggedIn" class="icons mb-2" src="@/assets/icons/login.png"> Login</router-link></li>
+            <li class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> FAQ</router-link></li>
+            <li class="nav-item mt-2"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
+            <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/logout.png"> Logout</button></li>
         </ul>
       </div>
     </nav>
@@ -46,7 +29,15 @@
 <style lang="css">
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
+/* Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  .icons {
+    display: none;
+  }
+}
+
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
   .icons {
     display: none;
   }
@@ -181,8 +172,8 @@ input::-webkit-inner-spin-button {
   max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
-  border-bottom: 2px solid #EAEAEA;
-  background-color: #EAEAEA;
+  border-bottom: 2px solid #dcdcdc;
+  background-color: #dcdcdc;
 }
 
 .max::-webkit-scrollbar {
