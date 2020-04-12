@@ -5,9 +5,14 @@
             <strong>Email sended</strong>
           </div>
         <div class="card-body">
-          <div class="container" v-for="profileData of profile" :key="profileData['.key']">
-            <div v-if="seen" class="row">
-              <div class="col">
+          <div class="card-body position-absolute">
+            <div class="row">
+              <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
+            </div>
+          </div>
+          <div class="container mt-5" v-for="profileData of profile" :key="profileData['.key']">
+            <div v-if="seen" class="row mt-5">
+              <div class="col mt-5">
                 <div class="card card-border" style="width: 30rem;">
                   <div class="card-body">
                     <h4 class="card-title text-center mb-4">Personal information</h4>
@@ -22,7 +27,7 @@
                 </div>
               </div>
               <div class="col"></div>
-              <div class="col">
+              <div class="col mt-5">
                 <div class="card card-border" style="width: 30rem;">
                   <div class="card-body">
                     <h4 class="card-title text-center mb-3">Business information</h4>
@@ -38,11 +43,6 @@
               </div>
             </div>
           </div>
-          <div class="card-body mt-5 float-right">
-              <div class="row">
-                <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
-              </div>
-            </div>
         </div>
     </div>
 </template>

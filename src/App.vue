@@ -8,29 +8,31 @@
       <div class="navbar-collapse" v-if="!isHidden">
         <ul class="navbar-nav mr-auto"></ul>
         <li v-if="isLoggedIn" class="nav"><span class="currentUser"><img class="userOnline" src="@/assets/icons/userOnline.png">{{currentUser}}</span></li>
-        <ul class="navbar-nav">
-          <img v-if="isLoggedIn" class="icons" src="@/assets/icons/add.png">
-          <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Add' }" class="nav-link">Add Internship</router-link></li>
+        <ul class="navbar-nav mr-3">
+          <div class="row">
+            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/add.png">
+            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Add' }" class="nav-link">Add Internship</router-link></li>
 
-          <img v-if="isLoggedIn" class="icons" src="@/assets/icons/internship.png">
-          <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
+            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/internship.png">
+            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
 
-          <img v-if="isLoggedIn" class="icons" src="@/assets/icons/profile.png">
-          <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link">Profile</router-link></li>
+            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/profile.png">
+            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link">Profile</router-link></li>
 
-          <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
+            <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
 
-          <img v-if="isLoggedIn" class="icons" src="@/assets/icons/logout.png">
-          <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link">Logout</button></li>
+            <img v-if="isLoggedIn" class="icons" src="@/assets/icons/logout.png">
+            <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link">Logout</button></li>
 
-          <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/internship.png">
-          <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
+            <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/internship.png">
+            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link">Internships</router-link></li>
 
-          <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/login.png">
-          <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link></li>
+            <img v-if="!isLoggedIn" class="icons" src="@/assets/icons/login.png">
+            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link">Login</router-link></li>
 
-          <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
-          <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link">FAQ</router-link></li>
+            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
+            <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link">FAQ</router-link></li>
+          </div>
         </ul>
       </div>
     </nav>

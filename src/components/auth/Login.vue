@@ -77,26 +77,27 @@
                         <input 
                         type="password" 
                         class="input"
-                        @input="p_len" 
                         name="password"
                         required
                         v-model="password"/>
                     </label>
-                    <span v-bind:class="{valid_password_length: valid_password_length , show_password_length: typed}" 
-                        class="password_length">
-                        {{password_length}}
-                    </span>
-                    <div class="lnu_container">
-                        <p v-bind:class="{ uppercase_valid: contains_uppercase }">Uppercase</p>
-                        <p v-bind:class="{ lovercase_valid: contains_lovercase }">Lowercase</p>
-                        <p v-bind:class="{ number_valid: contains_number }">Number</p>
-                    </div>
-                    <div class="valid_password_container" v-bind:class="{show_valid_password_container : valid_password }">
-                        <svg width="100%" height="100%" viewBox="0 0 140 100">
-                          <path class="tick" v-bind:class="{checked: valid_password }" d="M0, 20 l25,40 l95,-70" />
-                        </svg>
-                    </div>
                     <button type="button" @click="register" class="submit button">Sign Up</button>
+                    <hr>
+                    <div v-if="!isHidden" class="loader loader--style3" title="2">
+                      <svg version="1.1" id="loader-1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                        width="60px" height="60px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
+                      <path fill="#000" d="M43.935,25.145c0-10.318-8.364-18.683-18.683-18.683c-10.318,0-18.683,8.365-18.683,18.683h4.068c0-8.071,6.543-14.615,
+                      14.615-14.615c8.072,0,14.615,6.543,14.615,14.615H43.935z">
+                        <animateTransform attributeType="xml"
+                          attributeName="transform"
+                          type="rotate"
+                          from="0 25 25"
+                          to="360 25 25"
+                          dur="0.6s"
+                          repeatCount="indefinite"/>
+                        </path>
+                      </svg>
+                    </div>
                 </form>
             </div>
         </div>
@@ -112,15 +113,7 @@ export default {
       isHidden: true,
       title: 'Login',
       email: '',
-      password: '',
-      password_length: 0,
-      typed: false,
-      contains_lovercase: false,
-      contains_number: false,
-      contains_uppercase: false,
-      valid_password_length: false,
-      valid_password: false
-
+      password: ''
     };
   },
   head: {
@@ -131,39 +124,14 @@ export default {
 		}
 	},
   methods: {
-    p_len() {
-      this.password_length = this.password.length;
-      if (this.password_length > 7) {
-        this.valid_password_length = true;
-      } else {
-        this.valid_password_length = false;
-      }
-
-      if (this.password_length > 0) {
-        this.typed = true;
-      } else {
-        this.typed = false;
-      }
-
-      this.contains_lovercase = /[a-z]/.test(this.password);
-      this.contains_number = /\d/.test(this.password);
-      this.contains_uppercase = /[A-Z]/.test(this.password);
-
-      // Check if the password is valid
-      if (this.contains_lovercase == true && this.contains_number == true) {
-        this.valid_password = false;
-      if (this.contains_uppercase == true && this.valid_password_length == true)
-        this.valid_password = true;
-      } else {
-        this.valid_password = false;
-      }
-    },
     register(e) {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
         .then(user => {
-          alert('Account created for ' + this.email);
-          this.$router.push('/ProfileInfo');
-          location.reload();
+           setTimeout(() => {
+            this.$router.push('/ProfileInfo');
+            location.reload();
+          }, 3000);
+          this.isHidden = false;
         },
         err => {
           alert(err.message);
@@ -494,115 +462,6 @@ label {
 
   @include signUpActive {
     transform: translate3d(0,0,0);
-  }
-}
-
-
-/* PASSWORD LENGHT */
-.input_container {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  height: auto;
-  position: relative;
-  border-radius: 4px;
-  overflow: hidden;
-  margin-bottom: 10px;
-  padding-right: 20px;
-}
-
-.password_length {
-  padding: 2px 10px;
-  position: absolute;
-  top: 55%;
-  right: 29%;
-  -webkit-transform: translateY(-50%);
-  transform: translateY(-50%);
-  background: #FBD490;
-  color: rgba(71, 87, 98, .8);
-  border-radius: 4px;
-  font-size: 13px;
-  display: none;
-  -webkit-transition: all .1s;
-  transition: all .1s;
-}
-
-.valid_password_length {
-  background: #00AD7C;
-  color: rgba(255, 255, 255, .9);
-}
-
-.show_password_length {
-  display: block;
-}
-
-.lnu_container {
-  display: block;
-  margin: 10px auto;
-  width: 320px;
-  height: auto;
-  display: flex;
-  justify-content: space-between;
-}
-
-.lnu_container p {
-  width: 100px;
-  height: auto;
-  font-size: 12px;
-  line-height: 1.2;
-  text-align: center;
-  border-radius: 2px;
-  color: rgba(71, 87, 98, .8);
-  background: linear-gradient(to right, #00AD7C 50%, #eee 50%);
-  background-size: 201% 100%;
-  background-position: right;
-  -webkit-transition: background .3s;
-  transition: background .3s;
-}
-
-.lovercase_valid,
-.number_valid,
-.uppercase_valid {
-  background-position: left !important;
-  color: rgba(255, 255, 255, .9) !important;
-}
-
-.valid_password_container {
-  display: block;
-  margin: 10px auto;
-  border-radius: 4px;
-  position: relative;
-  background: #00AD7C;
-  width: 20px;
-  height: 20px;
-  visibility: hidden;
-  opacity: 0;
-}
-
-.show_valid_password_container {
-  visibility: visible;
-  opacity: 1;
-}
-
-.tick {
-  width: 100%;
-  height: 100%;
-  fill: none;
-  stroke: white;
-  stroke-width: 25;
-  stroke-linecap: round;
-  stroke-dasharray: 180;
-  stroke-dashoffset: 180;
-}
-
-.checked {
-  -webkit-animation: draw 0.5s ease forwards;
-  animation: draw 0.5s ease forwards;
-}
-
-@keyframes draw {
-  to {
-    stroke-dashoffset: 0;
   }
 }
 

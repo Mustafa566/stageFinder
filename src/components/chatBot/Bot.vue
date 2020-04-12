@@ -18,9 +18,11 @@
 </template>
 
 <script>
+import json from './Botinfo.json';
 export default {
     data() {
         return {
+            test: this.json,
             know: {
                 'welkom' : 'Welcome I will help you to answer your questions. If you want more info type "help".',
                 'help' : 'Working...',
