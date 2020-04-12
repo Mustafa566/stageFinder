@@ -1,7 +1,7 @@
 <template>
     <div class="container">
         <div class="container max">
-            <div class="container">
+            <div class="container con">
                 <div class="row ml-0 mt-3">
                     <p>{{this.know.welkom}}</p>
                 </div>
@@ -12,33 +12,48 @@
             <div class="col">
                 <input id="userBox" class="inputChat" type="text" @keyup.enter="talk()" v-model="msg" required>
             </div>
-            <input type="submit" class="btn btn-primary mt-2 ml-2" @click="talk()">
+            <div type="submit" value="Send" class="btn btn-primary mt-2 ml-2" @click="talk()">Send<img class="sendIcon" src="@/assets/icons/send.png"></div>
         </div>
     </div>
 </template>
 
 <script>
-import json from './Botinfo.json';
+// eslint-disable-next-line
+import json from './info.json';
 export default {
     data() {
         return {
+            title: 'Chat bot',
             test: this.json,
             know: {
-                'welkom' : 'Welcome I will help you to answer your questions. If you want more info type "help".',
-                'help' : 'Working...',
+                'welkom' : '📌Welcome I will help you to answer your questions. If you want more info type "help".📌',
+                'help' : 'These are the questions that can be answerd: <br>' + 
+                         '1. how do you login <br>' +
+                         '2. how do you register <br>' +
+                         '3. how to add a internship <br>' +
+                         '4. edit a internship <br>' +
+                         '5. who are you',
                 'how do you login' : 'If you are on the "Homepage" you see on the top a "Login" button click on it, ' + 
                                      'sign in with your email and password and you logged in.',
                 'how do you register' : '1. Click on "login" on the navbar.' +
                                         '2. On the right side you see a "SIGN UP" button click on the button and you can register.',
-                'add internship' : '1. You need a account and you need to be logged in.' + '<br>' +
-                                   '2. When you logged in you see above your email on the right side you see "Add internship" ' +
-                                   'click on it.' + '<br>' +
-                                   '3. Then you see some empty field you need to fill with your company information ' +
-                                   '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".',
+                'how to add a internship' : '1. You need a account and you need to be logged in.' + '<br>' +
+                                            '2. When you logged in you see above your email on the right side you see "Add internship" ' +
+                                            'click on it.' + '<br>' +
+                                            '3. Then you see some empty field you need to fill with your company information ' +
+                                            '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".',
                 'edit a internship' : '1. Go to your "internship page". Their you see a edit button if you click on it you can edit ' +
-                                      'your internship information.'
+                                      'your internship information.',
+                'who are you' : 'I am your DAD! Look behind 😀'
             },
             msg: ''
+        }
+    },
+    head: {
+        title: function () {
+            return {
+                inner: this.title
+            }
         }
     },
     methods: {
@@ -54,7 +69,6 @@ export default {
             } else {
                 alert('Type text in');
             }
-            window.scrollTo(0, 500);
             this.msg = '';
             console.log(this.msg);
         }

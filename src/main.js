@@ -17,7 +17,7 @@ import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
 import VueHead from 'vue-head'
-import json from './components/chatBot/Botinfo.json';
+import json from './components/chatBot/info.json';
 
 
 Vue.use(VueHead)

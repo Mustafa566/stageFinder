@@ -194,6 +194,12 @@ input::-webkit-inner-spin-button {
 	background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
 }
 
+.sendIcon {
+  width: 20px;
+  height: 20px;
+  margin-left: 5px;
+}
+
 </style>
 
 <script>
