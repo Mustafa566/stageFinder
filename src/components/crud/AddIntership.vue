@@ -2,7 +2,8 @@
     <div v-if="isLoggedIn" class="container bgColor">
         <h3 class="text-center mt-4">Add internship</h3>
         <div class="card-body">
-            <form v-on:submit.prevent="AddIntership">
+            <form v-on:submit.prevent="AddIntership" @click="date()">
+                <p id="date" :v-model="newItem.date"></p>
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
                         <input type="text" class="inputText form-control" placeholder="Internship name" v-model="newItem.name" required/>
@@ -41,11 +42,13 @@
                     <textarea class="form-control inputText form-control" placeholder="Information" rows="5" v-model="newItem.info"></textarea>
                 </div>
 
+                <div class="form-group mt-4 dateNow"></div>
+
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary mt-3" value="Add internship"/>
                 </div>
             </form>
-
+            
             <h2 class="text-center mb-3">Preview design</h2>
             <div class="card rounded-circle">
                 <div class="card-body default-bgcolor">
@@ -124,13 +127,6 @@
     </div>
 </template>
 
-<style scoped>
-.inputText {
-	padding: 0.5em;
-    font-size: 1.5rem;
-}
-</style>
-
 <script>
 import firebase from "firebase";
 import { db } from '../../config/db';
@@ -149,6 +145,7 @@ export default {
         toggleIcon: 'More info',
         showSection: false,
         newItem: {
+            date: '',
             name: '',
             location: '',
             education: '',
@@ -172,6 +169,7 @@ export default {
         AddIntership() {
             console.log(JSON.stringify(this.newItem))
             this.$firebaseRefs.items.push({
+                date: this.newItem.date,
                 name: this.newItem.name,
                 location: this.newItem.location,
                 education: this.newItem.education,
@@ -182,6 +180,7 @@ export default {
                 website: this.newItem.website,
                 info: this.newItem.info
             })
+            this.newItem.date = '';
             this.newItem.name = '';
             this.newItem.location = '';
             this.newItem.education = '';
@@ -195,6 +194,13 @@ export default {
         },
         toggle() {
             this.showSection = !this.showSection
+        },
+        date() {
+            var date = new Date();
+            var y = date.getFullYear();
+            var m = date.getMonth() + 1;
+            var d = date.getDate();
+            document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
         }
     },
     created() {

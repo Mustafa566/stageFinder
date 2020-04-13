@@ -13,8 +13,3 @@
 
 # Profile.vue
   - Check if the currentUser the same is an take only their own information.
-
-# Comments about the code.
-
-# Chat bot.
-  - When you enter scoll top bottom of div.

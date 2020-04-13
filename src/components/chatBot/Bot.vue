@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <div class="container max">
+        <div class="container max" ref="scroll">
             <div class="container con">
                 <div class="row ml-0 mt-3">
                     <p>{{this.know.welkom}}</p>
@@ -71,7 +71,7 @@ export default {
             }
             console.log(this.msg);
             this.msg = '';
-            const chatLogDiv = document.getElementById('chatLog')
+            const chatLogDiv = this.$refs.scroll;
             chatLogDiv.scrollTop = chatLogDiv.scrollHeight
         }
     }

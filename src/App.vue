@@ -26,8 +26,11 @@
   </div>
 </template>
 
+
 <style lang="css">
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+@import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
+@import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
 
 /* Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
@@ -71,6 +74,15 @@
   background-color: #DF9347;
 }
 
+/* Navbar */
+.navbar-light .navbar-brand {
+  color: white;
+}
+
+.navbar-light .navbar-nav .nav-link {
+  color: white;
+}
+
 .icons {
   width: 28px;
   height: 28px;
@@ -85,20 +97,11 @@
   padding: 3px;
 }
 
-/* */
-
-.navbar-light .navbar-brand {
-  color: white;
-}
-
-.navbar-light .navbar-nav .nav-link {
-  color: white;
-}
-
 .gap {
   padding-top: 50px;
 }
 
+/* Currentuser */
 .currentUser {
   margin-right: 50px;
   font-weight: bold;
@@ -128,10 +131,19 @@
   width: 30%;
 }
 
+
+/* Edit button */
 .editbtn, .dltbtn, .editbtn:hover, .dltbtn:hover {
   border: 2px solid black;
 }
 
+
+.inputText {
+	padding: 0.5em;
+  font-size: 1.5rem;
+}
+
+/* Background color */
 .bgColor {
   background-color: #f1f1f1;
   border-radius: 20px;
@@ -153,6 +165,7 @@ input::-webkit-inner-spin-button {
   border-radius: 15px;
 }
 
+/* Chat bot */
 .inputChat {
   display: block;
   width: 100%;
@@ -191,6 +204,232 @@ input::-webkit-inner-spin-button {
   margin-left: 5px;
 }
 
+
+/* Faq page */
+.box {
+   margin: 0px auto;
+   background: #fff;
+   border-radius: 7px;
+   box-shadow: 1px 2px 4px rgba(0,0,0,.3);
+}
+
+.heading {
+   font-size: 30px;
+   border-radius: 7px 7px 0px 0px;
+   padding: 10px;
+   color: black;
+   text-align: center;
+   font-family: "Rubik";
+}
+
+.faqs{
+   padding: 0px 20px 20px;
+}
+
+::-webkit-details-marker{
+   float: right;
+   margin-top: 3px;
+}
+
+details{
+   background: #f6f6f6;
+   padding: 10px 20px;
+   border-radius: 7px;
+   margin-top: 20px;
+   font-family: "Rubik";
+   font-size: 14px;
+   letter-spacing: 1px;
+   cursor: pointer;
+   box-shadow: 2px 2px 2px rgba(0,0,0,.3);
+}
+
+details summary{
+   outline: none;
+}
+
+.faqText {
+   line-height: 2;
+}
+
+.cardtitl {
+   background: linear-gradient(122deg,#67bf67 0,#349045 100%);
+}
+
+.headingText {
+   color: #fff;
+   font-size: 14px;
+   font-weight: 400;
+   padding: 20px 15px 15px 15px;
+   text-transform: uppercase;
+}
+
+.serviceIcon {
+   background-color: #fff;
+    border-radius: 50%;
+    box-shadow: 0 6px 10px rgba(0,0,0,.24);
+    height: 55px;
+    position: absolute;
+    right: 1.5em;
+    top: 1.7em;
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1),opacity 15ms linear 30ms,transform 270ms 0ms cubic-bezier(0,0,.2,1),-webkit-box-shadow 280ms cubic-bezier(.4,0,.2,1),-webkit-transform 270ms 0ms cubic-bezier(0,0,.2,1);
+    width: 55px;
+}
+
+.phone {
+   margin: 15px 0 0 13px;
+}
+
+.textService {
+   color: #656565;
+   font-size: 16px;
+   font-weight: 400;
+   padding-bottom: 20px;
+}
+
+.shadowCall {
+   box-shadow: 2px 2px 15px rgba(0,0,0,.3);
+}
+
+.phoneNr {
+   color: #f5940b;
+}
+
+/* Index page */
+@keyframes open {
+	0%
+	{
+		transform: scaleY(1);
+	}
+	100%
+	{
+		transform: scaleY(0);
+	}
+}
+
+@keyframes fadeIn {
+	0%
+	{
+		opacity: 0;
+	}
+	100%
+	{
+		opacity: 1;
+	}
+}
+
+@keyframes slidein {
+	from {
+		margin-left: 200%;
+		width: 100%;
+	}
+
+	to {
+		margin-left: 0%;
+		width: 100%;
+	}
+}
+
+@keyframes slideout {
+	from {
+		margin-right: 200%;
+		width: 100%;
+	}
+
+	to {
+		margin-right: 0%;
+		width: 100%;
+	}
+}
+
+.isometric {
+	width: 800px;
+	height: 500px;
+	animation-delay: 1s;
+	animation-duration: 1s;
+    animation-name: slidein;
+}
+
+body {
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	overflow-x: hidden;
+}
+
+.font {
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+
+.open {
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 10000;
+}
+
+.open .layer {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-origin: top;
+	animation: open 1s ease-in-out forwards;
+}
+
+.open .layer:nth-child(1) {
+	background: rgb(255, 163, 25);
+	z-index: 2;
+}
+
+.open .layer:nth-child(2) {
+	background:  rgb(255, 163, 25);
+	animation-delay: 1s;
+	z-index: 1;
+}
+
+.size {
+	font-size: 35px;
+	animation: fadeIn 1s linear backwards;
+	animation-delay: 2s;
+}
+
+.h5 {
+	opacity: 0;
+	font-weight: 400;
+	font-size: 1.2em;
+	animation: fadeIn 1s linear forwards;
+	animation-delay: 2.5s;
+}
+
+.team {
+	animation: fadeIn 1s linear backwards;
+	animation-delay: 3s;
+}
+
+.teamImg {
+	width: 200px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.teamImg2 {
+	width: 207px;
+	margin: auto;
+	margin-top: 10px;
+}
+
+.sticky-footer {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 1rem;
+  background-color: #efefef;
+  text-align: center;
+}
 </style>
 
 <script>
