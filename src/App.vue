@@ -14,7 +14,6 @@
             <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/profile.png"> Profile</router-link></li>
             <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link"><img v-if="!isLoggedIn" class="icons mb-2" src="@/assets/icons/login.png"> Login</router-link></li>
             <li class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> FAQ</router-link></li>
-            <li class="nav-item mt-2"><router-link :to="{ name: 'Bot' }" class="nav-link">Chat bot</router-link></li>
             <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/logout.png"> Logout</button></li>
         </ul>
       </div>
@@ -72,6 +71,14 @@
 
 .default-bgcolor:hover {
   background-color: #DF9347;
+}
+
+.defaultHover {
+  color: #f5940b;
+}
+
+.defaultHover:hover {
+  color: #f5940b;
 }
 
 /* Navbar */
@@ -290,10 +297,6 @@ details summary{
    box-shadow: 2px 2px 15px rgba(0,0,0,.3);
 }
 
-.phoneNr {
-   color: #f5940b;
-}
-
 /* Index page */
 @keyframes open {
 	0%
@@ -429,6 +432,11 @@ body {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+.iconFaq {
+  width: 80px;
+  height: 80px;
 }
 </style>
 

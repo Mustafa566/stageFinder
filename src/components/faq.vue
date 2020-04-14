@@ -1,4 +1,5 @@
 <template>
+<div>
 <div class="container box">
    <h2 class="heading">Frequently Asked Questions</h2>
    <div class="container">
@@ -21,7 +22,7 @@
             <div class="card-body">
                <div class="text-secondary">Phone</div>
                <div class="textService">
-                  <a href="tel:06 12 34 56 78" class="phoneNr">06 12 34 56 78</a>
+                  <a href="tel:06 12 34 56 78" class="defaultHover">06 12 34 56 78</a>
                </div>
                <div class="text-secondary">Achievability</div>
                <div>Mo-Fr from 8:00 to 17:00.</div>
@@ -59,6 +60,47 @@
          <p class="text mt-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
       </details>
    </div>
+   <div class="row">
+      <div class="col-md-9 col-sm mt-5">
+         <h5 class="font-weight-bold">Chat bot</h5>
+         <p>
+            Do you want immediate help with the search or do you have another question?
+            We have a chat bot that can help you with your question.
+            When you go to the chat bot type <b>help</b>, because it can only answer the question what below says.
+            To open the chat directly, click on the chat icon below.
+         </p>
+         <router-link to="Bot"><img class="iconFaq" src="@/assets/icons/bot.png"></router-link>
+
+         <h5 class="mt-5 font-weight-bold">Internship not found, we will help you</h5>
+         <p>
+            Have you not found a learning place using the chat or school? Then fill in the form.
+            This will put you in touch with Stage Finder.
+            We help you find an internship or a learning job.
+            Click on the form icon below to fill the form.
+         </p>
+         <img class="iconFaq" src="@/assets/icons/form.png">
+
+         <h5 class="mt-5 font-weight-bold">Ask a Question</h5>
+         <p>
+            Do you have another question? You can also fill in <a href="" class="defaultHover">this e-mail form.</a>
+            Your question will then be answered by the service desk or forwarded to the right 
+            person who can answer your question. If you want direct contact, call us.
+         </p>
+
+         <h5 class="mt-5 font-weight-bold">Internship discrimination</h5>
+         <p>
+            Do you think you will be discriminated against while applying for a job?
+            For example because of your origin, religion, gender or age?
+            <a href="" class="defaultHover">Report your internship discrimination.</a> Stage Finder will process your report.
+         </p>
+      </div>
+   </div>
+</div>
+   <footer class="footer mt-5 py-3 sticky-footer">
+      <div class="container text-center">
+         <span class="text-muted">Copyright &copy; Stage Finder</span>
+      </div>
+   </footer>
 </div>
 </template>
 

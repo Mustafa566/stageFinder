@@ -24,7 +24,7 @@ export default {
     data() {
         return {
             title: 'Chat bot',
-            test: this.json,
+            file: this.json,
             know: {
                 'welkom' : '📍Welcome I will help you to answer your questions. If you want more info type "help".📍',
                 'help' : 'These are the questions that can be answerd: <br>' + 
@@ -64,7 +64,7 @@ export default {
                 if (user in this.know) {
                     document.getElementById('chatLog').innerHTML += this.know[user] + "<br>" + "<br>";
                 } else {
-                    document.getElementById('chatLog').innerHTML += 'I don\'t understand...<br>' + '<br>';
+                    document.getElementById('chatLog').innerHTML += 'I can\'t answer your question, type "help" I can only help you with that or you can go to the Faq page...<br>' + '<br>';
                 }
             } else {
                 alert('Type text in');
