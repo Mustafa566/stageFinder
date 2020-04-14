@@ -3,7 +3,7 @@
         <div class="container max" ref="scroll">
             <div class="container con">
                 <div class="row ml-0 mt-3">
-                    <p>{{this.know.welkom}}</p>
+                    <p>{{this.file.welkom}}</p>
                 </div>
                <p id="chatLog" class="chatLog font-weight-bold"></p><br>
             </div>
@@ -24,15 +24,15 @@ export default {
     data() {
         return {
             title: 'Chat bot',
-            file: this.json,
+            file: json,
             know: {
-                'welkom' : '📍Welcome I will help you to answer your questions. If you want more info type "help".📍',
-                'help' : 'These are the questions that can be answerd: <br>' + 
-                         '1️⃣ how do you login <br>' +
-                         '2️⃣ how do you register <br>' +
-                         '3️⃣ how to add a internship <br>' +
-                         '4️⃣ edit a internship <br>' +
-                         '5️⃣ who are you',
+                'welkom' : '',
+                'help' : '' + 
+                         '' +
+                         '' +
+                         '' +
+                         '' +
+                         '',
                 'how do you login' : 'If you are on the "Homepage" you see on the top a "Login" button click on it, ' + 
                                      'sign in with your email and password and you logged in.',
                 'how do you register' : '1. Click on "login" on the navbar.' +
@@ -44,7 +44,7 @@ export default {
                                             '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".',
                 'edit a internship' : '1. Go to your "internship page". Their you see a edit button if you click on it you can edit ' +
                                       'your internship information.',
-                'who are you' : 'I am your DAD! Look behind 😀'
+                
             },
             msg: ''
         }
@@ -61,8 +61,8 @@ export default {
             var user = this.msg;
             document.getElementById('chatLog').innerHTML += user + '<br>';
             if (user != '') {
-                if (user in this.know) {
-                    document.getElementById('chatLog').innerHTML += this.know[user] + "<br>" + "<br>";
+                if (user in this.file) {
+                    document.getElementById('chatLog').innerHTML += this.file[user] + "<br>" + "<br>";
                 } else {
                     document.getElementById('chatLog').innerHTML += 'I can\'t answer your question, type "help" I can only help you with that or you can go to the Faq page...<br>' + '<br>';
                 }
