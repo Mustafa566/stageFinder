@@ -18,8 +18,9 @@ import firebase from "firebase"
 import './config/db'
 import VueHead from 'vue-head'
 import json from './components/chatBot/info.json';
-
-
+import VModal from 'vue-js-modal'
+ 
+Vue.use(VModal)
 Vue.use(VueHead)
 Vue.use(VueFire)
 Vue.use(VueRouter)
@@ -33,7 +34,12 @@ let routes = [
   {
     name: 'faq',
     path: '/faq',
-    component: faq ,
+    component: faq,
+  },
+  {
+    name: 'test',
+    path: '/test',
+    component: test,
   },
   {
     name: 'Bot',

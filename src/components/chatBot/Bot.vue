@@ -25,27 +25,6 @@ export default {
         return {
             title: 'Chat bot',
             file: json,
-            know: {
-                'welkom' : '',
-                'help' : '' + 
-                         '' +
-                         '' +
-                         '' +
-                         '' +
-                         '',
-                'how do you login' : 'If you are on the "Homepage" you see on the top a "Login" button click on it, ' + 
-                                     'sign in with your email and password and you logged in.',
-                'how do you register' : '1. Click on "login" on the navbar.' +
-                                        '2. On the right side you see a "SIGN UP" button click on the button and you can register.',
-                'how to add a internship' : '1. You need a account and you need to be logged in.' + '<br>' +
-                                            '2. When you logged in you see above your email on the right side you see "Add internship" ' +
-                                            'click on it.' + '<br>' +
-                                            '3. Then you see some empty field you need to fill with your company information ' +
-                                            '4. You can see how it is on the "Preview design" and if everthing is good click on "Add internship".',
-                'edit a internship' : '1. Go to your "internship page". Their you see a edit button if you click on it you can edit ' +
-                                      'your internship information.',
-                
-            },
             msg: ''
         }
     },

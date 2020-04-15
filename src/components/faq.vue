@@ -1,5 +1,28 @@
 <template>
 <div>
+   <div v-if="!isHidden" class="openDiv">
+		<div class="layerDiv">
+         <h1 class="X ml-5 mt-5" @click="isHidden = !isHidden">X</h1>
+         <div class="container">
+            <form>
+               <div class="form-group">
+                  <label for="exampleInputEmail1" class="defaultColor2">Email address</label>
+                  <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                  <small id="emailHelp" class="form-text text-muted defaultColor2">We'll never share your email with anyone else.</small>
+               </div>
+               <div class="form-group">
+                  <label for="exampleInputPassword1" class="defaultColor2">Password</label>
+                  <input type="password" class="form-control" id="exampleInputPassword1">
+               </div>
+               <div class="form-group form-check">
+                  <input type="checkbox" class="form-check-input defaultColor2 default-bgcolor" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+               </div>
+               <button type="submit" class="btn btn-primary defaultColor2">Submit</button>
+            </form>
+         </div>
+      </div>
+	</div>
 <div class="container box">
    <h2 class="heading">Frequently Asked Questions</h2>
    <div class="container">
@@ -78,7 +101,7 @@
             We help you find an internship or a learning job.
             Click on the form icon below to fill the form.
          </p>
-         <img class="iconFaq" src="@/assets/icons/form.png">
+         <img class="iconFaq" src="@/assets/icons/form.png" @click="isHidden = !isHidden; scrollTop()">
 
          <h5 class="mt-5 font-weight-bold">Ask a Question</h5>
          <p>
@@ -108,7 +131,8 @@
 export default {
 	data() {
 		return {
-         title: 'Faq'
+         title: 'Faq',
+         isHidden: true
 		}
 	},
 	head: {
@@ -117,6 +141,11 @@ export default {
 				inner: this.title
 			}
 		}
-	}
+   },
+   methods: {
+      scrollTop() {
+         window.scrollTo(0, 0);
+      }
+   }
 }
 </script>

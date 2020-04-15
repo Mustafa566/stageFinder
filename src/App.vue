@@ -14,6 +14,7 @@
             <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/profile.png"> Profile</router-link></li>
             <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link"><img v-if="!isLoggedIn" class="icons mb-2" src="@/assets/icons/login.png"> Login</router-link></li>
             <li class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> FAQ</router-link></li>
+            <li class="nav-item"><router-link :to="{ name: 'test' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> test</router-link></li>
             <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/logout.png"> Logout</button></li>
         </ul>
       </div>
@@ -26,10 +27,15 @@
 </template>
 
 
-<style lang="css">
+<style lang="scss">
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 @import url('https://fonts.googleapis.com/css?family=Rubik&display=swap');
 @import url('https://fonts.googleapis.com/css?family=PT+Sans+Narrow:400,700&display=swap');
+
+/* Variables */
+$gradient: linear-gradient(135deg,#d98618 0%,#c20016 100%);
+$orange-color: #d98618;
+$orange-second-color: #f5940b;
 
 /* Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
@@ -47,38 +53,39 @@
 
 /* standards */
 .btn-primary {
-  background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
-  border-color: #d98618;
+  background-image: $gradient;
+  border-color: orange-color;
 }
 
 .navbar {
-  background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
+  background-image: $gradient;
 }
 
 .btn-primary:hover, .btn-primary:active, .btn-primary:focus, .btn-primary:link, .btn-primary:visited {
-  background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
-  border-color: #d98618;
+  background-image: $gradient;
+  border-color: $orange-color;
 }
 
 .defaultColor {
   color: white;
 }
 
-.default-bgcolor {
-  background-color: #f5940b;
-  border-color: #f5940b;
+.defaultColor2 {
+  color: $orange-second-color;
 }
 
-.default-bgcolor:hover {
-  background-color: #DF9347;
+.default-bgcolor {
+  background-color: $orange-second-color;
+  border-color: $orange-second-color;
 }
+
 
 .defaultHover {
-  color: #f5940b;
+  color: $orange-second-color;
 }
 
 .defaultHover:hover {
-  color: #f5940b;
+  color: $orange-second-color;
 }
 
 /* Navbar */
@@ -202,7 +209,7 @@ input::-webkit-inner-spin-button {
 }
 
 .max::-webkit-scrollbar-thumb {
-	background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
+	background-image: $gradient;
 }
 
 .sendIcon {
@@ -297,6 +304,17 @@ details summary{
    box-shadow: 2px 2px 15px rgba(0,0,0,.3);
 }
 
+.iconFaq {
+  width: 80px;
+  height: 80px;
+  cursor: pointer;
+}
+
+.X {
+  color: $orange-second-color;
+  cursor: pointer;
+}
+
 /* Index page */
 @keyframes open {
 	0%
@@ -383,6 +401,22 @@ body {
 	animation: open 1s ease-in-out forwards;
 }
 
+.openDiv .layerDiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+  bottom: 0;
+	width: 100%;
+  height: 183%;
+	transform-origin: top;
+}
+
+.layerDiv:nth-child(1) {
+	background: black;
+	z-index: 2;
+  opacity: 0.9;
+}
+
 .open .layer:nth-child(1) {
 	background: rgb(255, 163, 25);
 	z-index: 2;
@@ -432,11 +466,6 @@ body {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
-}
-
-.iconFaq {
-  width: 80px;
-  height: 80px;
 }
 </style>
 
