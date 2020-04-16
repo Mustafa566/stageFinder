@@ -51,7 +51,7 @@ export default {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
     }
-    if(firebase.auth().currentUser.email == 'admin@gmail.com') {
+    if(firebase.auth().currentUser.email == 'admin@gmail.com' || firebase.auth().currentUser.email == 'test@gmail.com') {
       this.isAdmin = true;
       this.currentUser = firebase.auth().currentUser.email;
     }
@@ -69,6 +69,13 @@ $gradient: linear-gradient(135deg,#d98618 0%,#c20016 100%);
 $orange-color: #d98618;
 $orange-second-color: #f5940b;
 
+/* Iphone 6/7/8 */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+  .icons {
+    display: none;
+  }
+}
+
 /* Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
   .icons {
@@ -76,10 +83,18 @@ $orange-second-color: #f5940b;
   }
 }
 
-/* Iphone 6/7/8 */
-@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
-  .icons {
-    display: none;
+/* Tablet */
+@media only screen 
+  and (min-device-width: 768px) 
+  and (max-device-width: 1024px) 
+  and (-webkit-min-device-pixel-ratio: 2) {
+  .shadowCall {
+    flex: 0 0 40%;
+    max-width: 45%;
+  }
+
+  .faqTxt {
+    max-width: 60%;
   }
 }
 

@@ -107,7 +107,8 @@ export default {
         discriminationDb: db.ref('discrimination')
     },
     created() {
-        if(firebase.auth().currentUser.email == 'admin@gmail.com') {
+        if(firebase.auth().currentUser.email == 'admin@gmail.com' || 
+           firebase.auth().currentUser.email == 'test@gmail.com') {
             this.isAdmin = true;
             this.currentUser = firebase.auth().currentUser.email;
         }

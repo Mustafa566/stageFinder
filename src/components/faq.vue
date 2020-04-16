@@ -244,7 +244,7 @@
          <h2 class="heading">Frequently Asked Questions</h2>
          <div class="container">
             <div class="row mt-4">
-               <div class="col-md-9">
+               <div class="col-md-9 faqTxt">
                   <p class="faqText">
                      Finding a learning place is not always easy. You also sometimes encounter problems during your internship or apprenticeship
                      What can you do? Stage finder is ready to help you. See if your question is among the most frequently asked questions.
