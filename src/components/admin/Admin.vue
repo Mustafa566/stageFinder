@@ -4,9 +4,9 @@
             <h1 class="text-center">Admin panel</h1>
             <div class="table-responsive-sm mt-5">
                 <h2 class="ml-1">Help people to find internship</h2>
-                <table class="table">
+                <table class="table table-striped table-bordered table-hover table-sm">
                     <thead class="thead-dark">
-                        <tr>
+                        <tr scope="row">
                             <th scope="col">First name</th>
                             <th scope="col">Last name</th>
                             <th scope="col">Phone number</th>
@@ -19,7 +19,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="helpInternship of helpInternship" :key="helpInternship['.key']">
+                        <tr v-for="helpInternship of helpInternship" :key="helpInternship['.key']"  scope="row">
                             <td>{{helpInternship.firstName}}</td>
                             <td>{{helpInternship.lastName}}</td>
                             <td>{{helpInternship.phoneNumber}}</td>
@@ -36,9 +36,9 @@
             
             <div class="table-responsive-sm mt-5">
                 <h2 class="ml-1">Questions from people</h2>
-                <table class="table">
+                <table class="table table-striped table-bordered table-hover table-sm">
                     <thead class="thead-dark">
-                        <tr>
+                        <tr scope="row">
                             <th scope="col">First name</th>
                             <th scope="col">Last name</th>
                             <th scope="col">Email</th>
@@ -47,7 +47,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="questions of questions" :key="questions['.key']">
+                        <tr v-for="questions of questions" :key="questions['.key']" scope="row">
                             <td>{{questions.firstName}}</td>
                             <td>{{questions.lastName}}</td>
                             <td>{{questions.email}}</td>
@@ -60,9 +60,9 @@
 
             <div class="table-responsive-sm mt-5 mb-5">
                 <h2 class="ml-1">Discrimination reports</h2>
-                <table class="table">
+                <table class="table table-striped table-bordered table-hover table-sm">
                     <thead class="thead-dark">
-                        <tr>
+                        <tr scope="row">
                             <th scope="col">First name</th>
                             <th scope="col">Last name</th>
                             <th scope="col">Email</th>
@@ -73,7 +73,7 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr v-for="discriminated of discriminationDb" :key="discriminated['.key']">
+                        <tr v-for="discriminated of discriminationDb" :key="discriminated['.key']" scope="row">
                             <td>{{discriminated.firstName}}</td>
                             <td>{{discriminated.lastName}}</td>
                             <td>{{discriminated.email}}</td>

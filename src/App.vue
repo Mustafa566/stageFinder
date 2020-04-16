@@ -83,6 +83,17 @@ $orange-second-color: #f5940b;
   }
 }
 
+/* Laptops */
+@media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 1) { 
+  th, td {
+    font-size: 13px;
+  }
+
+  .nav-item, .nav {
+    font-size: 15px;
+  }
+}
+
 /* standards */
 .btn-primary {
   background-image: $gradient;
