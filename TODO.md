@@ -17,9 +17,8 @@
 # Profile.vue
   - Check if the currentUser the same is an take only their own information.
 
-# Reports.vue
-  - print alles van faq form naar reports en maak een tabel.
-  - alleen admin kan erin.
+# Admin.vue
+  - Show all users.
 
 
 ------

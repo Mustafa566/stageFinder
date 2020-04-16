@@ -90,16 +90,6 @@ export default {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
     }
-    
-    // var user = firebase.auth().currentUser;
-    // if (this.user == this.profileData.CurrentUser) {
-    //   this.seen = true;
-    // } else {
-    //   this.seen = false;
-    // }
-    if (firebase.auth().currentUser) {
-      this.profileData.CurrentUser == this.currentUser.uid;
-    }
   }
 };
 </script>

@@ -9,39 +9,231 @@
                <form v-on:submit.prevent="toFirebase">
                   <div class="row mt-5">
                      <div class="col-sm-12 col-md-6">
-                        <input type="text" class="form-control transparent text-warning" placeholder="First name *" v-model="newItem.firstName" required>
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="First name *" 
+                        v-model="helpInternship.firstName" 
+                        required>
                      </div>
                      <div class="col-sm-12 col-md-6">
-                        <input type="number" class="form-control transparent text-warning" placeholder="Phone number" v-model="newItem.phoneNumber">
+                        <input 
+                        type="number" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Phone number" 
+                        v-model="helpInternship.phoneNumber">
                      </div>
                   </div>
                   <div class="row mt-4">
                      <div class="col-sm-12 col-md-5">
-                        <input type="text" class="form-control transparent text-warning" placeholder="Last name *" v-model="newItem.lastName" required>
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Last name *" 
+                        v-model="helpInternship.lastName" 
+                        required>
                      </div>
                      <div class="col-sm-12 col-md-7">
-                        <input type="text" class="form-control transparent text-warning" placeholder="Name of your education *" v-model="newItem.education" required>
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Name of your education *" 
+                        v-model="helpInternship.education" 
+                        required>
                      </div>
                   </div>
                   <div class="row mt-4">
                      <div class="col-sm-12 col-md-2">
-                        <input type="text" class="form-control transparent text-warning" placeholder="Zip code *" v-model="newItem.zipCode" required>
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Zip code *" 
+                        v-model="helpInternship.zipCode" 
+                        required>
                      </div>
                      <div class="col-sm-12 col-md-3">
-                        <input type="text" class="form-control transparent text-warning" placeholder="House number *" v-model="newItem.houseNumber" required>
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="House number *" 
+                        v-model="helpInternship.houseNumber" 
+                        required>
                      </div>
                      <div class="col-sm-12 col-md-7">
-                        <input type="text" class="form-control transparent text-warning" placeholder="Name of educational institution" v-model="newItem.educationInstitution">
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Name of educational institution" 
+                        v-model="helpInternship.educationInstitution">
                      </div>
                   </div>
                   <div class="row mt-4">
                      <div class="col-sm-12 col-md-6">
-                        <input type="email" class="form-control transparent text-warning" placeholder="Email *" v-model="newItem.email" required>
+                        <input 
+                        type="email" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Email *" 
+                        v-model="helpInternship.email" 
+                        required>
                      </div>
                      <div class="col-sm-12 col-md-6">
-                        <textarea class="form-control transparent text-warning" placeholder="Information" v-model="newItem.information" rows="6"></textarea>
+                        <textarea 
+                        class="form-control transparent text-warning" 
+                        placeholder="Information" 
+                        v-model="helpInternship.information" 
+                        rows="6" 
+                        maxlength="1000">
+                        </textarea>
                      </div>
                      <input type="submit" class="btn btn-primary ml-3 sendBtn" value="Help me with finding">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+	</div>
+   <div v-if="!seen" class="openDiv">
+		<div class="layerDiv">
+         <h1 class="X ml-5 mt-5" @click="seen = !seen" >X</h1>
+         <div class="container mt-5">
+            <div class="form-group width">
+               <h1 class="text-center defaultHover">Need help</h1>
+               <form v-on:submit.prevent="sendQuestion">
+                  <div class="row mt-5">
+                     <div class="col-sm-12 col-md-6">
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="First name *" 
+                        v-model="questions.firstName" 
+                        required>
+                     </div>
+                     <div class="col-sm-12 col-md-6">
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Last name *" 
+                        v-model="questions.lastName" 
+                        required>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <input 
+                        type="email" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Email *" 
+                        v-model="questions.email" 
+                        required>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Subject *" 
+                        v-model="questions.subject" 
+                        required>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <textarea 
+                        class="form-control transparent text-warning" 
+                        placeholder="What is your question ? *" 
+                        v-model="questions.information" 
+                        rows="6" maxlength="1000" 
+                        required>
+                        </textarea>
+                     </div>
+                     <input type="submit" class="btn btn-primary ml-3 sendBtn" value="Send question">
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+	</div>
+   <div v-if="!notSeen" class="openDiv">
+		<div class="layerDiv">
+         <h1 class="X ml-5 mt-5" @click="notSeen = !notSeen" >X</h1>
+         <div class="container mt-5">
+            <div class="form-group width">
+               <h1 class="text-center defaultHover">Internship discrimination form</h1>
+               <form v-on:submit.prevent="discrimination">
+                  <div class="row mt-5">
+                     <div class="col-sm-12 col-md-6">
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="First name *" 
+                        v-model="discriminated.firstName" 
+                        required>
+                     </div>
+                     <div class="col-sm-12 col-md-6">
+                        <input 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Last name *" 
+                        v-model="discriminated.lastName" 
+                        required>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <input 
+                        type="email" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Email *" 
+                        v-model="discriminated.email" 
+                        required>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <input 
+                        type="number" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Phone number" 
+                        v-model="discriminated.phoneNumber">
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <textarea 
+                        type="text" 
+                        class="form-control transparent text-warning" 
+                        placeholder="Describe the internship discrimination *" 
+                        v-model="discriminated.Describe" 
+                        rows="6" maxlength="1000"
+                        required>
+                        </textarea>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-12 col-md-12">
+                        <textarea 
+                        class="form-control transparent text-warning" 
+                        placeholder="comments ?" 
+                        v-model="discriminated.comments" 
+                        rows="6" maxlength="1000">
+                        </textarea>
+                     </div>
+                  </div>
+                  <div class="row mt-4">
+                     <div class="col-sm-6 col-md-2">
+                        <input 
+                        type="checkbox" 
+                        class="transparent text-warning mt-4 float-right" 
+                        v-model="discriminated.myDetails" 
+                        required>
+                     </div>
+                     <div class="col-sm-6 col-md-10">
+                        <label class="label">Do not share my data with school and the training company</label>
+                     </div>
+                     <div class="col-sm-12 col-md-12">
+                        <input type="submit" class="btn btn-primary ml-3 sendBtn" value="Send question">
+                     </div>
                   </div>
                </form>
             </div>
@@ -130,7 +322,7 @@
 
                <h5 class="mt-5 font-weight-bold">Ask a Question</h5>
                <p>
-                  Do you have another question? You can also fill in <a href="" class="defaultHover">this e-mail form.</a>
+                  Do you have another question? You can also fill in <b @click="seen = !seen; scrollTop()" class="defaultHover cursorPointer">this e-mail form.</b>
                   Your question will then be answered by the service desk or forwarded to the right 
                   person who can answer your question. If you want direct contact, call us.
                </p>
@@ -139,7 +331,7 @@
                <p>
                   Do you think you will be discriminated against while applying for a job?
                   For example because of your origin, religion, gender or age?
-                  <a href="" class="defaultHover">Report your internship discrimination.</a> Stage Finder will process your report.
+                  <b @click="notSeen = !notSeen; scrollTop()" class="defaultHover cursorPointer">Report your internship discrimination.</b> Stage Finder will process your report.
                </p>
             </div>
          </div>
@@ -161,8 +353,10 @@ export default {
 		return {
          title: 'Faq',
          isHidden: true,
+         seen: true,
+         notSeen: true,
          isActive: false,
-         newItem: {
+         helpInternship: {
             firstName: '',
             phoneNumber: '',
             lastName: '',
@@ -173,6 +367,22 @@ export default {
             email: '',
             information: ''
         },
+        questions: {
+           firstName: '',
+           lastName: '',
+           email: '',
+           subject: '',
+           information: ''
+        },
+        discriminated: {
+           firstName: '',
+           lastName: '',
+           email: '',
+           phoneNumber: '',
+           Describe: '',
+           comments: '',
+           myDetails: false
+        }
 		}
    },
 	head: {
@@ -183,21 +393,47 @@ export default {
 		}
    },
    firebase: {
-      helpInternship: db.ref('helpInternship')
+      helpInternship: db.ref('helpCenter'),
+      questions: db.ref('questions'),
+      discriminationDb: db.ref('discrimination')
    },
    methods: {
       toFirebase() {
-         console.log(JSON.stringify(this.newItem))
+         console.log(JSON.stringify(this.helpInternship))
          this.$firebaseRefs.helpInternship.push({
-               firstName: this.newItem.firstName,
-               phoneNumber: this.newItem.phoneNumber,
-               lastName: this.newItem.lastName,
-               education: this.newItem.education,
-               zipCode: this.newItem.zipCode,
-               houseNumber: this.newItem.houseNumber,
-               educationInstitution: this.newItem.educationInstitution,
-               email: this.newItem.email,
-               information: this.newItem.information,
+               firstName: this.helpInternship.firstName,
+               phoneNumber: this.helpInternship.phoneNumber,
+               lastName: this.helpInternship.lastName,
+               education: this.helpInternship.education,
+               zipCode: this.helpInternship.zipCode,
+               houseNumber: this.helpInternship.houseNumber,
+               educationInstitution: this.helpInternship.educationInstitution,
+               email: this.helpInternship.email,
+               information: this.helpInternship.information,
+         })
+         location.reload();
+      },
+      sendQuestion() {
+         console.log(JSON.stringify(this.questions))
+         this.$firebaseRefs.questions.push({
+               firstName: this.questions.firstName,
+               lastName: this.questions.lastName,
+               email: this.questions.email,
+               subject: this.questions.subject,
+               information: this.questions.information,
+         })
+         location.reload();
+      },
+      discrimination() {
+         console.log(JSON.stringify(this.discriminated))
+         this.$firebaseRefs.discriminationDb.push({
+               firstName: this.discriminated.firstName,
+               lastName: this.discriminated.lastName,
+               email: this.discriminated.email,
+               phoneNumber: this.discriminated.phoneNumber,
+               Describe: this.discriminated.Describe,
+               comments: this.discriminated.comments,
+               myDetails: this.discriminated.myDetails
          })
          location.reload();
       },

@@ -13,7 +13,7 @@
             <li class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/internship.png"> Internships</router-link></li>
             <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/profile.png"> Profile</router-link></li>
             <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link"><img v-if="!isLoggedIn" class="icons mb-2" src="@/assets/icons/login.png"> Login</router-link></li>
-            <li v-if="isAdmin" class="nav-item"><router-link :to="{ name: 'Reports' }" class="nav-link"><img v-if="isAdmin" class="icons mb-2" src="@/assets/icons/reports.png"> Reports</router-link></li>
+            <li v-if="isAdmin" class="nav-item"><router-link :to="{ name: 'Admin' }" class="nav-link"><img v-if="isAdmin" class="icons mb-2" src="@/assets/icons/reports.png"> Admin panel</router-link></li>
             <li class="nav-item"><router-link :to="{ name: 'Faq' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> FAQ</router-link></li>
             <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/logout.png"> Logout</button></li>
         </ul>
@@ -111,6 +111,9 @@ $orange-second-color: #f5940b;
   border-color: $orange-second-color;
 }
 
+.cursorPointer {
+  cursor: pointer;
+}
 
 .defaultHover {
   color: $orange-second-color;
@@ -387,6 +390,12 @@ details summary{
   margin-top: 20px;
 }
 
+.label {
+  width: unset;
+  color: $orange-second-color;
+  float: left;
+}
+
 /* Index page */
 @keyframes open {
 	0%
@@ -522,5 +531,11 @@ body {
   padding: 1rem;
   background-color: #efefef;
   text-align: center;
+}
+
+/* Admin panel */
+.adminPanel {
+  max-width: 98%;
+  margin: 0 auto;
 }
 </style>

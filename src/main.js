@@ -13,7 +13,7 @@ import Profile from './components/crud/Profile.vue'
 import Bot from './components/chatBot/Bot.vue'
 import Index from './components/Index.vue'
 import Faq from './components/Faq.vue'
-import Reports from './components/admin/Reports.vue'
+import Admin from './components/admin/Admin.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
@@ -77,9 +77,9 @@ let routes = [
     component: EditItem,
   },
   {
-    name: 'Reports',
-    path: '/Reports',
-    component: Reports,
+    name: 'Admin',
+    path: '/Admin',
+    component: Admin,
   }
 ];
 
