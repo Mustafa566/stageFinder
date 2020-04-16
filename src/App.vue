@@ -13,8 +13,8 @@
             <li class="nav-item"><router-link :to="{ name: 'Internship' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/internship.png"> Internships</router-link></li>
             <li v-if="isLoggedIn" class="nav-item"><router-link :to="{ name: 'Profile' }" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/profile.png"> Profile</router-link></li>
             <li v-if="!isLoggedIn" class="nav-item"><router-link :to="{ name: 'Login' }" class="nav-link"><img v-if="!isLoggedIn" class="icons mb-2" src="@/assets/icons/login.png"> Login</router-link></li>
-            <li class="nav-item"><router-link :to="{ name: 'faq' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> FAQ</router-link></li>
-            <li class="nav-item"><router-link :to="{ name: 'test' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> test</router-link></li>
+            <li v-if="isAdmin" class="nav-item"><router-link :to="{ name: 'Reports' }" class="nav-link"><img v-if="isAdmin" class="icons mb-2" src="@/assets/icons/reports.png"> Reports</router-link></li>
+            <li class="nav-item"><router-link :to="{ name: 'Faq' }" class="nav-link"><img class="icons mb-2" src="@/assets/icons/question.png"> FAQ</router-link></li>
             <li v-if="isLoggedIn" class="nav-item"><button @click="logout" class="nav-link"><img v-if="isLoggedIn" class="icons mb-2" src="@/assets/icons/logout.png"> Logout</button></li>
         </ul>
       </div>
@@ -26,6 +26,38 @@
   </div>
 </template>
 
+<script>
+import firebase from "firebase";
+export default {
+  name: "app",
+  data() {
+    return {
+      isLoggedIn: false,
+      isAdmin: false,
+      currentUser: false,
+      isHidden: false
+    };
+  },
+  methods: {
+    logout() {
+      firebase.auth().signOut().then(() => {
+        this.$router.push('/Login')
+        location.reload();
+      })
+    }
+  },
+  created() {
+    if(firebase.auth().currentUser) {
+      this.isLoggedIn = true;
+      this.currentUser = firebase.auth().currentUser.email;
+    }
+    if(firebase.auth().currentUser.email == 'admin@gmail.com') {
+      this.isAdmin = true;
+      this.currentUser = firebase.auth().currentUser.email;
+    }
+  }
+};
+</script>
 
 <style lang="scss">
 @import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
@@ -54,7 +86,7 @@ $orange-second-color: #f5940b;
 /* standards */
 .btn-primary {
   background-image: $gradient;
-  border-color: orange-color;
+  border-color: $orange-color;
 }
 
 .navbar {
@@ -98,8 +130,8 @@ $orange-second-color: #f5940b;
 }
 
 .icons {
-  width: 28px;
-  height: 28px;
+  width: 26px;
+  height: 26px;
   margin-top: 5px;
   margin-left: 15px;
 }
@@ -220,6 +252,25 @@ input::-webkit-inner-spin-button {
 
 
 /* Faq page */
+.openDiv .layerDiv {
+	position: absolute;
+	top: 0;
+	left: 0;
+  bottom: 0;
+	width: 100%;
+  height: 183%;
+	transform-origin: top;
+  animation-delay: 0s;
+	animation-duration: 1s;
+  animation-name: slidein;
+}
+
+.layerDiv:nth-child(1) {
+	background: black;
+	z-index: 2;
+  opacity: 0.9;
+}
+
 .box {
    margin: 0px auto;
    background: #fff;
@@ -315,6 +366,27 @@ details summary{
   cursor: pointer;
 }
 
+
+.X:hover {
+  color: white;
+  cursor: pointer;
+}
+
+.transparent, .transparent:active, .transparent:focus {
+  background-color: transparent;
+}
+
+.width {
+  width: 70%;
+  margin: 0 auto;
+}
+
+.sendBtn {
+  font-size: 16px;
+  width: 180px;
+  margin-top: 20px;
+}
+
 /* Index page */
 @keyframes open {
 	0%
@@ -352,12 +424,12 @@ details summary{
 
 @keyframes slideout {
 	from {
-		margin-right: 200%;
+		margin-left: 0%;
 		width: 100%;
 	}
 
 	to {
-		margin-right: 0%;
+		margin-left: 200%;
 		width: 100%;
 	}
 }
@@ -367,7 +439,7 @@ details summary{
 	height: 500px;
 	animation-delay: 1s;
 	animation-duration: 1s;
-    animation-name: slidein;
+  animation-name: slidein;
 }
 
 body {
@@ -399,22 +471,6 @@ body {
 	height: 100%;
 	transform-origin: top;
 	animation: open 1s ease-in-out forwards;
-}
-
-.openDiv .layerDiv {
-	position: absolute;
-	top: 0;
-	left: 0;
-  bottom: 0;
-	width: 100%;
-  height: 183%;
-	transform-origin: top;
-}
-
-.layerDiv:nth-child(1) {
-	background: black;
-	z-index: 2;
-  opacity: 0.9;
 }
 
 .open .layer:nth-child(1) {
@@ -468,31 +524,3 @@ body {
   text-align: center;
 }
 </style>
-
-<script>
-import firebase from "firebase";
-export default {
-  name: "app",
-  data() {
-    return {
-      isLoggedIn: false,
-      currentUser: false,
-      isHidden: false
-    };
-  },
-  methods: {
-    logout() {
-      firebase.auth().signOut().then(() => {
-        this.$router.push('/Login')
-        location.reload();
-      })
-    }
-  },
-  created() {
-    if(firebase.auth().currentUser) {
-      this.isLoggedIn = true;
-      this.currentUser = firebase.auth().currentUser.email;
-    }
-  }
-};
-</script>

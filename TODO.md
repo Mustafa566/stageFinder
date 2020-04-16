@@ -1,6 +1,6 @@
 # Faq page
-  - Wanneer je op de img klik komt er een popup met een form. En het verstuurd naar de database.
-  - https://www.stagemarkt.nl/Zoeken/Home/Content?contenttype=Hulp
+  - En het verstuurd naar de database.
+
 
   - Internship discrimination
   - https://www.s-bb.nl/formulier-stagediscriminatie
@@ -16,3 +16,16 @@
 
 # Profile.vue
   - Check if the currentUser the same is an take only their own information.
+
+# Reports.vue
+  - print alles van faq form naar reports en maak een tabel.
+  - alleen admin kan erin.
+
+
+------
+# This code says if the current email == is admin@gmail.com show this. app.vue created()
+
+if(firebase.auth().currentUser.email == 'admin@gmail.com') {
+  this.isLoggedIn = true;
+  this.currentUser = firebase.auth().currentUser.email;
+}

@@ -12,15 +12,15 @@ import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Profile from './components/crud/Profile.vue'
 import Bot from './components/chatBot/Bot.vue'
 import Index from './components/Index.vue'
-import faq from './components/Faq.vue'
+import Faq from './components/Faq.vue'
+import Reports from './components/admin/Reports.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
 import VueHead from 'vue-head'
 import json from './components/chatBot/info.json';
-import VModal from 'vue-js-modal'
- 
-Vue.use(VModal)
+
+
 Vue.use(VueHead)
 Vue.use(VueFire)
 Vue.use(VueRouter)
@@ -32,14 +32,19 @@ let routes = [
     redirect: '/index',
   },
   {
-    name: 'faq',
-    path: '/faq',
-    component: faq,
+    name: 'Index',
+    path: '/Index',
+    component: Index,
   },
   {
-    name: 'test',
-    path: '/test',
-    component: test,
+    name: 'Faq',
+    path: '/Faq',
+    component: Faq,
+  },
+  {
+    name: 'Internship',
+    path: '/Internship',
+    component: Internship,
   },
   {
     name: 'Bot',
@@ -47,13 +52,8 @@ let routes = [
     component: Bot ,
   },
   {
-    name: 'Index',
-    path: '/index',
-    component: Index,
-  },
-  {
     name: 'Login',
-    path: '/login',
+    path: '/Login',
     component: Login,
   },
   {
@@ -63,24 +63,24 @@ let routes = [
   },
   {
     name: 'Profile',
-    path: '/profile',
+    path: '/Profile',
     component: Profile,
   },
   {
     name: 'Add',
-    path: '/add',
+    path: '/Add',
     component: AddIntership,
   },
   {
     name: 'Edit',
-    path: '/edit/:id',
+    path: '/Edit/:id',
     component: EditItem,
   },
   {
-    name: 'Internship',
-    path: '/internship',
-    component: Internship,
-  },
+    name: 'Reports',
+    path: '/Reports',
+    component: Reports,
+  }
 ];
 
 const router = new VueRouter({ mode: 'history', routes: routes });
