@@ -225,8 +225,7 @@
                         <input 
                         type="checkbox" 
                         class="transparent text-warning mt-4 float-right" 
-                        v-model="discriminated.myDetails" 
-                        required>
+                        v-model="discriminated.myDetails">
                      </div>
                      <div class="col-sm-6 col-md-10">
                         <label class="label">Do not share my data with school and the training company</label>

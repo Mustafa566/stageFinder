@@ -16,6 +16,7 @@
                             <th scope="col">Name of educational institution</th>
                             <th scope="col">Email</th>
                             <th scope="col">Information</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -29,6 +30,7 @@
                             <td>{{helpInternship.educationInstitution}}</td>
                             <td>{{helpInternship.email}}</td>
                             <td class="w-25">{{helpInternship.information}}</td>
+                            <button @click="deleteItem(helpInternship['.key'])" class="btn btn-danger deleteBtn">Delete</button>
                         </tr>
                     </tbody>
                 </table>
@@ -44,6 +46,7 @@
                             <th scope="col">Email</th>
                             <th scope="col">Subject</th>
                             <th scope="col">Information</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -53,6 +56,7 @@
                             <td>{{questions.email}}</td>
                             <td>{{questions.subject}}</td>
                             <td>{{questions.information}}</td>
+                            <button @click="deleteItem(questions['.key'])" class="btn btn-danger deleteBtn">Delete</button>
                         </tr>
                     </tbody>
                 </table>
@@ -70,6 +74,7 @@
                             <th scope="col">Describe</th>
                             <th scope="col">comments</th>
                             <th scope="col">Share details</th>
+                            <th scope="col">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -81,6 +86,7 @@
                             <td>{{discriminated.Describe}}</td>
                             <td>{{discriminated.comments}}</td>
                             <td>{{discriminated.myDetails}}</td>
+                            <button @click="deleteItem(discriminated['.key'])" class="btn btn-danger deleteBtn">Delete</button>
                         </tr>
                     </tbody>
                 </table>
@@ -105,6 +111,13 @@ export default {
         helpInternship: db.ref('helpCenter'),
         questions: db.ref('questions'),
         discriminationDb: db.ref('discrimination')
+    },
+    methods: {
+        deleteItem(key) {
+            this.$firebaseRefs.helpInternship.child(key).remove();
+            this.$firebaseRefs.questions.child(key).remove();
+            this.$firebaseRefs.discriminationDb.child(key).remove();
+        }
     },
     created() {
         if(firebase.auth().currentUser.email == 'admin@gmail.com' || 

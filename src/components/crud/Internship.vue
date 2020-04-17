@@ -16,65 +16,10 @@
                 <p class="card-text">{{ item.availability }}</p>
               </div>
             </div>
-            <div class="container">
-              <div class="row">
-                <button @click="toggle" class="btn btn-dark">{{toggleIcon}}</button>
-                <div class="col-xs-1 ml-3 mr-2" v-if="isLoggedIn"><router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">Edit</router-link></div>
-                <div class="col-xs-1" v-if="isLoggedIn"><button @click="deleteItem(item['.key'])" class="btn btn-danger dltbtn">Delete</button></div>
-              </div>
-              <div class="infoList mt-4" v-show="showSection">
-                <div class="container mt-5">
-                  <div class="row mb-4">
-                    <div class="col-sm-1 col-md">
-                      <h6 class="font-weight-bold text-center">Education</h6>
-                    </div>
-                    <div class="col-sm-1 col-md">
-                      {{ item.education }}
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-sm-1 col-md text-center">
-                      <h6 class="font-weight-bold">Niveau</h6>
-                    </div>
-                    <div class="col-sm-1 col-md">
-                      {{ item.niveau }}
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-sm-1 col-md text-center">
-                      <h6 class="font-weight-bold">Website</h6>
-                    </div>
-                    <div class="col-sm-1 col-md">
-                      {{ item.website }}
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-sm-1 col-md text-center">
-                      <h6 class="font-weight-bold">Phone number</h6>
-                    </div>
-                    <div class="col-sm-1 col-md">
-                      {{ item.phoneNumber }}
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-sm-1 col-md text-center">
-                      <h6 class="font-weight-bold">Email</h6>
-                    </div>
-                    <div class="col-sm-1 col-md">
-                      {{ item.email }}
-                    </div>
-                  </div>
-                  <div class="row mb-4">
-                    <div class="col-sm-1 col-md text-center">
-                      <h6 class="font-weight-bold">Information</h6>
-                    </div>
-                    <div class="w-100"></div>
-                    <div class="col-sm-1 col-md">
-                      {{ item.info }}
-                    </div>
-                  </div>
-                </div>
-              </div>
+            <div class="row">
+              <div class="col-xs-1 ml-3 mr-2" v-if="isLoggedIn"><router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">Details</router-link></div>
+              <div class="col-xs-1 ml-3 mr-2" v-if="isLoggedIn"><router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">Edit</router-link></div>
+              <div class="col-xs-1" v-if="isLoggedIn"><button @click="deleteItem(item['.key'])" class="btn btn-danger dltbtn">Delete</button></div>
             </div>
           </div>
         </div>
@@ -98,8 +43,6 @@ export default {
       items: [],
       isLoggedIn: false,
       currentUser: false,
-      showSection: false,
-      toggleIcon: 'More info'
     }
   },
   head: {
@@ -113,9 +56,6 @@ export default {
     items: db.ref('items')
   },
   methods: {
-    toggle() {
-     this.showSection = !this.showSection
-    },
     deleteItem(key) {
       this.$firebaseRefs.items.child(key).remove();
     }

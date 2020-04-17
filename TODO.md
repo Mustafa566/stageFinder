@@ -1,13 +1,3 @@
-# Faq page
-  - En het verstuurd naar de database.
-
-
-  - Internship discrimination
-  - https://www.s-bb.nl/formulier-stagediscriminatie
-
-# sorteren op date intership nieuwste bovenaan
-  Date.now() function add index
-
 # Responsive die nog gedaan moeten worden.
   - Homepage
   - faq
@@ -21,10 +11,13 @@
   - Show all users.
 
 
-------
-# This code says if the current email == is admin@gmail.com show this. app.vue created()
+# InternshipDetails.vue
+  - Print only the id of the data
 
-if(firebase.auth().currentUser.email == 'admin@gmail.com') {
-  this.isLoggedIn = true;
-  this.currentUser = firebase.auth().currentUser.email;
-}
+------
+
+# This code says if the current email == is admin@gmail.com show this. app.vue created()
+  if(firebase.auth().currentUser.email == 'admin@gmail.com') {
+    this.isLoggedIn = true;
+    this.currentUser = firebase.auth().currentUser.email;
+  }

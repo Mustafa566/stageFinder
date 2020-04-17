@@ -7,10 +7,12 @@ import App from './App.vue'
 import AddIntership from './components/crud/AddIntership.vue'
 import EditItem from './components/crud/EditItem.vue'
 import Internship from './components/crud/Internship.vue'
+import InternshipDetails from './components/crud/InternshipDetails.vue'
+import Profile from './components/crud/Profile.vue'
 import Login from './components/auth/Login.vue'
 import ProfileInfo from './components/auth/ProfileInfo.vue'
-import Profile from './components/crud/Profile.vue'
 import Bot from './components/chatBot/Bot.vue'
+import json from './components/chatBot/info.json';
 import Index from './components/Index.vue'
 import Faq from './components/Faq.vue'
 import Admin from './components/admin/Admin.vue'
@@ -18,7 +20,6 @@ import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
 import './config/db'
 import VueHead from 'vue-head'
-import json from './components/chatBot/info.json';
 
 
 Vue.use(VueHead)
@@ -75,6 +76,11 @@ let routes = [
     name: 'Edit',
     path: '/Edit/:id',
     component: EditItem,
+  },
+  {
+    name: 'InternshipDetails',
+    path: '/InternshipDetails/:id',
+    component: InternshipDetails,
   },
   {
     name: 'Admin',

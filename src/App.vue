@@ -564,4 +564,9 @@ body {
   max-width: 98%;
   margin: 0 auto;
 }
+
+.deleteBtn {
+  border: 2px solid black;
+  padding: 2px 2px;
+}
 </style>
