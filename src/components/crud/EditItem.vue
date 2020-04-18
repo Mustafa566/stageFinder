@@ -33,8 +33,13 @@
                     </div>
                 </div>
 
-                <div class="form-group mt-4">
-                    <input type="text" class="inputText form-control" placeholder="Website" v-model="newItem.website"/>
+                <div class="row">
+                    <div class="col-sm-1 col-md form-group">
+                        <input type="text" class="inputText form-control" placeholder="Job name" v-model="newItem.job" required/>
+                    </div>
+                    <div class="col-sm-1 col-md form-group">
+                        <input type="text" class="inputText form-control" placeholder="Website" v-model="newItem.website"/>
+                    </div>
                 </div>
 
                 <div class="form-group mt-4">

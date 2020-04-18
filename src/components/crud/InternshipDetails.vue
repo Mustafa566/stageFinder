@@ -1,10 +1,10 @@
 <template>
     <div>
-        <h1 class="text-center mb-5 font-weight-bold">Internship list</h1>
+        <h1 class="text-center mb-5 font-weight-bold">Details</h1>
         <div class="container" v-for="item of items" :key="item['.key']">
         <div class="col-sm-12 mt-5">
             <div class="card rounded-circle">
-            <div class="card-body default-bgcolor">
+            <div class="card-body defaultGrey">
                 <h4 class="card-title text-center mb-5 font-weight-bold">{{ item.name }}</h4>
                 <div class="row mb-4">
                 <div class="col-sm text-center mb-4">

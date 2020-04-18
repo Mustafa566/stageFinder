@@ -2,8 +2,7 @@
     <div v-if="isLoggedIn" class="container bgColor">
         <h3 class="text-center mt-4">Add internship</h3>
         <div class="card-body">
-            <form v-on:submit.prevent="AddIntership" @click="date()">
-                <p id="date" :v-model="newItem.date"></p>
+            <form v-on:submit.prevent="AddIntership">
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
                         <input type="text" class="inputText form-control" placeholder="Internship name" v-model="newItem.name" required/>
@@ -12,6 +11,12 @@
                         <input type="text" class="inputText form-control" placeholder="Internship location" v-model="newItem.location" required/>
                     </div>
                 </div>
+
+                <!-- <div class="row mt-4">
+                    <div class="col-sm-1 col-md form-group">
+                        <input type="date" v-model='myDate'>
+                    </div>
+                </div> -->
 
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
@@ -34,8 +39,13 @@
                     </div>
                 </div>
 
-                <div class="form-group mt-4">
-                    <input type="text" class="inputText form-control" placeholder="Website" v-model="newItem.website"/>
+                <div class="row">
+                    <div class="col-sm-1 col-md form-group">
+                        <input type="text" class="inputText form-control" placeholder="Job name" v-model="newItem.job" required/>
+                    </div>
+                    <div class="col-sm-1 col-md form-group">
+                        <input type="text" class="inputText form-control" placeholder="Website" v-model="newItem.website"/>
+                    </div>
                 </div>
 
                 <div class="form-group mt-4">
@@ -98,7 +108,7 @@
                                 <h6 class="font-weight-bold">Phone number</h6>
                             </div>
                             <div class="col-sm-1 col-md">
-                            {{ newItem.phoneNumber }}
+                                {{ newItem.phoneNumber }}
                             </div>
                         </div>
                         <div class="row mb-4">
@@ -144,8 +154,9 @@ export default {
         isLoggedIn: false,
         toggleIcon: 'More info',
         showSection: false,
+        myDate: new Date().toISOString().slice(0,10),
         newItem: {
-            date: '',
+            // myDate: '',
             name: '',
             location: '',
             education: '',
@@ -153,6 +164,7 @@ export default {
             availability: '',
             email: '',
             phoneNumber: '',
+            job: '',
             website: '',
             info: ''
         },
@@ -169,7 +181,7 @@ export default {
         AddIntership() {
             console.log(JSON.stringify(this.newItem))
             this.$firebaseRefs.items.push({
-                date: this.newItem.date,
+                // myDate: this.newItem.myDate,
                 name: this.newItem.name,
                 location: this.newItem.location,
                 education: this.newItem.education,
@@ -177,6 +189,7 @@ export default {
                 availability: this.newItem.availability,
                 email: this.newItem.email,
                 phoneNumber: this.newItem.phoneNumber,
+                job: this.newItem.job,
                 website: this.newItem.website,
                 info: this.newItem.info
             })
@@ -188,19 +201,13 @@ export default {
             this.newItem.availability = '';
             this.newItem.email = '';
             this.newItem.phoneNumber = '';
+            this.newItem.job = '';
             this.newItem.website = '';
             this.newItem.info = '';
             this.$router.push('/internship')
         },
         toggle() {
             this.showSection = !this.showSection
-        },
-        date() {
-            var date = new Date();
-            var y = date.getFullYear();
-            var m = date.getMonth() + 1;
-            var d = date.getDate();
-            document.getElementById("date").innerHTML = m + "/" + d + "/" + y;
         }
     },
     created() {

@@ -68,6 +68,7 @@ export default {
 $gradient: linear-gradient(135deg,#d98618 0%,#c20016 100%);
 $orange-color: #d98618;
 $orange-second-color: #f5940b;
+$grey-color: #dcdcdc;
 
 /* Iphone 6/7/8 */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
@@ -147,6 +148,21 @@ $orange-second-color: #f5940b;
 
 .defaultHover:hover {
   color: $orange-second-color;
+}
+
+/* Internship */
+.defaultGrey {
+  background-color: $grey-color;
+  border-color: $grey-color;
+  border-radius: 20px;
+}
+
+.checkboxMargin {
+  margin-left: 0px;
+}
+
+.rightLine {
+  border-right: groove;
 }
 
 /* Navbar */
@@ -260,8 +276,8 @@ input::-webkit-inner-spin-button {
   max-height: 450px;
   overflow-y: scroll;
   overflow-x: hidden;
-  border-bottom: 2px solid #dcdcdc;
-  background-color: #dcdcdc;
+  border-bottom: 2px solid $grey-color;
+  background-color: $grey-color;
 }
 
 .max::-webkit-scrollbar {

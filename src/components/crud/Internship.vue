@@ -1,28 +1,73 @@
 <template>
   <div>
     <h1 class="text-center mb-5 font-weight-bold">Internship list</h1>
-    <div class="container" v-for="item of items" :key="item['.key']">
-      <div class="col-sm-12 mt-5">
-        <div class="card rounded-circle">
-          <div class="card-body default-bgcolor">
-            <h4 class="card-title text-center mb-5 font-weight-bold">{{ item.name }}</h4>
-            <div class="row mb-4">
-              <div class="col-sm text-center mb-4">
-                <h6 class="font-weight-bold">Location</h6>
-                <p class="card-text">{{ item.location }}</p>
-              </div>
-              <div class="col-sm text-center mb-4">
-                <h6 class="font-weight-bold">Availability</h6>
-                <p class="card-text">{{ item.availability }}</p>
+    <div>
+      <div class="row">
+        <div class="col-sm-12 col-md-3 ml-3 rightLine">
+          <h4 class="text-center">Search internship</h4>
+          <div class="form-check mt-5">
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+            
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+                        
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+                        
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+                        
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+                        
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+                        
+            <div>
+              <input class="form-check-input checkboxMargin" type="checkbox">
+              <label class="form-check-label checkboxMargin">Default checkbox</label>
+            </div>
+            
+          </div>
+        </div>
+      <div class="col-sm-12 col-md-7">
+        <div class="card rounded-circle mt-5" v-for="item of items" :key="item['.key']">
+          <div class="card-body defaultGrey">
+            <h5 class="card-title font-weight-bold">{{ item.name }}</h5>
+            <div class="row mb-2">
+              <div class="col-sm ">
+                <div class="row ml-0"><h6 class="font-weight-bold">Job:</h6><h6 class="ml-1">{{ item.job }}</h6></div>
+                <div class="row ml-0"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1"> {{ item.location }}</h6></div>
+                <h6>Availability: {{ item.availability }}</h6>
+                <h6>{{ item.info }}</h6>
               </div>
             </div>
             <div class="row">
-              <div class="col-xs-1 ml-3 mr-2" v-if="isLoggedIn"><router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">Details</router-link></div>
-              <div class="col-xs-1 ml-3 mr-2" v-if="isLoggedIn"><router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">Edit</router-link></div>
+              <div class="col-xs-1 ml-3" v-if="isLoggedIn"><router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">Details</router-link></div>
+              <div class="col-xs-1 ml-3 mr-3" v-if="isLoggedIn"><router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">Edit</router-link></div>
               <div class="col-xs-1" v-if="isLoggedIn"><button @click="deleteItem(item['.key'])" class="btn btn-danger dltbtn">Delete</button></div>
             </div>
           </div>
         </div>
+      </div>
       </div>
       <br>
     </div>
