@@ -43,7 +43,7 @@
                      </div>
                   </div>
                   <div class="row mt-4">
-                     <div class="col-sm-12 col-md-2">
+                     <div class="col-sm-12 col-md-2 zip">
                         <input 
                         type="text" 
                         class="form-control transparent text-warning" 
@@ -51,7 +51,7 @@
                         v-model="helpInternship.zipCode" 
                         required>
                      </div>
-                     <div class="col-sm-12 col-md-3">
+                     <div class="col-sm-12 col-md-3 houseNmb">
                         <input 
                         type="text" 
                         class="form-control transparent text-warning" 
@@ -62,7 +62,7 @@
                      <div class="col-sm-12 col-md-7">
                         <input 
                         type="text" 
-                        class="form-control transparent text-warning" 
+                        class="form-control transparent text-warning eduInstitution" 
                         placeholder="Name of educational institution" 
                         v-model="helpInternship.educationInstitution">
                      </div>

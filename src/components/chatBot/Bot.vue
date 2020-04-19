@@ -10,7 +10,7 @@
         </div>
         <div class="row mt-4">
             <div class="col">
-                <input id="userBox" class="inputChat" type="text" @keyup.enter="talk()" v-model="msg" required>
+                <input id="userBox" class="inputChat" placeholder="Type here..." type="text" @keyup.enter="talk()" v-model="msg" required>
             </div>
             <div type="submit" value="Send" class="btn btn-primary mt-2 ml-2" @click="talk()">Send<img class="sendIcon" src="@/assets/icons/send.png"></div>
         </div>

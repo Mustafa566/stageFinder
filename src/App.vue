@@ -94,6 +94,15 @@ $grey-color: #dcdcdc;
     top: 20px;
   }
 
+  .navbar-light .navbar-nav .nav-link, .currentUser {
+    font-size: 12px;
+  }
+
+  .icons {
+    width: 20px !important;
+    height: 20px !important;
+  }
+
   /* Login page */
   .form {
     width: 400px !important;
@@ -108,10 +117,46 @@ $grey-color: #dcdcdc;
   .cont {
     height: 1200px !important;
   }
+
+  /* Admin panel page */
+  table {
+    font-size: 10px;
+  }
+
+  .deleteBtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+
+   /* Chat bot */
+  .max {
+    height: 470px !important;
+    margin-left: -15px;
+    width: 109%;
+  }
+
+  .container .con, .inputChat {
+    font-size: 12px !important;
+  }
+
+  /* Faq page */
+  .label {
+    font-size: 11px;
+    width: max-content !important;
+  }
+
+  label {
+    margin: -15px -66px !important;
+  }
+
+  .openDiv .layerDiv {
+    height: 364% !important;
+  }
 }
 
 /* Iphone 6/7/8 + */
-@media only screen and (min-device-width: 413px) and (max-device-width: 737px) and (-webkit-min-device-pixel-ratio: 3) { 
+@media only screen and (min-device-width : 414px) and (max-device-width : 736px) and (orientation : landscape) and (-webkit-min-device-pixel-ratio : 3)  { 
   /* Index page */
   #app {
     overflow-x: hidden;
@@ -137,6 +182,22 @@ $grey-color: #dcdcdc;
     height: 20px !important;
     margin-top: 5px !important;
     margin-left: 0px !important;
+  }
+
+  /* Chat bot */
+  .max {
+    height: 520px !important;
+    margin-left: -15px;
+    width: 109%;
+  }
+
+  .container .con, .inputChat {
+    font-size: 12px !important;
+  }
+
+  /* Faq page */
+  .openDiv .layerDiv {
+    height: 361% !important;
   }
 }
 
@@ -168,10 +229,46 @@ $grey-color: #dcdcdc;
     margin-top: 5px !important;
     margin-left: 0px !important;
   }
+
+  /* Admin panel page */
+  table {
+    font-size: 10px;
+  }
+
+  .deleteBtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-size: 10px;
+  }
+
+  /* Chat bot */
+  .max {
+    height: 600px !important;
+    margin-left: -15px;
+    width: 109%;
+  }
+
+  .container .con, .inputChat {
+    font-size: 12px !important;
+  }
+
+  /* Faq page */
+  .label {
+    font-size: 11px;
+    width: max-content !important;
+  }
+
+  label {
+    margin: -15px -66px !important;
+  }
+
+  .openDiv .layerDiv {
+    height: 300% !important;
+  }
 }
 
 /* Ipad */
-@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+@media only screen and (min-device-width: 768px) and (max-device-width: 1023px) and (-webkit-min-device-pixel-ratio: 2) {
   /* Index page */
   #app {
     overflow-x: hidden;
@@ -221,6 +318,48 @@ $grey-color: #dcdcdc;
     height: 16px;
   }
 
+  /* Chat bot */
+  .max {
+    height: 800px !important;
+  }
+
+  .container .con, .inputChat {
+    font-size: 18px !important;
+  }
+
+  /* Faq */
+  .transparent {
+    font-size: 20px;
+  }
+
+  .sendBtn {
+    font-size: 20px !important;
+    width: 200px !important;
+  }
+
+  .zip {
+    flex: 0 0 33.666667% !important;
+    max-width: 33.666667% !important;
+    margin-bottom: 24px !important;
+  }
+
+  .houseNmb {
+    flex: 0 0 46%;
+    max-width: 46%;
+  }
+
+  .eduInstitution {
+    width: 310px;
+  }
+
+  label {
+    margin: 20px auto 0;
+  }
+
+  .label {
+    font-size: 15px;
+  }
+
   .shadowCall {
     flex: 0 0 40%;
     max-width: 45%;
@@ -228,6 +367,10 @@ $grey-color: #dcdcdc;
 
   .faqTxt {
     max-width: 60%;
+  }
+
+  .openDiv .layerDiv {
+    height: 191% !important;
   }
 }
 
@@ -266,7 +409,7 @@ $grey-color: #dcdcdc;
   }
 
   .input {
-    font-size: 22px;
+    font-size: 22px !important;
   }
 
   .submit {
@@ -298,6 +441,46 @@ $grey-color: #dcdcdc;
   input[type=checkbox], input[type=radio] {
     width: 20px;
     height: 16px;
+  }
+
+  /* Add intership */
+  .inputText {
+    font-size: x-large;
+  }
+
+  .btn {
+    font-size: 1.3rem;
+  }
+
+  /* Admin panel page */
+  .deleteBtn {
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  /* Chat bot */
+  .max {
+    height: 1100px !important;
+  }
+
+  .container .con, .inputChat {
+    font-size: 20px !important;
+  }
+
+  /* Faq */
+  .transparent {
+    font-size: 20px;
+  }
+
+  .sendBtn {
+    font-size: 20px !important;
+    width: 200px !important;
+  }
+
+  .zip {
+    flex: 0 0 33.666667% !important;
+    max-width: 33.666667% !important;
+    margin-bottom: 24px !important;
   }
 }
 
