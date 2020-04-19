@@ -20,7 +20,7 @@
 
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
-                        <input type="text" class="inputText form-control" placeholder="Education" v-model="newItem.education" required/>
+                        <input type="text" class="inputText form-control" placeholder="Education" v-model="newItem.education"/>
                     </div>
                     <div class="col-sm-1 col-md form-group">
                         <input type="text" class="inputText form-control" placeholder="Niveau" v-model="newItem.niveau" required/>
@@ -32,7 +32,7 @@
 
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
-                        <input type="email" class="inputText form-control" placeholder="Email" v-model="newItem.email" required/>
+                        <input type="email" class="inputText form-control" placeholder="Email" v-model="newItem.email"/>
                     </div>
                     <div class="col-sm-1 col-md form-group">
                         <input type="number" class="inputText form-control" placeholder="Phone number" v-model="newItem.phoneNumber"/>

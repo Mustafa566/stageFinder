@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <nav class="navbar navbar-expand-lg navbar-light navbar">
+    <nav class="navbar navbar-expand-xl navbar-light navbar">
       <h1 class="default-color"><router-link :to="{ name: 'Index' }" class="default-color">Stage Finder</router-link></h1>
       <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" @click="isHidden = !isHidden"></span>
@@ -70,25 +70,157 @@ $orange-color: #d98618;
 $orange-second-color: #f5940b;
 $grey-color: #dcdcdc;
 
+
+/* Responsive */
 /* Iphone 6/7/8 */
 @media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) { 
+  /* Index page */
+  #app {
+    overflow-x: hidden;
+  }
+
+  .isometric {
+    width: 380px !important;
+    height: 280px !important;
+  }
+
+  .team1 {
+    right: 40px;
+    bottom: 20px;
+  }
+
+  .team2 {
+    left: 47px;
+    top: 20px;
+  }
+
+  /* Login page */
+  .form {
+    width: 400px !important;
+    padding: 100px 30px 0 !important;
+  }
+
+  .sub-cont {
+    overflow: visible !important;
+    top: 700px !important;
+  }
+
+  .cont {
+    height: 1200px !important;
+  }
+}
+
+/* Iphone 6/7/8 + */
+@media only screen and (min-device-width: 413px) and (max-device-width: 737px) and (-webkit-min-device-pixel-ratio: 3) { 
+  /* Index page */
+  #app {
+    overflow-x: hidden;
+  }
+
+  .isometric {
+    width: 420px !important;
+    height: 280px !important;
+  }
+
+  .team1 {
+    right: 40px;
+    bottom: 20px;
+  }
+
+  .team2 {
+    left: 47px;
+    top: 20px;
+  }
+
   .icons {
-    display: none;
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 5px !important;
+    margin-left: 0px !important;
   }
 }
 
 /* Iphone X */
 @media only screen and (min-device-width: 375px) and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 3) {
+  /* Index page */
+  #app {
+    overflow-x: hidden;
+  }
+
+  .isometric {
+    width: 380px !important;
+    height: 280px !important;
+  }
+
+  .team1 {
+    right: 40px;
+    bottom: 20px;
+  }
+
+  .team2 {
+    left: 47px;
+    top: 20px;
+  }
+
   .icons {
-    display: none;
+    width: 20px !important;
+    height: 20px !important;
+    margin-top: 5px !important;
+    margin-left: 0px !important;
   }
 }
 
-/* Tablet */
-@media only screen 
-  and (min-device-width: 768px) 
-  and (max-device-width: 1024px) 
-  and (-webkit-min-device-pixel-ratio: 2) {
+/* Ipad */
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  /* Index page */
+  #app {
+    overflow-x: hidden;
+  }
+
+  .navbar {
+    width: 104%;
+  }
+
+  .navbar-light .navbar-toggler {
+    margin-right: 30px;
+  }
+
+  /* Login page */
+  .img__text p, .img__btn span {
+    line-height: 1.9;
+  }
+
+  .sub-cont {
+    left: 515px !important;
+    margin-right: 50px;
+  }
+
+  .cont.s--signup .sub-cont {
+    transform: translate3d(-540px, 0, 0) !important;
+  }
+
+  /* Internship page */
+  .col-md-3 {
+    max-width: 38%;
+  }
+
+  .h5, h5 {
+    font-size: 1.5rem;
+  }
+
+  .h6, h6 {
+    font-size: 1.25rem;
+  }
+
+  .checkboxMargin {
+    font-size: 18px;
+  }
+
+  input[type=checkbox], input[type=radio] {
+    width: 20px;
+    height: 16px;
+  }
+
   .shadowCall {
     flex: 0 0 40%;
     max-width: 45%;
@@ -96,6 +228,76 @@ $grey-color: #dcdcdc;
 
   .faqTxt {
     max-width: 60%;
+  }
+}
+
+/* Ipad pro */
+@media only screen and (min-device-width: 1024px) and (max-device-width: 1366px)and (-webkit-min-device-pixel-ratio: 2) {
+  /* Index page */
+  #app, .gap, .main {
+    overflow-x: hidden !important;
+  }
+
+  .isometric {
+    width: 500px !important;
+    height: 300px !important;
+  }
+  
+  .isobg {
+    margin-top: 20% !important;
+    margin-bottom: 12% !important;
+  }
+
+  .navbar-light .navbar-nav .nav-link {
+    font-size: 20px;
+  }
+
+  .navbar-collapse {
+    margin-right: 20px; 
+  }
+
+  /* Login page */
+  .h2 {
+    font-size: 40px;
+  }
+
+  label span {
+    font-size: 19px !important;
+  }
+
+  .input {
+    font-size: 22px;
+  }
+
+  .submit {
+    font-size: 20px;
+  }
+
+  .img__text h2 {
+    font-size: 26px;
+  }
+
+  .img__text p, .img__btn span {
+    font-size: 17px !important;
+    line-height: 1.9;
+  }
+
+  /* Internship page */
+  .h5, h5 {
+    font-size: 1.5rem;
+  }
+
+  .h6, h6 {
+    font-size: 1.25rem;
+  }
+
+  .checkboxMargin {
+    font-size: 18px;
+  }
+
+  input[type=checkbox], input[type=radio] {
+    width: 20px;
+    height: 16px;
   }
 }
 
@@ -108,6 +310,26 @@ $grey-color: #dcdcdc;
   .nav-item, .nav {
     font-size: 15px;
   }
+}
+
+/* Body */
+body::-webkit-scrollbar-thumb {
+	background-image: $gradient;
+}
+
+body::-webkit-scrollbar {
+  width: 12px;
+	background-color: black;
+}
+
+.navbar-light .navbar-toggler {
+  color: transparent;
+  border-color: transparent;
+}
+
+.navbar-light .navbar-toggler:focus, .navbar-light .navbar-toggler:active {
+  color: transparent;
+  border-color: transparent;
 }
 
 /* standards */
@@ -148,6 +370,10 @@ $grey-color: #dcdcdc;
 
 .defaultHover:hover {
   color: $orange-second-color;
+}
+
+.form-control:focus, .inputText:focus {
+  outline: none;
 }
 
 /* Internship */
@@ -231,7 +457,6 @@ $grey-color: #dcdcdc;
 
 .inputText {
 	padding: 0.5em;
-  font-size: 1.5rem;
 }
 
 /* Background color */
@@ -241,8 +466,7 @@ $grey-color: #dcdcdc;
   border: 1px solid #c4c4c4;
 }
 
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
@@ -267,13 +491,8 @@ input::-webkit-inner-spin-button {
   border-bottom: 1px solid rgba(0,0,0,0.4);
 }
 
-.chatLog {
-  line-height: 3;
-}
-
 .max {
-  height: 450px;
-  max-height: 450px;
+  height: 700px;
   overflow-y: scroll;
   overflow-x: hidden;
   border-bottom: 2px solid $grey-color;

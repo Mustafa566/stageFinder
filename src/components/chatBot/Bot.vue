@@ -2,10 +2,10 @@
     <div class="container">
         <div class="container max" ref="scroll">
             <div class="container con">
-                <div class="row ml-0 mt-3">
+                <div class="row ml-0 mt-3 font-weight-bold">
                     <p>{{this.file.welkom}}</p>
                 </div>
-               <p id="chatLog" class="chatLog font-weight-bold"></p><br>
+               <p id="chatLog"></p><br>
             </div>
         </div>
         <div class="row mt-4">
@@ -18,7 +18,6 @@
 </template>
 
 <script>
-// eslint-disable-next-line
 import json from './info.json';
 export default {
     data() {

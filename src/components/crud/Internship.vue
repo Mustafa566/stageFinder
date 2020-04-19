@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="main">
     <h1 class="text-center mb-5 font-weight-bold">Internship list</h1>
     <div>
       <div class="row">
@@ -55,8 +55,9 @@
             <div class="row mb-2">
               <div class="col-sm ">
                 <div class="row ml-0"><h6 class="font-weight-bold">Job:</h6><h6 class="ml-1">{{ item.job }}</h6></div>
-                <div class="row ml-0"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1"> {{ item.location }}</h6></div>
-                <h6>Availability: {{ item.availability }}</h6>
+                <div class="row ml-0"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1">{{ item.location }}</h6></div>
+                <div class="row ml-0"><h6 class="font-weight-bold">Niveau:</h6><h6 class="ml-1">{{ item.niveau }}</h6></div>
+                <div class="row ml-0"><h6 class="font-weight-bold">Availability:</h6><h6 class="ml-1">{{ item.availability }}</h6></div>
                 <h6>{{ item.info }}</h6>
               </div>
             </div>
