@@ -1,5 +1,8 @@
 Todos:
 
+✔ @critical 3180 Lines of code @done(20-04-19 21:38)
+
+
 ☐ Profile.vue
   ✘ Check if the currentUser the same is an take only their own information.
 
@@ -9,7 +12,11 @@ Todos:
 ☐ InternshipDetails.vue
   ✘ Print only the id of the data
 
-------
+☐ Faq.vue
+  ✘ Add question and answers 
+
+☐ Internship.vue
+  ✘ Search internship
 
 ☐ This code says if the current email == is admin@gmail.com show this. app.vue created()
   if(firebase.auth().currentUser.email == 'admin@gmail.com') {
