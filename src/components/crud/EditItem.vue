@@ -14,7 +14,7 @@
 
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
-                        <input type="text" class="inputText form-control" placeholder="Education" v-model="newItem.education" required/>
+                        <input type="text" class="inputText form-control" placeholder="Education" v-model="newItem.education"/>
                     </div>
                     <div class="col-sm-1 col-md form-group">
                         <input type="text" class="inputText form-control" placeholder="Niveau" v-model="newItem.niveau" required/>
@@ -26,7 +26,26 @@
 
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
-                        <input type="email" class="inputText form-control" placeholder="Email" v-model="newItem.email" required/>
+                        <input type="email" class="inputText form-control" placeholder="Email" v-model="newItem.email"/>
+                    </div>
+                    <div class="col-sm-1 col-md form-group">
+                        <select class="custom-select" placeholder="categories" v-model="newItem.categories">
+                            <option disabled value="">Choose...</option>
+                            <option>Agriculture, Food and Natural Resources</option>
+                            <option>Arts, Audio/Video Technology and Communications</option>
+                            <option>Education and Training</option>
+                            <option>Public Administration</option>
+                            <option>Hospitality and Tourism</option>
+                            <option>Information Technology</option>
+                            <option>Science, Technology, Engineering and Mathematics</option>
+                            <option>Architecture and Construction</option>
+                            <option>Business Management and Administration</option>
+                            <option>Finance</option>
+                            <option>Human Services</option>
+                            <option>Marketing, Sales and Service</option>
+                            <option>Transportation, Distribution and Logistics</option>
+                            <option>Others</option>
+                        </select>
                     </div>
                     <div class="col-sm-1 col-md form-group">
                         <input type="number" class="inputText form-control" placeholder="Phone number" v-model="newItem.phoneNumber"/>
@@ -92,7 +111,9 @@ export default {
        niveau: item.niveau,
        availability: item.availability,
        email: item.email,
+       categories: item.categories,
        phoneNumber: item.phoneNumber,
+       job: item.job,
        website: item.website,
        info: item.info,
      }

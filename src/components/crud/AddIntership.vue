@@ -35,6 +35,25 @@
                         <input type="email" class="inputText form-control" placeholder="Email" v-model="newItem.email"/>
                     </div>
                     <div class="col-sm-1 col-md form-group">
+                        <select class="custom-select" placeholder="categories" v-model="newItem.categories">
+                            <option disabled value="">Choose...</option>
+                            <option>Agriculture, Food and Natural Resources</option>
+                            <option>Arts, Audio/Video Technology and Communications</option>
+                            <option>Education and Training</option>
+                            <option>Public Administration</option>
+                            <option>Hospitality and Tourism</option>
+                            <option>Information Technology</option>
+                            <option>Science, Technology, Engineering and Mathematics</option>
+                            <option>Architecture and Construction</option>
+                            <option>Business Management and Administration</option>
+                            <option>Finance</option>
+                            <option>Human Services</option>
+                            <option>Marketing, Sales and Service</option>
+                            <option>Transportation, Distribution and Logistics</option>
+                            <option>Others</option>
+                        </select>
+                    </div>
+                    <div class="col-sm-1 col-md form-group">
                         <input type="number" class="inputText form-control" placeholder="Phone number" v-model="newItem.phoneNumber"/>
                     </div>
                 </div>
@@ -121,6 +140,14 @@
                         </div>
                         <div class="row mb-4">
                             <div class="col-sm-1 col-md text-center">
+                                <h6 class="font-weight-bold">categories</h6>
+                            </div>
+                            <div class="col-sm-1 col-md">
+                            {{ newItem.categories }}
+                            </div>
+                        </div>
+                        <div class="row mb-4">
+                            <div class="col-sm-1 col-md text-center">
                                 <h6 class="font-weight-bold">Information</h6>
                             </div>
                             <div class="w-100"></div>
@@ -163,6 +190,7 @@ export default {
             niveau: '',
             availability: '',
             email: '',
+            categories: '',
             phoneNumber: '',
             job: '',
             website: '',
@@ -188,6 +216,7 @@ export default {
                 niveau: this.newItem.niveau,
                 availability: this.newItem.availability,
                 email: this.newItem.email,
+                categories: this.newItem.categories,
                 phoneNumber: this.newItem.phoneNumber,
                 job: this.newItem.job,
                 website: this.newItem.website,
@@ -200,6 +229,7 @@ export default {
             this.newItem.niveau = '';
             this.newItem.availability = '';
             this.newItem.email = '';
+            this.newItem.categories = '';
             this.newItem.phoneNumber = '';
             this.newItem.job = '';
             this.newItem.website = '';

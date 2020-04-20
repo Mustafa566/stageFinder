@@ -566,10 +566,6 @@ body::-webkit-scrollbar {
   border-radius: 20px;
 }
 
-.checkboxMargin {
-  margin-left: 0px;
-}
-
 .rightLine {
   border-right: groove;
 }
@@ -890,7 +886,7 @@ details summary{
 .isometric {
 	width: 800px;
 	height: 500px;
-	animation-delay: 1s;
+	animation-delay: 0.5s;
 	animation-duration: 1s;
   animation-name: slidein;
 }
@@ -933,14 +929,13 @@ body {
 
 .open .layer:nth-child(2) {
 	background:  rgb(255, 163, 25);
-	animation-delay: 1s;
 	z-index: 1;
 }
 
 .size {
 	font-size: 35px;
 	animation: fadeIn 1s linear backwards;
-	animation-delay: 2s;
+	animation-delay: 1s;
 }
 
 .h5 {
@@ -948,12 +943,12 @@ body {
 	font-weight: 400;
 	font-size: 1.2em;
 	animation: fadeIn 1s linear forwards;
-	animation-delay: 2.5s;
+	animation-delay: 1.5s;
 }
 
 .team {
 	animation: fadeIn 1s linear backwards;
-	animation-delay: 3s;
+	animation-delay: 2s;
 }
 
 .teamImg {

@@ -4,22 +4,13 @@ Todos:
 
 
 ☐ Profile.vue
-  ✘ Check if the currentUser the same is an take only their own information.
+  ☐ @low Check if the currentUser the same is an take only their own information.
 
 ☐ Admin.vue
-  ✘ Show all users.
+  ☐ @low Show all users.
 
 ☐ InternshipDetails.vue
-  ✘ Print only the id of the data
-
-☐ Faq.vue
-  ✘ Add question and answers 
+  ☐ @low Print only the id of the data
 
 ☐ Internship.vue
-  ✘ Search internship
-
-☐ This code says if the current email == is admin@gmail.com show this. app.vue created()
-  if(firebase.auth().currentUser.email == 'admin@gmail.com') {
-    this.isLoggedIn = true;
-    this.currentUser = firebase.auth().currentUser.email;
-  }
+  ☐ @critical Search internship

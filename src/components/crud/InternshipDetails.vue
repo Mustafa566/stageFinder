@@ -53,6 +53,14 @@
                     </div>
                     <div class="row mb-4">
                         <div class="col-sm-1 col-md text-center">
+                        <h6 class="font-weight-bold">Category</h6>
+                        </div>
+                        <div class="col-sm-1 col-md">
+                        {{ item.categories }}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-1 col-md text-center">
                         <h6 class="font-weight-bold">Email</h6>
                         </div>
                         <div class="col-sm-1 col-md">
@@ -115,6 +123,7 @@ export default {
             availability: item.availability,
             email: item.email,
             phoneNumber: item.phoneNumber,
+            categories: item.categories,
             website: item.website,
             info: item.info,
         }
