@@ -65,6 +65,10 @@
                     <textarea class="form-control inputText form-control" placeholder="Information" rows="5" v-model="newItem.info"></textarea>
                 </div>
 
+                <div class="form-group mt-4">
+                    <input type="email" class="inputText form-control" placeholder="Email of your account (same email on the navbar)" v-model="newItem.user" required/>
+                </div>
+
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary mt-3" value="Save"/>
                 </div>
@@ -116,6 +120,7 @@ export default {
        job: item.job,
        website: item.website,
        info: item.info,
+       user: item.user
      }
      if(firebase.auth().currentUser) {
         this.isLoggedIn = true;
@@ -124,8 +129,12 @@ export default {
   },
   methods: {
     updateItem() {
-      this.$firebaseRefs.items.child(this.$route.params.id).set(this.newItem);
-      this.$router.push('/internship')
+      if(this.newItem.user == this.currentUser) {
+        this.$firebaseRefs.items.child(this.$route.params.id).set(this.newItem);
+        this.$router.push('/internship')
+      } else {
+            alert('Use the same email with this account when you logged in.');
+      }
     }
   }
 }

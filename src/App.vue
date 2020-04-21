@@ -35,7 +35,7 @@ export default {
       isLoggedIn: false,
       isAdmin: false,
       currentUser: false,
-      isHidden: false
+      isHidden: false,
     };
   },
   methods: {
@@ -886,7 +886,7 @@ details summary{
 .isometric {
 	width: 800px;
 	height: 500px;
-	animation-delay: 0.5s;
+	animation-delay: 0.2s;
 	animation-duration: 1s;
   animation-name: slidein;
 }

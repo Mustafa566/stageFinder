@@ -90,13 +90,26 @@
                   <div class="row ml-0"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1">{{ item.location }}</h6></div>
                   <div class="row ml-0"><h6 class="font-weight-bold">Niveau:</h6><h6 class="ml-1">{{ item.niveau }}</h6></div>
                   <div class="row ml-0"><h6 class="font-weight-bold">Availability:</h6><h6 class="ml-1">{{ item.availability }}</h6></div>
+                  <div class="row ml-0"><h6 class="font-weight-bold">Posted:</h6><h6 class="ml-1">{{ item.user }}</h6></div>
                   <h6>{{ item.info }}</h6>
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-1 ml-3" v-if="isLoggedIn"><router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">Details</router-link></div>
-                <div class="col-xs-1 ml-3 mr-3" v-if="isLoggedIn"><router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">Edit</router-link></div>
-                <div class="col-xs-1" v-if="isLoggedIn"><button @click="deleteItem(item['.key'])" class="btn btn-danger dltbtn">Delete</button></div>
+                <div class="col-xs-1 ml-3" v-if="isLoggedIn">
+                  <router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">
+                    Details
+                  </router-link>
+                </div>
+
+                <div class="col-xs-1 ml-3 mr-3" v-if="isLoggedIn && item.user == myEmail">
+                  <router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">
+                    Edit
+                  </router-link>
+                </div>
+                
+                <div class="col-xs-1" v-if="isLoggedIn && item.user == myEmail">
+                  <button @click="deleteItem(item['.key'])" class="btn btn-danger dltbtn">Delete</button>
+                </div>
               </div>
             </div>
           </div>
@@ -121,6 +134,7 @@ export default {
       title: 'Internship',
       items: [],
       check: [],
+      myEmail: 'admin@gmail.com',
       isLoggedIn: false,
       currentUser: false
     }

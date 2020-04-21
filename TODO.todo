@@ -14,3 +14,4 @@ Todos:
 
 ☐ Internship.vue
   ☐ @critical Search internship
+  ☐ @critical myEmail object need all of register email. v-if="isLoggedIn && item.user == myEmail"

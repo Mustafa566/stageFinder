@@ -71,6 +71,10 @@
                     <textarea class="form-control inputText form-control" placeholder="Information" rows="5" v-model="newItem.info"></textarea>
                 </div>
 
+                <div class="form-group mt-4">
+                    <input type="email" class="inputText form-control" placeholder="Email of your account (same email on the navbar)" v-model="newItem.user" required/>
+                </div>
+
                 <div class="form-group mt-4 dateNow"></div>
 
                 <div class="form-group">
@@ -194,7 +198,8 @@ export default {
             phoneNumber: '',
             job: '',
             website: '',
-            info: ''
+            info: '',
+            user: ''
         },
     }
   },
@@ -207,34 +212,40 @@ export default {
 	},
   methods: {
         AddIntership() {
-            console.log(JSON.stringify(this.newItem))
-            this.$firebaseRefs.items.push({
-                // myDate: this.newItem.myDate,
-                name: this.newItem.name,
-                location: this.newItem.location,
-                education: this.newItem.education,
-                niveau: this.newItem.niveau,
-                availability: this.newItem.availability,
-                email: this.newItem.email,
-                categories: this.newItem.categories,
-                phoneNumber: this.newItem.phoneNumber,
-                job: this.newItem.job,
-                website: this.newItem.website,
-                info: this.newItem.info
-            })
-            this.newItem.date = '';
-            this.newItem.name = '';
-            this.newItem.location = '';
-            this.newItem.education = '';
-            this.newItem.niveau = '';
-            this.newItem.availability = '';
-            this.newItem.email = '';
-            this.newItem.categories = '';
-            this.newItem.phoneNumber = '';
-            this.newItem.job = '';
-            this.newItem.website = '';
-            this.newItem.info = '';
-            this.$router.push('/internship')
+            if(this.newItem.user == this.currentUser) {
+                console.log(JSON.stringify(this.newItem))
+                this.$firebaseRefs.items.push({
+                    // myDate: this.newItem.myDate,
+                    name: this.newItem.name,
+                    location: this.newItem.location,
+                    education: this.newItem.education,
+                    niveau: this.newItem.niveau,
+                    availability: this.newItem.availability,
+                    email: this.newItem.email,
+                    categories: this.newItem.categories,
+                    phoneNumber: this.newItem.phoneNumber,
+                    job: this.newItem.job,
+                    website: this.newItem.website,
+                    info: this.newItem.info,
+                    user: this.newItem.user
+                })
+                this.newItem.date = '';
+                this.newItem.name = '';
+                this.newItem.location = '';
+                this.newItem.education = '';
+                this.newItem.niveau = '';
+                this.newItem.availability = '';
+                this.newItem.email = '';
+                this.newItem.categories = '';
+                this.newItem.phoneNumber = '';
+                this.newItem.job = '';
+                this.newItem.website = '';
+                this.newItem.info = '';
+                this.newItem.user = '';
+                this.$router.push('/internship')
+            } else {
+                alert('Use the same email with this account when you logged in.');
+            }
         },
         toggle() {
             this.showSection = !this.showSection

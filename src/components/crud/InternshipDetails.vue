@@ -76,6 +76,14 @@
                         {{ item.info }}
                         </div>
                     </div>
+                    <div class="row mb-4">
+                        <div class="col-sm-1 col-md-2 text-center">
+                            <h6 class="font-weight-bold">Posted:</h6>
+                        </div>
+                        <div class="col-sm-1 col-md-9">
+                            <h6 class="font-weight-bold">{{ item.user }}</h6>
+                        </div>
+                    </div>
                     </div>
                 </div>
                 </div>
