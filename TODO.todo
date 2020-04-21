@@ -5,6 +5,7 @@ Todos:
 
 ☐ Profile.vue
   ☐ @low Check if the currentUser the same is an take only their own information.
+  ☐ @critical My internship show post.
 
 ☐ Admin.vue
   ☐ @low Show all users.
@@ -14,4 +15,3 @@ Todos:
 
 ☐ Internship.vue
   ☐ @critical Search internship
-  ☐ @critical myEmail object need all of register email. v-if="isLoggedIn && item.user == myEmail"

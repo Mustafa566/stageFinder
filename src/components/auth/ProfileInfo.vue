@@ -155,7 +155,7 @@ export default {
             console.log('Added to database');
             setTimeout(() => {
                 this.$router.push('/internship')
-            }, 3000);
+            }, 2500);
         },
         alert() {
             if (this.profileData.firstName == '' || this.profileData.lastName == '' || 

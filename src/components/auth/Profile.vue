@@ -1,8 +1,11 @@
 <template>
     <div v-if="isLoggedIn" class="container">
         <h1 class="text-center mt-2">Profile</h1>
-          <div v-if="!isHidden" class="alert alert-success" role="alert">
+          <div v-if="!isHidden" class="alert alert-success fade show" role="alert">
             <strong>Email sended</strong>
+            <button type="button" class="close" @click="isHidden = !isHidden">
+              <span aria-hidden="true">&times;</span>
+            </button>
           </div>
         <div class="card-body">
           <div class="card-body position-absolute">
