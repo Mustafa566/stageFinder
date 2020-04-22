@@ -1,11 +1,11 @@
 Todos:
 
-✔ @critical 3180 Lines of code @done(20-04-19 21:38)
+✔ @critical 3180 Lines of code @done(19-04-20 21:38)
+✔ @critical 3458 Lines of code @done(22-04-20 19:08)
 
 
 ☐ Profile.vue
-  ☐ @low Check if the currentUser the same is an take only their own information.
-  ☐ @critical My internship show post.
+
 
 ☐ Admin.vue
   ☐ @low Show all users.

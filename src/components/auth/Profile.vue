@@ -144,23 +144,7 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    <div class="container" v-for="profileData of profile" :key="profileData['.key']">
-                      <div v-if="seen && profileData.user == currentUser" class="row">
-                        <div class="col">
-                          <div>
-                            <div class="card-body">
-                              <p>Company name: {{profileData.companyName}}</p>
-                              <p>Chamber Of Commerce Number: {{profileData.chamberOfCommerceNumber}}</p>
-                              <p>Street: {{profileData.street}}</p>
-                              <p>House number: {{profileData.houseNumber}}</p>
-                              <p>ZIP code: {{profileData.zipCode}}</p>
-                              <p>Location: {{profileData.location}}</p>
-                              <p>Company email: {{profileData.companyEmail}}</p>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                    
                   </div>
                 </div>
               </div>

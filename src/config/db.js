@@ -11,6 +11,4 @@ import Firebase from 'firebase'
     measurementId: "G-KRSS8BJVBT"
   };
 let app = Firebase.initializeApp(config)
-
-
 export const db = app.database()
