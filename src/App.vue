@@ -982,4 +982,10 @@ body {
   border: 2px solid black;
   padding: 2px 2px;
 }
+
+/* Profile page */
+.listProfile:focus {
+  background: linear-gradient(135deg,#c20016 0%,#d98618 100%);
+  color: white;
+}
 </style>

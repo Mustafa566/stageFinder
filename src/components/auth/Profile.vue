@@ -10,13 +10,13 @@
         <div class="row">
           <div class="col-md-3 ">
             <div class="list-group ">
-              <a href="#" class="list-group-item list-group-item-action active" @click="firstTab =! firstTab">Personal information</a>
-              <a href="#" class="list-group-item list-group-item-action" @click="firstTab =! firstTab">Business information</a>
-              <a href="#" class="list-group-item list-group-item-action" @click="thirdTab =! secondTab">My internship posts</a>
-              <a href="#" class="list-group-item list-group-item-action" @click="fourthTab =! secondTab">Settings</a>
+              <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '1'">Personal information</a>
+              <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '2'">Business information</a>
+              <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '3'">My internship posts</a>
+              <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '4'">Settings</a>
             </div> 
           </div>
-          <div class="col-md-9" v-if="!firstTab">
+          <div class="col-md-9" v-if="listTab == '1'">
             <div class="card">
               <div class="card-body">
                 <div class="row">
@@ -43,18 +43,103 @@
                         </div>
                       </div>
                     </div>
+                    <div class="col">
+                      <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <div class="col-md-9" v-if="firstTab">
+          <div class="col-md-9" v-if="listTab == '2'">
             <div class="card">
               <div class="card-body">
                 <div class="row">
                   <div class="col-md-12">
                     <h4 class="text-center">Business information</h4>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="container" v-for="profileData of profile" :key="profileData['.key']">
+                      <div v-if="seen && profileData.user == currentUser" class="row">
+                        <div class="col">
+                          <div>
+                            <div class="card-body">
+                              <div class="row"><h6 class="font-weight-bold">Company name:</h6><h6 class="ml-1">{{profileData.companyName}}</h6></div>
+                              <div class="row"><h6 class="font-weight-bold">Chamber Of Commerce Number:</h6><h6 class="ml-1">{{profileData.chamberOfCommerceNumber}}</h6></div>
+                              <div class="row"><h6 class="font-weight-bold">Street:</h6><h6 class="ml-1">{{profileData.street}}</h6></div>
+                              <div class="row"><h6 class="font-weight-bold">House number:</h6><h6 class="ml-1">{{profileData.houseNumber}}</h6></div>
+                              <div class="row"><h6 class="font-weight-bold">ZIP code:</h6><h6 class="ml-1">{{profileData.zipCode}}</h6></div>
+                              <div class="row"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1">{{profileData.location}}</h6></div>
+                              <div class="row"><h6 class="font-weight-bold">Company email:</h6><h6 class="ml-1">{{profileData.companyEmail}}</h6></div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-9" v-if="listTab == '3'">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="text-center">My internship posts</h4>
+                  </div>
+                </div>
+                <div class="col-sm-12 col-md-12">
+                  <div class="mt-4" v-for="item of items" :key="item['.key']">
+                    <div v-if="isLoggedIn && item.user == currentUser">
+                      <div class="card-body defaultGrey">
+                        <h5 class="card-title font-weight-bold">{{ item.name }}</h5>
+                        <div class="row mb-2">
+                          <div class="col-sm">
+                            <div class="row ml-0"><h6 class="font-weight-bold">Job:</h6><h6 class="ml-1">{{ item.job }}</h6></div>
+                            <div class="row ml-0"><h6 class="font-weight-bold">Category:</h6><h6 class="ml-1">{{ item.categories }}</h6></div>
+                            <div class="row ml-0"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1">{{ item.location }}</h6></div>
+                            <div class="row ml-0"><h6 class="font-weight-bold">Niveau:</h6><h6 class="ml-1">{{ item.niveau }}</h6></div>
+                            <div class="row ml-0"><h6 class="font-weight-bold">Availability:</h6><h6 class="ml-1">{{ item.availability }}</h6></div>
+                            <h6>{{ item.info }}</h6>
+                            <div class="row ml-0"><h6 class="font-weight-bold">Posted:</h6><h6 class="ml-1">{{ item.user }}</h6></div>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col-xs-1 ml-3">
+                            <router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">
+                              Details
+                            </router-link>
+                          </div>
+
+                          <div class="col-xs-1 ml-3 mr-3">
+                            <router-link :to="{ name: 'Edit', params: {id: item['.key']} }" class="btn btn-warning editbtn">
+                              Edit
+                            </router-link>
+                          </div>
+                          
+                          <div class="col-xs-1">
+                            <button @click="deleteItem(item['.key'])" class="btn btn-danger dltbtn">Delete</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-md-9" v-if="listTab == '4'">
+            <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-12">
+                    <h4 class="text-center">Settings</h4>
                   </div>
                 </div>
                 <div class="row">
@@ -71,9 +156,6 @@
                               <p>ZIP code: {{profileData.zipCode}}</p>
                               <p>Location: {{profileData.location}}</p>
                               <p>Company email: {{profileData.companyEmail}}</p>
-                                <div class="row">
-                                  <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
-                                </div>
                             </div>
                           </div>
                         </div>
@@ -84,6 +166,7 @@
               </div>
             </div>
           </div>
+
         </div>
       </div>
     </div>
@@ -100,11 +183,11 @@ export default {
       email: '',
       password: '',
       profileData: [],
+      item: [],
       isHidden: true,
       seen: true,
       isLoggedIn: false,
-      firstTab: false,
-      secondTab: true
+      listTab: '1'
     }
   },
   head: {
@@ -115,7 +198,8 @@ export default {
 		}
 	},
   firebase: {
-    profile: db.ref('profile')
+    profile: db.ref('profile'),
+    items: db.ref('items')
   },
   methods: {
     resetPassword() {

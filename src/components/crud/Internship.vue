@@ -7,76 +7,75 @@
           <h4 class="text-center">Search internship</h4>
           <div class="form-check mt-5">
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Agriculture, Food and Natural Resources</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Agriculture, Food and Natural Resources</p>
             </div>
 
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Arts, Audio/Video Technology and Communications</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Arts, Audio/Video Technology and Communications</p>
             </div>
             
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Education and Training</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Education and Training</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Public Administration</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Public Administration</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Hospitality and Tourism</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Hospitality and Tourism</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Information Technology</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Information Technology</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Science, Technology, Engineering and Mathematics</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Science, Technology, Engineering and Mathematics</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Architecture and Construction</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Architecture and Construction</p>
             </div>
             
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Business Management and Administration</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Business Management and Administration</p>
             </div>
 
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Finance</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Finance</p>
             </div>
             
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Human Services</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Human Services</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Marketing, Sales and Service</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Marketing, Sales and Service</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Transportation, Distribution and Logistics</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Transportation, Distribution and Logistics</p>
             </div>
                         
             <div>
-              <input class="form-check-input checkboxMargin" type="checkbox">
-              <p class="form-check-label checkboxMargin">Others</p>
+                <input class="form-check-input checkboxMargin" type="checkbox">
+                <p class="form-check-label checkboxMargin">Others</p>
             </div>
-                        
-          </div>
+        </div>
         </div>
       <div class="col-sm-12 col-md-7">
         <div class="card rounded-circle mt-5" v-for="item of items" :key="item['.key']">
@@ -126,9 +125,6 @@ import firebase from "firebase";
 import { db } from '../../config/db';
 
 export default {
-  components: {
-      name: 'Internship'
-  },
   data() {
     return {
       title: 'Internship',

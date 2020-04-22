@@ -21,7 +21,6 @@ import firebase from "firebase"
 import './config/db'
 import VueHead from 'vue-head'
 
-
 Vue.use(VueHead)
 Vue.use(VueFire)
 Vue.use(VueRouter)
