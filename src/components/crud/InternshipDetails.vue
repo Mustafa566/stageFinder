@@ -2,7 +2,7 @@
     <div>
         <h1 class="text-center mb-5 font-weight-bold">Details</h1>
         <div class="container" v-for="item of items" :key="item['.key']">
-        <div class="col-sm-12 mt-5">
+        <div class="col-sm-12 mt-5" v-if="item['.key'] == route">
             <div class="card rounded-circle">
             <div class="card-body defaultGrey">
                 <h4 class="card-title text-center mb-5 font-weight-bold">{{ item.name }}</h4>
@@ -80,7 +80,7 @@
                         <div class="col-sm-1 col-md-2 text-center">
                             <h6 class="font-weight-bold">Posted:</h6>
                         </div>
-                        <div class="col-sm-1 col-md-9">
+                        <div class="col-sm-1 col-md-3">
                             <h6 class="font-weight-bold">{{ item.user }}</h6>
                         </div>
                     </div>
@@ -104,7 +104,8 @@ export default {
             title: 'Internship details',
             newItem: {},
             isLoggedIn: false,
-            items: []
+            items: [],
+            route: this.$route.params.id
         }
     },
     firebase: {
@@ -122,7 +123,7 @@ export default {
         }
     },
     created() {
-        let item = this.itemsObj[this.$route.params.id]
+        var item = this.itemsObj[this.$route.params.id]
         this.newItem = {
             name: item.name,
             location: item.location,

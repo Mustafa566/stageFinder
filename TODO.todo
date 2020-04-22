@@ -11,7 +11,7 @@ Todos:
   ☐ @low Show all users
 
 ☐ InternshipDetails.vue
-  ☐ @low Print only the id of the data
+  ☐ @critical  Design of template
 
 ☐ Internship.vue
   ☐ @critical Search internship
