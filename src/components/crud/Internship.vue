@@ -1,6 +1,5 @@
 <template>
   <div class="main">
-    <h1 class="text-center mb-5 font-weight-bold">Internship list</h1>
     <div>
       <div class="row">
         <div class="col-sm-12 col-md-3 ml-3 rightLine">
@@ -37,7 +36,7 @@
             </div>
                         
             <div>
-                <input class="form-check-input checkboxMargin" type="checkbox">
+                <input class="form-check-input checkboxMargin" type="checkbox" value="Science, Technology, Engineering and Mathematics">
                 <p class="form-check-label checkboxMargin">Science, Technology, Engineering and Mathematics</p>
             </div>
                         

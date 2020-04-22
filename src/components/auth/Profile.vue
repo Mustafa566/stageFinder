@@ -31,13 +31,38 @@
                         <div class="col">
                           <div>
                             <div class="card-body">
-                              <div class="row"><h6 class="font-weight-bold">ID:</h6><h6 class="ml-1">{{profileData.user}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">First name:</h6><h6 class="ml-1">{{profileData.firstName}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Last name:</h6><h6 class="ml-1">{{profileData.lastName}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Phone number:</h6><h6 class="ml-1">{{profileData.phoneNumber}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Adress:</h6><h6 class="ml-1">{{profileData.adress}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Citizenship:</h6><h6 class="ml-1">{{profileData.citizenship}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Personal email:</h6><h6 class="ml-1">{{profileData.personalEmail}}</h6></div>
+                              <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">ID</th>
+                                    <td>{{profileData.user}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">First name:</th>
+                                    <td>{{profileData.firstName}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Last name:</th>
+                                    <td>{{profileData.lastName}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Phone number:</th>
+                                    <td>{{profileData.phoneNumber}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Adress:</th>
+                                    <td>{{profileData.adress}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Citizenship:</th>
+                                    <td>{{profileData.citizenship}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Personal email:</th>
+                                    <td>{{profileData.personalEmail}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
                             </div>
                           </div>
                         </div>
@@ -67,13 +92,38 @@
                         <div class="col">
                           <div>
                             <div class="card-body">
-                              <div class="row"><h6 class="font-weight-bold">Company name:</h6><h6 class="ml-1">{{profileData.companyName}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Chamber Of Commerce Number:</h6><h6 class="ml-1">{{profileData.chamberOfCommerceNumber}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Street:</h6><h6 class="ml-1">{{profileData.street}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">House number:</h6><h6 class="ml-1">{{profileData.houseNumber}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">ZIP code:</h6><h6 class="ml-1">{{profileData.zipCode}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1">{{profileData.location}}</h6></div>
-                              <div class="row"><h6 class="font-weight-bold">Company email:</h6><h6 class="ml-1">{{profileData.companyEmail}}</h6></div>
+                              <table class="table">
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">Company name</th>
+                                    <td>{{profileData.companyName}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Chamber Of Commerce Number:</th>
+                                    <td>{{profileData.chamberOfCommerceNumber}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Street:</th>
+                                    <td>{{profileData.street}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">House number:</th>
+                                    <td>{{profileData.houseNumber}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">ZIP code:</th>
+                                    <td>{{profileData.zipCode}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Location:</th>
+                                    <td>{{profileData.location}}</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">Company email:</th>
+                                    <td>{{profileData.companyEmail}}</td>
+                                  </tr>
+                                </tbody>
+                              </table>
                             </div>
                           </div>
                         </div>
