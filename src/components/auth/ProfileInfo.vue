@@ -1,14 +1,11 @@
 <template>
     <div v-if="isLoggedIn" class="container">
-        <div v-if="!isHidden" class="alert alert-success" role="alert">
+        <div v-if="!isHidden && profileData.user == currentUser" class="alert alert-success" role="alert">
             <strong>Personal and Business information saved.</strong>
         </div>
         <div class="row">
             <div class="col">
                 <h2 class="mb-5">Personal information</h2>
-            </div>
-            <div class="col">
-                <input v-if="isLoggedIn" class="nav float-right font-weight-bold" v-model="currentUser">
             </div>
         </div>
         <form v-on:submit.prevent="AddProfile">
@@ -28,14 +25,18 @@
                 <div class="col-sm-1 col-md form-group">
                     <input type="text" class="inputText form-control" placeholder="Adress" v-model="profileData.adress" required/>
                 </div>
-            </div>
-
-            <div class="row mt-4">
                 <div class="col-sm-1 col-md form-group">
                     <input type="text" class="inputText form-control" placeholder="Citizenship" v-model="profileData.citizenship" required/>
                 </div>
+            </div>
+
+            <div class="row mt-4">
+
                 <div class="col-sm-1 col-md form-group">
                     <input type="email" class="inputText form-control" placeholder="Personal E-mail" v-model="profileData.personalEmail" required/>
+                </div>
+                <div class="col-sm-1 col-md form-group">
+                    <input type="email" class="inputText form-control" placeholder="ID: same as the email on the navbar in the center" v-model="profileData.user" required/>
                 </div>
             </div>
 
@@ -108,7 +109,8 @@ export default {
                 houseNumber: '',
                 zipCode: '',
                 location: '',
-                companyEmail: ''
+                companyEmail: '',
+                user: ''
             },
         }
     },
@@ -121,41 +123,45 @@ export default {
 	},
     methods: {
         AddProfile() {
-            console.log(JSON.stringify(this.profileData) + this.currentUser)
-            this.$firebaseRefs.profile.push({
-                firstName: this.profileData.firstName,
-                lastName: this.profileData.lastName,
-                phoneNumber: this.profileData.phoneNumber,
-                adress: this.profileData.adress,
-                citizenship: this.profileData.citizenship,
-                personalEmail: this.profileData.personalEmail,
-                companyName: this.profileData.companyName,
-                chamberOfCommerceNumber: this.profileData.chamberOfCommerceNumber,
-                street: this.profileData.street,
-                houseNumber: this.profileData.houseNumber,
-                zipCode: this.profileData.zipCode,
-                location: this.profileData.location,
-                companyEmail: this.profileData.companyEmail,
-                CurrentUser: this.currentUser
-            })
-            this.profileData.firstName = '';
-            this.profileData.lastName = '';
-            this.profileData.phoneNumber = '';
-            this.profileData.adress = '';
-            this.profileData.personalEmail = '';
-            this.profileData.companyName = '';
-            this.profileData.chamberOfCommerceNumber = '';
-            this.profileData.street = '';
-            this.profileData.houseNumber = '';
-            this.profileData.zipCode = '';
-            this.profileData.location = '';
-            this.profileData.companyEmail = '';
-            this.CurrentUser = '';
-            window.scrollTo(0,0, 0,0);
-            console.log('Added to database');
-            setTimeout(() => {
-                this.$router.push('/internship')
-            }, 2500);
+            if(this.profileData.user == this.currentUser) {
+                console.log(JSON.stringify(this.profileData))
+                this.$firebaseRefs.profile.push({
+                    firstName: this.profileData.firstName,
+                    lastName: this.profileData.lastName,
+                    phoneNumber: this.profileData.phoneNumber,
+                    adress: this.profileData.adress,
+                    citizenship: this.profileData.citizenship,
+                    personalEmail: this.profileData.personalEmail,
+                    companyName: this.profileData.companyName,
+                    chamberOfCommerceNumber: this.profileData.chamberOfCommerceNumber,
+                    street: this.profileData.street,
+                    houseNumber: this.profileData.houseNumber,
+                    zipCode: this.profileData.zipCode,
+                    location: this.profileData.location,
+                    companyEmail: this.profileData.companyEmail,
+                    user: this.profileData.user
+                })
+                this.profileData.firstName = '';
+                this.profileData.lastName = '';
+                this.profileData.phoneNumber = '';
+                this.profileData.adress = '';
+                this.profileData.personalEmail = '';
+                this.profileData.companyName = '';
+                this.profileData.chamberOfCommerceNumber = '';
+                this.profileData.street = '';
+                this.profileData.houseNumber = '';
+                this.profileData.zipCode = '';
+                this.profileData.location = '';
+                this.profileData.companyEmail = '';
+                this.profileData.user = '';
+                window.scrollTo(0,0, 0,0);
+                console.log('Added to database');
+                setTimeout(() => {
+                    this.$router.push('/internship')
+                }, 2500);
+            } else {
+                alert('Use the same email with this account when you logged in.');
+            }
         },
         alert() {
             if (this.profileData.firstName == '' || this.profileData.lastName == '' || 
@@ -164,7 +170,7 @@ export default {
                 this.profileData.companyName == '' || this.profileData.chamberOfCommerceNumber == '' ||
                 this.profileData.street == '' || this.profileData.houseNumber == '' ||
                 this.profileData.zipCode == '' || this.profileData.location == '' ||
-                this.companyEmail == '') {
+                this.profileData.companyEmail == '' || this.profileData.user == '') {
                 this.isHidden = true;
             } else {
                 this.isHidden = false;
