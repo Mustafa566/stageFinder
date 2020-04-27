@@ -146,10 +146,6 @@ $grey-color: #dcdcdc;
     width: max-content !important;
   }
 
-  label {
-    margin: -15px -66px !important;
-  }
-
   .openDiv .layerDiv {
     height: 364% !important;
   }
@@ -256,10 +252,6 @@ $grey-color: #dcdcdc;
   .label {
     font-size: 11px;
     width: max-content !important;
-  }
-
-  label {
-    margin: -15px -66px !important;
   }
 
   .openDiv .layerDiv {

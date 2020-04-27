@@ -16,6 +16,7 @@
               <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '4'">Settings</a>
             </div> 
           </div>
+
           <div class="col-md-9" v-if="listTab == '1'">
             <div class="card">
               <div class="card-body">
@@ -67,9 +68,6 @@
                           </div>
                         </div>
                       </div>
-                    </div>
-                    <div class="col">
-                      <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
                     </div>
                   </div>
                 </div>
@@ -194,7 +192,9 @@
                 </div>
                 <div class="row">
                   <div class="col-md-12">
-                    
+                    <div class="col">
+                      <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
+                    </div>
                   </div>
                 </div>
               </div>

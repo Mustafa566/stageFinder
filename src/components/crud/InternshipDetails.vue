@@ -1,12 +1,11 @@
 <template>
     <div>
-        <h1 class="text-center mb-5 font-weight-bold">Details</h1>
         <div class="container" v-for="item of items" :key="item['.key']">
-        <div class="col-sm-12 mt-5" v-if="item['.key'] == route">
+        <div class="col-sm-12" v-if="item['.key'] == route">
             <div class="card rounded-circle">
             <div class="card-body defaultGrey">
-                <h4 class="card-title text-center mb-5 font-weight-bold">{{ item.name }}</h4>
-                <div class="row mb-4">
+                <h4 class="card-title text-center font-weight-bold">{{ item.name }}</h4>
+                <div class="row">
                 <div class="col-sm text-center mb-4">
                     <h6 class="font-weight-bold">Location</h6>
                     <p class="card-text">{{ item.location }}</p>

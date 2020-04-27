@@ -134,6 +134,7 @@ export default {
       title: 'Internship',
       isLoggedIn: false,
       currentUser: false,
+      item: [],
       selectedCategory: "All"
     }
   },
@@ -157,19 +158,7 @@ export default {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
     }
-  },
-  computed: {
-		filteredPeople: function() {
-			var category = this.selectedCategory;
-			
-			if(category === "All") {
-				return this.item;
-			} else {
-				return this.item.filter(function(item) {
-					return item.categories === category;
-				});
-			}
-		}
-	}
+    
+  }
 }
 </script>
