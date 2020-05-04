@@ -4,12 +4,5 @@ Todos:
 ✔ @critical 3458 Lines of code @done(22-04-20 19:08)
 
 
-
-☐ Admin.vue
-  ☐ @low Show all users
-
 ☐ InternshipDetails.vue
   ☐ @critical Design of template
-
-☐ Internship.vue
-  ☐ @critical Search internship

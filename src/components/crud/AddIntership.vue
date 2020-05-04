@@ -12,12 +12,6 @@
                     </div>
                 </div>
 
-                <!-- <div class="row mt-4">
-                    <div class="col-sm-1 col-md form-group">
-                        <input type="date" v-model='myDate'>
-                    </div>
-                </div> -->
-
                 <div class="row mt-4">
                     <div class="col-sm-1 col-md form-group">
                         <input type="text" class="inputText form-control" placeholder="Education" v-model="newItem.education"/>
@@ -84,83 +78,18 @@
             
             <h2 class="text-center mb-3">Preview design</h2>
             <div class="card rounded-circle">
-                <div class="card-body default-bgcolor">
-                    <h4 class="card-title text-center mb-5 font-weight-bold">{{ newItem.name }}</h4>
-                    <div class="row mb-4">
-                        <div class="col-sm text-center mb-4">
-                            <h6 class="font-weight-bold">Location</h6>
-                            <p class="card-text">{{ newItem.location }}</p>
+                <div class="card-body defaultGrey">
+                    <h5 class="card-title font-weight-bold">{{ newItem.name }}</h5>
+                    <div class="row mb-2">
+                        <div class="col-sm ">
+                        <div class="row ml-0"><h6 class="font-weight-bold">Job:</h6><h6 class="ml-1">{{ newItem.job }}</h6></div>
+                        <div class="row ml-0"><h6 class="font-weight-bold">Category:</h6><h6 class="ml-1">{{ newItem.categories }}</h6></div>
+                        <div class="row ml-0"><h6 class="font-weight-bold">Location:</h6><h6 class="ml-1">{{ newItem.location }}</h6></div>
+                        <div class="row ml-0"><h6 class="font-weight-bold">Niveau:</h6><h6 class="ml-1">{{ newItem.niveau }}</h6></div>
+                        <div class="row ml-0"><h6 class="font-weight-bold">Availability:</h6><h6 class="ml-1">{{ newItem.availability }}</h6></div>
+                        <h6>{{ newItem.info }}</h6>
+                        <div class="row ml-0"><h6 class="font-weight-bold">Posted:</h6><h6 class="ml-1">{{ newItem.user }}</h6></div>
                         </div>
-                        <div class="col-sm text-center mb-4">
-                            <h6 class="font-weight-bold">Availability</h6>
-                            <p class="card-text">{{ newItem.availability }}</p>
-                        </div>
-                    </div>
-                    <div class="container">
-                        <div class="row">
-                            <button @click="toggle" class="btn btn-dark">{{toggleIcon}}</button>
-                        </div>
-                    <div class="infoList mt-4" v-show="showSection">
-                    <div class="container mt-5">
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md">
-                                <h6 class="font-weight-bold text-center">Education</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ newItem.education }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                                <h6 class="font-weight-bold">Niveau</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ newItem.niveau }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                                <h6 class="font-weight-bold">Website</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ newItem.website }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                                <h6 class="font-weight-bold">Phone number</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                                {{ newItem.phoneNumber }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                                <h6 class="font-weight-bold">Email</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ newItem.email }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                                <h6 class="font-weight-bold">categories</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ newItem.categories }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                                <h6 class="font-weight-bold">Information</h6>
-                            </div>
-                            <div class="w-100"></div>
-                            <div class="col-sm-1 col-md">
-                            {{ newItem.info }}
-                            </div>
-                        </div>
-                    </div>
-                    </div>
                     </div>
                 </div>
             </div>
@@ -183,11 +112,10 @@ export default {
     return {
         title: 'Add internship',
         isLoggedIn: false,
-        toggleIcon: 'More info',
+        toggleIcon: 'Details',
         showSection: false,
         myDate: new Date().toISOString().slice(0,10),
         newItem: {
-            // myDate: '',
             name: '',
             location: '',
             education: '',
