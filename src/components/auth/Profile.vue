@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoggedIn" class="container">
+    <div class="container">
       <div v-if="!isHidden" class="alert alert-success fade show" role="alert">
         <strong>Email sended</strong>
         <button type="button" class="close" @click="isHidden = !isHidden">
@@ -251,6 +251,9 @@ export default {
     if(firebase.auth().currentUser) {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
+    }
+    if (this.isLoggedIn == false) {
+      this.$router.push('/Login')
     }
   }
 };

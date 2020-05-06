@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoggedIn" class="container">
+    <div class="container">
         <div v-if="!isHidden && profileData.user == currentUser" class="alert alert-success" role="alert">
             <strong>Personal and Business information saved.</strong>
         </div>
@@ -181,6 +181,9 @@ export default {
         if(firebase.auth().currentUser) {
             this.isLoggedIn = true;
             this.currentUser = firebase.auth().currentUser.email;
+        }
+        if (this.isLoggedIn == false) {
+            this.$router.push('/Login')
         }
     }
 }

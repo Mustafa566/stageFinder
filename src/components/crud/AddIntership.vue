@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoggedIn" class="container bgColor">
+    <div class="container bgColor">
         <h3 class="text-center mt-4">Add internship</h3>
         <div class="card-body">
             <form v-on:submit.prevent="AddIntership">
@@ -184,6 +184,9 @@ export default {
             this.isLoggedIn = true;
             this.currentUser = firebase.auth().currentUser.email;
         }   
+        if (this.isLoggedIn == false) {
+            this.$router.push('/Login')
+        }
     }
 }
 </script>

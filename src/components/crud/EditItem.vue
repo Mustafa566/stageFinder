@@ -1,5 +1,5 @@
 <template>
-    <div v-if="isLoggedIn" class="container bgColor">
+    <div class="container bgColor">
         <h3 class="text-center mt-4">Edit internship</h3>
         <div class="card-body">
             <form v-on:submit.prevent="updateItem">
@@ -122,10 +122,13 @@ export default {
        info: item.info,
        user: item.user
      }
-     if(firebase.auth().currentUser) {
+    if(firebase.auth().currentUser) {
         this.isLoggedIn = true;
         this.currentUser = firebase.auth().currentUser.email;
-      }
+    }
+    if (this.isLoggedIn == false) {
+        this.$router.push('/Login')
+    }
   },
   methods: {
     updateItem() {

@@ -104,7 +104,8 @@ export default {
             isAdmin: false,
             helpInternship: [],
             questions: [],
-            discriminated: []
+            discriminated: [],
+            isLoggedIn: false
         }
     },
     firebase: {
@@ -124,6 +125,9 @@ export default {
            firebase.auth().currentUser.email == 'test@gmail.com') {
             this.isAdmin = true;
             this.currentUser = firebase.auth().currentUser.email;
+        }
+        if (this.isLoggedIn == false) {
+            this.$router.push('/Login')
         }
     }
 }

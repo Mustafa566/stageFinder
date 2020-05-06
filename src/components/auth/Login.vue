@@ -106,7 +106,6 @@
 
 <script>
 import firebase from "firebase";
-/* eslint-disable */
 export default {
   data() {
     return {
@@ -126,21 +125,21 @@ export default {
   methods: {
     register(e) {
       firebase.auth().createUserWithEmailAndPassword(this.email, this.password)
-        .then(user => {
+        .then(/* eslint-disable */user => {
            setTimeout(() => {
             this.$router.push('/ProfileInfo');
             location.reload();
           }, 3000);
           this.isHidden = false;
         },
-        err => {
+        err => {  
           alert(err.message);
         })
       e.preventDefault();
     },
     login(e) {
       firebase.auth().signInWithEmailAndPassword(this.email, this.password)
-        .then(user => {
+        .then(/* eslint-disable */user => {
           setTimeout(() => {
             this.$router.push('/index');
             location.reload();
