@@ -149,6 +149,11 @@ $grey-color: #dcdcdc;
   .openDiv .layerDiv {
     height: 364% !important;
   }
+
+  /* Internship details */
+  .position {
+    left: 0% !important;
+  }
 }
 
 /* Iphone 6/7/8 + */
@@ -308,6 +313,11 @@ $grey-color: #dcdcdc;
   input[type=checkbox], input[type=radio] {
     width: 20px;
     height: 16px;
+  }
+
+  .position {
+    left: 2% !important;
+    position: inherit;
   }
 
   /* Chat bot */
@@ -979,5 +989,12 @@ body {
 .listProfile:focus {
   background: linear-gradient(135deg,#c20016 0%,#d98618 100%);
   color: white;
+}
+
+/* Internship page */
+.position {
+  top: 150px;
+  left: 20%;
+  position: absolute;
 }
 </style>

@@ -93,7 +93,7 @@
                 </div>
               </div>
               <div class="row">
-                <div class="col-xs-1 ml-3" v-if="isLoggedIn">
+                <div class="col-xs-1 ml-3">
                   <router-link :to="{ name: 'InternshipDetails', params: {id: item['.key']} }" class="btn bg-info editbtn">
                     Details
                   </router-link>
