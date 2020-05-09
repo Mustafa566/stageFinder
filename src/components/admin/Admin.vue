@@ -105,7 +105,9 @@ export default {
             helpInternship: [],
             questions: [],
             discriminated: [],
-            isLoggedIn: false
+            isLoggedIn: false,
+            currentUser: false,
+            email: ''
         }
     },
     firebase: {
@@ -126,8 +128,12 @@ export default {
             this.isAdmin = true;
             this.currentUser = firebase.auth().currentUser.email;
         }
-        if (this.isLoggedIn == false) {
-            this.$router.push('/Login')
+    },
+    mounted() {
+        if(this.currentUser == null) {
+            this.$router.push('/Login');
+        } else {
+            console.log('works');
         }
     }
 }

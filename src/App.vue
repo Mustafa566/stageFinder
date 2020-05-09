@@ -36,6 +36,7 @@ export default {
       isAdmin: false,
       currentUser: false,
       isHidden: false,
+      email: ''
     };
   },
   methods: {

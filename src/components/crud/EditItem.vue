@@ -96,7 +96,8 @@ export default {
     return {
         title: 'Edit',
         newItem: {},
-        isLoggedIn: false
+        isLoggedIn: false,
+        email: '',
     }
   },
   head: {
@@ -106,30 +107,6 @@ export default {
 			}
 		}
     },
-  created() {
-     let item = this.itemsObj[this.$route.params.id]
-     this.newItem = {
-       name: item.name,
-       location: item.location,
-       education: item.education,
-       niveau: item.niveau,
-       availability: item.availability,
-       email: item.email,
-       categories: item.categories,
-       phoneNumber: item.phoneNumber,
-       job: item.job,
-       website: item.website,
-       info: item.info,
-       user: item.user
-     }
-    if(firebase.auth().currentUser) {
-        this.isLoggedIn = true;
-        this.currentUser = firebase.auth().currentUser.email;
-    }
-    if (this.isLoggedIn == false) {
-        this.$router.push('/Login')
-    }
-  },
   methods: {
     updateItem() {
       if(this.newItem.user == this.currentUser) {
@@ -139,6 +116,34 @@ export default {
             alert('Use the same email with this account when you logged in.');
       }
     }
-  }
+  },
+    created() {
+        let item = this.itemsObj[this.$route.params.id]
+        this.newItem = {
+            name: item.name,
+            location: item.location,
+            education: item.education,
+            niveau: item.niveau,
+            availability: item.availability,
+            email: item.email,
+            categories: item.categories,
+            phoneNumber: item.phoneNumber,
+            job: item.job,
+            website: item.website,
+            info: item.info,
+            user: item.user
+        }
+        if(firebase.auth().currentUser) {
+            this.isLoggedIn = true;
+            this.currentUser = firebase.auth().currentUser.email;
+        }
+    },
+    mounted() {
+        if(this.currentUser == null) {
+            this.$router.push('/Login');
+        } else {
+            console.log('works');
+        }
+    }
 }
 </script>

@@ -252,8 +252,12 @@ export default {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
     }
-    if (this.isLoggedIn == false) {
-      this.$router.push('/Login')
+  },
+  mounted() {
+    if(this.currentUser == null) {
+      this.$router.push('/Login');
+    } else {
+      console.log('works');
     }
   }
 };
