@@ -24,6 +24,7 @@
                     required
                     v-model="password"/>
                 </label>
+                <router-link :to="{ name: 'ForgotPassword' }" class="fgtPass nav-link">Forgot my password ?</router-link>
                 <button type="button" @click="login" class="submit button">Sign In</button>
                 <hr>
                 <div v-if="!isHidden" class="loader loader--style3" title="2">
@@ -440,7 +441,7 @@ label {
 }
 
 .submit {
-  margin-top: 40px;
+  margin-top: 10px;
   margin-bottom: 20px;
   background-image: linear-gradient(135deg,#d98618 0%,#c20016 100%);
   text-transform: uppercase;
@@ -473,5 +474,11 @@ label {
 
 svg path, svg rect{
   fill: #FF6700;
+}
+
+.fgtPass, .fgtPass:hover {
+  text-align: center;
+  color: #FF6700;
+  margin-top: 20px;
 }
 </style>

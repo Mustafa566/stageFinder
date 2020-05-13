@@ -69,8 +69,13 @@
                     <input type="email" class="inputText form-control" placeholder="Email of your account (same email on the navbar)" v-model="newItem.user" required/>
                 </div>
 
-                <div class="form-group">
-                    <input type="submit" class="btn btn-primary mt-3" value="Save"/>
+                <div class="row">
+                    <div class="form-group">
+                        <input type="submit" class="btn btn-primary mt-3" value="Save"/>
+                    </div>
+                    <div class="form-group btn btn-primary ml-2 mt-3">
+                        <router-link :to="{ name: 'Internship' }" class="goBack defaultColor">Cancel</router-link>
+                    </div>
                 </div>
             </form>
         </div>

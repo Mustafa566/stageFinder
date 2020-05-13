@@ -2,9 +2,9 @@
   <div id="app">
     <nav class="navbar navbar-expand-xl navbar-light navbar">
       <h1 class="default-color"><router-link :to="{ name: 'Index' }" class="default-color">Stage Finder</router-link></h1>
-      <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon" @click="isHidden = !isHidden"></span>
-      </button>
+        <button class="navbar-toggler" type="button" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon" @click="isHidden = !isHidden"></span>
+        </button>
       <div class="navbar-collapse" v-if="!isHidden">
         <ul class="navbar-nav mr-auto"></ul>
         <li v-if="isLoggedIn" class="nav"><span class="currentUser"><img class="userOnline" src="@/assets/icons/userOnline.png">{{currentUser}}</span></li>
@@ -154,6 +154,26 @@ $grey-color: #dcdcdc;
   /* Internship details */
   .position {
     left: 0% !important;
+  }
+
+  /* Forgot password */
+  .bg {
+    border-top-left-radius: 0% !important;
+    border-top-right-radius: 0% !important;
+    border: 0px solid black !important;
+  }
+
+  .centerVertical {
+    margin-top: 50px !important;
+  }
+
+  .w-50 {
+    width: 100% !important;
+  }
+
+  .mailImg {
+    width: 300px;
+    margin-left: 20px;
   }
 }
 
@@ -375,6 +395,20 @@ $grey-color: #dcdcdc;
   .openDiv .layerDiv {
     height: 191% !important;
   }
+
+  /* Forgot password */
+  .centerVertical {
+    margin-top: 90px !important;
+  }
+
+  .w-50 {
+    width: 100% !important;
+  }
+
+  .mailImg {
+    width: 300px;
+    margin-left: 20px;
+  }
 }
 
 /* Ipad pro */
@@ -485,6 +519,28 @@ $grey-color: #dcdcdc;
     max-width: 33.666667% !important;
     margin-bottom: 24px !important;
   }
+
+  /* Forgot password */
+  .centerVertical {
+    margin-top: 150px !important;
+  }
+
+  .w-50 {
+    width: 100% !important;
+  }
+
+  .mailImg {
+    width: 450px;
+    margin-left: 20px;
+  }
+
+  .fgPass {
+    font-size: 25px;
+  }
+
+  .alertText {
+    font-size: 22px;
+  }
 }
 
 /* Laptops */
@@ -533,8 +589,9 @@ body::-webkit-scrollbar {
   border-color: $orange-color;
 }
 
-.defaultColor {
+.defaultColor, .goBack:hover {
   color: white;
+  text-decoration: none;
 }
 
 .defaultColor2 {
@@ -567,6 +624,7 @@ body::-webkit-scrollbar {
   background-color: $grey-color;
   border-color: $grey-color;
   border-radius: 20px;
+  border: 3px solid black;
 }
 
 .rightLine {
@@ -630,6 +688,18 @@ body::-webkit-scrollbar {
   width: 30%;
 }
 
+/* forgot password */
+.centerVertical {
+  margin: auto 0;
+}
+
+.bg {
+  background-color: white;
+  border-top-left-radius: 40%;
+  border-top-right-radius: 40%;
+  border: 5px solid black;
+  box-shadow: 5px 40px 40px grey;
+}
 
 /* Edit button */
 .editbtn, .dltbtn, .editbtn:hover, .dltbtn:hover {
@@ -651,11 +721,6 @@ body::-webkit-scrollbar {
 input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
-}
-
-.infoList {
-  border: 2px solid black;
-  border-radius: 5px;
 }
 
 .card-border {

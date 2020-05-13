@@ -10,6 +10,7 @@ import Internship from './components/crud/Internship.vue'
 import InternshipDetails from './components/crud/InternshipDetails.vue'
 import Profile from './components/auth/Profile.vue'
 import Login from './components/auth/Login.vue'
+import ForgotPassword from './components/auth/ForgotPassword.vue'
 import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Bot from './components/chatBot/Bot.vue'
 import json from './components/chatBot/info.json';
@@ -55,6 +56,11 @@ let routes = [
     name: 'Login',
     path: '/Login',
     component: Login,
+  },
+  {
+    name: 'ForgotPassword',
+    path: '/ForgotPassword',
+    component: ForgotPassword,
   },
   {
     name: 'ProfileInfo',

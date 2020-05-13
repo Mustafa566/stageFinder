@@ -1,90 +1,83 @@
 <template>
     <div>
+        <div class="btn btn-primary ml-5 mb-2">
+            <router-link :to="{ name: 'Internship' }" class="defaultColor goBack">Go back</router-link>
+        </div>
         <div class="container position" v-for="item of items" :key="item['.key']">
             <div class="col-sm-12" v-if="item['.key'] == route">
                 <div class="card rounded-circle">
                 <div class="card-body defaultGrey">
-                    <h4 class="card-title text-center font-weight-bold">{{ item.name }}</h4>
-                    <div class="row">
-                    <div class="col-sm text-center mb-4">
-                        <h6 class="font-weight-bold">Location</h6>
-                        <p class="card-text">{{ item.location }}</p>
+                    <h4 class="card-title font-weight-bold">{{ item.name }}</h4>
+                    <div class="row ml-0">
+                        <div class="col-sm">
+                            <div class="row">
+                                <p class="font-weight-bold">Location:</p>
+                                <p class="card-text ml-1">{{ item.location }}</p>
+                            </div>
+                        </div>    
                     </div>
-                    <div class="col-sm text-center mb-4">
-                        <h6 class="font-weight-bold">Availability</h6>
-                        <p class="card-text">{{ item.availability }}</p>
-                    </div>
-                    </div>
-                    <div class="container">
-                    <div class="infoList mt-4">
-                        <div class="container mt-5">
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md">
-                            <h6 class="font-weight-bold text-center">Education</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.education }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                            <h6 class="font-weight-bold">Niveau</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.niveau }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                            <h6 class="font-weight-bold">Website</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.website }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                            <h6 class="font-weight-bold">Phone number</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.phoneNumber }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                            <h6 class="font-weight-bold">Category</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.categories }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                            <h6 class="font-weight-bold">Email</h6>
-                            </div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.email }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md text-center">
-                            <h6 class="font-weight-bold">Information</h6>
-                            </div>
-                            <div class="w-100"></div>
-                            <div class="col-sm-1 col-md">
-                            {{ item.info }}
-                            </div>
-                        </div>
-                        <div class="row mb-4">
-                            <div class="col-sm-1 col-md-2 text-center">
-                                <h6 class="font-weight-bold">Posted:</h6>
-                            </div>
-                            <div class="col-sm-1 col-md-3">
-                                <h6 class="font-weight-bold">{{ item.user }}</h6>
-                            </div>
-                        </div>
+
+                    <div class="col-sm">
+                        <div class="row">
+                            <p class="font-weight-bold">Availability:</p>
+                            <p class="card-text ml-1">{{ item.availability }}</p>
                         </div>
                     </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Education:</p>
+                            <p class="card-text ml-1">{{ item.education }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Niveau:</p>
+                            <p class="card-text ml-1">{{ item.niveau }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Website:</p>
+                            <p class="card-text ml-1">{{ item.website }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Phone number:</p>
+                            <p class="card-text ml-1">{{ item.phoneNumber }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Category:</p>
+                            <p class="card-text ml-1">{{ item.categories }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Email:</p>
+                            <p class="card-text ml-1">{{ item.email }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md">
+                        <div class="row">
+                            <p class="font-weight-bold">Information:</p>
+                            <p class="card-text">{{ item.info }}</p>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-1 col-md mt-2">
+                        <div class="row">
+                            <p class="font-weight-bold">Posted:</p>
+                            <p class="card-text">{{ item.user }}</p>
+                        </div>
                     </div>
                 </div>
                 </div>

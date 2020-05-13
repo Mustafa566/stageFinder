@@ -25,7 +25,7 @@
 						<img src="@/assets/images/mustafa.png" class="card-img-top teamImg">
 						<div class="card-body">
 							<h5 class="card-title text-center">Mustafa Bolat</h5>
-							<p class="card-text text-center mt-4">Full stack developer</p>
+							<p class="card-text text-center mt-4">Frontend developer</p>
 							<div class="row mt-4">
 								<a class="mx-auto d-block" href="https://www.instagram.com/musti_566/">
 									<img src="@/assets/icons/instagram.png">

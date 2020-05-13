@@ -1,11 +1,5 @@
 <template>
     <div class="container">
-      <div v-if="!isHidden" class="alert alert-success fade show" role="alert">
-        <strong>Email sended</strong>
-        <button type="button" class="close" @click="isHidden = !isHidden">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
       <div class="container">
         <div class="row">
           <div class="col-md-3 ">
@@ -13,7 +7,6 @@
               <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '1'">Personal information</a>
               <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '2'">Business information</a>
               <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '3'">My internship posts</a>
-              <a href="#" class="list-group-item list-group-item-action listProfile" @click="listTab = '4'">Settings</a>
             </div> 
           </div>
 
@@ -182,25 +175,6 @@
             </div>
           </div>
 
-          <div class="col-md-9" v-if="listTab == '4'">
-            <div class="card">
-              <div class="card-body">
-                <div class="row">
-                  <div class="col-md-12">
-                    <h4 class="text-center">Settings</h4>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-12">
-                    <div class="col">
-                      <input type="submit" class="btn btn-primary" @click="resetPassword; isHidden = !isHidden" value="Reset your password">
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </div>
@@ -234,18 +208,6 @@ export default {
   firebase: {
     profile: db.ref('profile'),
     items: db.ref('items')
-  },
-  methods: {
-    resetPassword() {
-      const auth = firebase.auth();
-      auth.sendPasswordResetEmail(auth.currentUser.email).then(() => {
-        console.log('Email send');
-        // Email sent.
-      }).catch((error) => {
-        // An error happened.
-        console.log(error);
-      });
-    }
   },
   created() {
     if(firebase.auth().currentUser) {

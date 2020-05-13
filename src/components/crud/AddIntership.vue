@@ -69,8 +69,6 @@
                     <input type="email" class="inputText form-control" placeholder="Email of your account (same email on the navbar)" v-model="newItem.user" required/>
                 </div>
 
-                <div class="form-group mt-4 dateNow"></div>
-
                 <div class="form-group">
                     <input type="submit" class="btn btn-primary mt-3" value="Add internship"/>
                 </div>
@@ -114,7 +112,6 @@ export default {
         isLoggedIn: false,
         toggleIcon: 'Details',
         showSection: false,
-        myDate: new Date().toISOString().slice(0,10),
         newItem: {
             name: '',
             location: '',
@@ -143,7 +140,6 @@ export default {
             if(this.newItem.user == this.currentUser) {
                 console.log(JSON.stringify(this.newItem))
                 this.$firebaseRefs.items.push({
-                    // myDate: this.newItem.myDate,
                     name: this.newItem.name,
                     location: this.newItem.location,
                     education: this.newItem.education,
