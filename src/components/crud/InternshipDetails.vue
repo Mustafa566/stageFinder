@@ -40,8 +40,8 @@
 
                     <div class="col-sm-1 col-md">
                         <div class="row">
-                            <p class="font-weight-bold">Website:</p>
-                            <p class="card-text ml-1">{{ item.website }}</p>
+                            <p class="font-weight-bold">Website: </p>
+                            <a :href="item.website" target="_blank" class="ml-1">{{item.website}}</a>
                         </div>
                     </div>
 

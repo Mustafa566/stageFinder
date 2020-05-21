@@ -113,6 +113,7 @@ export default {
         toggleIcon: 'Details',
         showSection: false,
         newItem: {
+            http: 'http://',
             name: '',
             location: '',
             education: '',
@@ -149,7 +150,7 @@ export default {
                     categories: this.newItem.categories,
                     phoneNumber: this.newItem.phoneNumber,
                     job: this.newItem.job,
-                    website: this.newItem.website,
+                    website: this.newItem.http + this.newItem.website,
                     info: this.newItem.info,
                     user: this.newItem.user
                 })

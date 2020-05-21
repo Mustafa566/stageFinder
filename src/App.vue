@@ -52,7 +52,7 @@ export default {
       this.isLoggedIn = true;
       this.currentUser = firebase.auth().currentUser.email;
     }
-    if(firebase.auth().currentUser.email == 'admin@gmail.com' || firebase.auth().currentUser.email == 'test@gmail.com') {
+    if(firebase.auth().currentUser.email == 'admin@gmail.com') {
       this.isAdmin = true;
       this.currentUser = firebase.auth().currentUser.email;
     }

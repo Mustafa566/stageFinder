@@ -123,8 +123,7 @@ export default {
         }
     },
     created() {
-        if(firebase.auth().currentUser.email == 'admin@gmail.com' || 
-           firebase.auth().currentUser.email == 'test@gmail.com') {
+        if(firebase.auth().currentUser.email == 'admin@gmail.com') {
             this.isAdmin = true;
             this.currentUser = firebase.auth().currentUser.email;
         }

@@ -21,7 +21,7 @@
 			<div class="row mt-5 isobg">
 				<h2 class="text-center mt-5 mb-5 team">OUR TEAM</h2>
 				<div class="col">
-					<div class="card float-right team team1" style="width: 18rem;">
+					<div class="card team float-right team1" style="width: 18rem;">
 						<img src="@/assets/images/mustafa.png" class="card-img-top teamImg">
 						<div class="card-body">
 							<h5 class="card-title text-center">Mustafa Bolat</h5>
