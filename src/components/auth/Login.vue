@@ -60,7 +60,7 @@
                     </div>
                 </div>
                 <form class="form sign-up" @submit.prevent="submit" @keyup.enter="register()">
-                    <h2 class="h2 text-center">Time to feel like home,</h2>
+                    <h2 class="h2 text-center">Register</h2>
                     <label>
                         <span>Email</span>
                         <input 
