@@ -15,7 +15,7 @@ import ProfileInfo from './components/auth/ProfileInfo.vue'
 import Bot from './components/chatBot/Bot.vue'
 import json from './components/chatBot/info.json';
 import Index from './components/Index.vue'
-import Faq from './components/Faq.vue'
+import Faq from './components/faq.vue'
 import Admin from './components/admin/Admin.vue'
 import '../node_modules/nprogress/nprogress.css'
 import firebase from "firebase"
